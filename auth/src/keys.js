@@ -1,0 +1,7 @@
+module.exports = {
+  ACCESS_TOKEN: 'Access-Token',
+  REFRESH_TOKEN: 'Refresh-Token',
+  TOKEN_EXPIRE_TIME: 'TOKEN_EXPIRE_TIME',
+  CURRENT_TOKEN: 'CURRENT_TOKEN',
+  USER_INFO: 'USER_INFO'
+}
