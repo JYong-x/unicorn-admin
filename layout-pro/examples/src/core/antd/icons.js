@@ -89,4 +89,7 @@ export {
 export {
   default as AlignLeftOutline
 } from '@ant-design/icons/lib/outline/AlignLeftOutline'
+export {
+  default as MenuOutline
+} from '@ant-design/icons/lib/outline/MenuOutline'
 /* MultiTab end */

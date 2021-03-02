@@ -1,13 +1,47 @@
 <template>
   <ConfigProvider>
-    <ContainerQuery :query="MediaQueryEnum" @onChange="handleMediaQuery">
-      <Layout :class="{...mediaQuery}">
-        <Header></Header>
+    <ContainerQuery :query="MediaQueryEnum" @change="handleMediaQuery">
+      <Layout
+        class="layout-basic"
+        :class="[`${prefix}-layout-basic`, {...mediaQuery}]"
+      >
+        <GlobalHeader>
+          <DropdownMenu
+            slot="menu"
+            :is-mobile="isMobile"
+            :menus="menus"
+          ></DropdownMenu>
+        </GlobalHeader>
         <Layout>
-          <Drawer v-if="isMobile">
-            <SideMenu :menus="menus"></SideMenu>
+          <Drawer
+            v-if="isMobile"
+            :visible="!collapsed"
+            placement="left"
+            :closable="false"
+            width="auto"
+            mask-closable
+            :body-style="{padding: 0,height: '100vh'}"
+            @close="() => handleCollapse(true)"
+          >
+            <SideMenu
+              :show-system-menu="showSystemMenu"
+              :menus="menus"
+              @changeSystem="changeSystem"
+            ></SideMenu>
           </Drawer>
-          <SideMenu v-else :menus="menus"></SideMenu>
+          <SideMenu
+            v-else
+            :show-system-menu="showSystemMenu"
+            :menus="menus"
+            @collapse="handleCollapse"
+            @changeSystem="changeSystem"
+          ></SideMenu>
+          <Layout class="layout-main" :style="{paddingLeft: collapsed ? '0' : '180px'}">
+            <content-wrap>
+              <slot></slot>
+            </content-wrap>
+            <Footer class="layout-footer"></Footer>
+          </Layout>
         </Layout>
       </Layout>
     </ContainerQuery>
@@ -15,39 +49,60 @@
 </template>
 
 <script>
+import config from './config'
 import { ContainerQuery } from 'vue-container-query'
 import 'ant-design-vue/es/layout/style'
 import Layout from 'ant-design-vue/es/layout'
 import ConfigProvider from 'ant-design-vue/es/config-provider'
 import 'ant-design-vue/es/drawer/style'
 import Drawer from 'ant-design-vue/es/drawer'
+import GlobalHeader from './components/GlobalHeader'
 import SideMenu from './components/SideMenu'
-const { Header } = Layout
+import DropdownMenu from './components/DropdownMenu'
+import ContentWrap from './components/ContentWrap'
+import { processMenu } from './utils/menu'
+const { Footer } = Layout
 export default {
   name: 'BasicLayout',
   components: {
+    ContentWrap,
     ConfigProvider,
     ContainerQuery,
     Layout,
-    Header,
+    GlobalHeader,
+    Footer,
+    DropdownMenu,
     SideMenu,
     Drawer
   },
   props: {
-    menus: {
+    systems: {
       type: Array,
       default: () => []
+    },
+    selfSystem: {
+      type: String,
+      required: true
     },
     isMobile: {
       type: Boolean,
       default: false
     },
     handleMediaQuery: {
-      type: Function
+      type: Function,
+      default: null
     },
     mediaQuery: {
       type: Object,
       default: () => {}
+    },
+    collapsed: {
+      type: Boolean,
+      default: false
+    },
+    showSystemMenu: {
+      type: Boolean,
+      default: true
     }
   },
   data () {
@@ -75,7 +130,21 @@ export default {
         'screen-xxl': {
           minWidth: 1600
         }
-      }
+      },
+      prefix: config.prefix,
+      menus: [],
+      curSystem: this.selfSystem
+    }
+  },
+  watch: {
+    systems: {
+      handler (systems) {
+        this.$nextTick(() => {
+          this.menus = processMenu(this.curSystem, systems)
+          console.log(this.menus, systems)
+        })
+      },
+      immediate: true
     }
   },
   methods: {
@@ -84,10 +153,34 @@ export default {
         return collapsed ? 80 : sideWidth
       }
       return 0
+    },
+    changeSystem (system) {},
+    handleCollapse (collapsed) {
+      this.$emit('collapse', collapsed)
     }
   }
 }
 </script>
-
-<style scoped>
+<style lang="less">
+  .ant-layout {
+    background-color: #e6effa;
+  }
+</style>
+<style lang="less" scoped>
+  @import "./config/style.less";
+  @layout-basic: ~'@{u-prefix}-layout-basic';
+  .@{layout-basic} {
+    &.layout-basic {
+      height: auto;
+      min-height: 100vh;
+    }
+    .layout-main {
+      overflow: visible;
+      transition: all .2s;
+    }
+    .layout-footer {
+      padding: 12px 0 0;
+      background: #e6effa;
+    }
+  }
 </style>

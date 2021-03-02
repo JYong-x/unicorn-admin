@@ -1,10 +1,11 @@
 <template>
-  <ContentWrap>
+  <WrapContent :class="[`${prefix}-layout-content-wrap`]">
     <ConfigProvider>
-      <div :class="[`${prefix}-content`]"></div>
-      <slot></slot>
+      <div :class="[`${prefix}-layout-content`]">
+        <slot></slot>
+      </div>
     </ConfigProvider>
-  </ContentWrap>
+  </WrapContent>
 </template>
 
 <script>
@@ -12,12 +13,12 @@ import config from '../../config'
 import ConfigProvider from 'ant-design-vue/es/config-provider'
 import 'ant-design-vue/es/layout/style'
 import Layout from 'ant-design-vue/es/layout'
-const { Content: ContentWrap } = Layout
+const { Content: WrapContent } = Layout
 export default {
   name: 'ContentWrap',
   components: {
     ConfigProvider,
-    ContentWrap
+    WrapContent
   },
   data () {
     return {
@@ -27,6 +28,15 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="less" scoped>
+  @import "../../config/style.less";
+  @layout-content-wrap: ~'@{u-prefix}-layout-content-wrap';
+  @layout-content: ~'@{u-prefix}-layout-content';
+  .@{layout-content-wrap} {
+    .@{layout-content} {
+      min-height: 100%;
+      margin: 0 12px;
+      background: #ffffff;
+    }
+  }
 </style>

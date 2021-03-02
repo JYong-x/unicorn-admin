@@ -54,6 +54,8 @@ module.exports = {
 
     // 添加别名
     config.resolve.alias
+      .set('@unicorn-admin/layout-pro', resolve('../layout-pro/src'))
+      .set('@unicorn-admin/auth', resolve('../auth/src'))
       .set('vue$', 'vue/dist/vue.esm.js')
       .set('@', resolve('src'))
       .set('api', resolve('src/api'))
@@ -147,7 +149,7 @@ module.exports = {
         modifyVars: {
           // 'primary-color': '#F5222D',
           // 'ant-prefix': 'u'
-          'hack': `true; @import "${resolve('./src/styles/antd.less')}";`
+          // 'hack': `true; @import "${resolve('./src/styles/antd.less')}";`
         },
         javascriptEnabled: true
       }
@@ -162,7 +164,7 @@ module.exports = {
       errors: true
     },
     open: true, // 是否自动打开浏览器
-    port: '8092', // 代理端口
+    port: '1000', // 代理端口
     https: false,
     hotOnly: true, // 热更新
     proxy: {
@@ -180,20 +182,6 @@ module.exports = {
         changeOrigin: true,
         pathRewrite: {
           '^/auth': '/'
-        }
-      },
-      // '/proxy-user': {
-      //   target: 'http://10.254.9.31:9090',
-      //   changeOrigin: true,
-      //   pathRewrite: {
-      //     '^/proxy-user': '/'
-      //   }
-      // },
-      '/isse-auth': {
-        target: 'https://10.254.9.31:8888',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/isse-auth': '/'
         }
       }
     }

@@ -80,8 +80,10 @@ function listenExpires () {
   }, 60 * 1000)
 }
 
-export default {
+export {
   setAuth,
   getAuth,
-  removeAuth
+  removeAuth,
+  getLocalToken,
+  getLocalRefreshToken
 }

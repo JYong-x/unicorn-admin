@@ -21,9 +21,7 @@ var webpack = require('webpack')
 
 module.exports = {
   entry: {
-    index: './src/index.js',
-    permission: './src/permission.js',
-    modules: './src/modules.js'
+    index: './src/index.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),

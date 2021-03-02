@@ -5,8 +5,9 @@ const envs = {
   dev,
   prod
 }
-function httpUri(env) {
+function defaultUri(env) {
   const envConfig = envs[env]
+  if (!envConfig) return {}
   return {
     accessTokenUri: `http://${envConfig.AUTH_URI}/oauth/token`,
     refreshTokenUri: `http://${envConfig.AUTH_URI}/oauth/token`,
@@ -17,6 +18,14 @@ function httpUri(env) {
     casUri: `${envConfig.AUTH_URI}/casLogin`,
     casLogOutUri: `${envConfig.AUTH_URI}/casLogout`,
   }
+}
+
+export function httpUri (config) {
+  const result = {...defaultUri(config.env), ...config}
+  // if (result.useCas) {
+  //   result.logoutUri = result.casLogOutUri
+  // }
+  return result
 }
 
 export default httpUri
