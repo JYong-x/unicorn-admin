@@ -1,7 +1,7 @@
 <template>
   <LayoutPro
     :systems="systems"
-    self-system="test"
+    :self-system="appConfig.code"
     :collapsed="collapsed"
     :media-query="query"
     :is-mobile="isMobile"
@@ -14,7 +14,8 @@
 </template>
 
 <script>
-import { asyncRouters } from '@/router'
+import { mapState } from 'vuex'
+import { appConfig } from '@/config'
 import LayoutPro from '@unicorn-admin/layout-pro'
 export default {
   name: 'BasicLayout',
@@ -23,8 +24,7 @@ export default {
   },
   data () {
     return {
-      // 系统菜单
-      systems: [],
+      appConfig,
       // 侧边栏是否收起
       collapsed: false,
       // 媒体查询
@@ -33,8 +33,11 @@ export default {
       isMobile: false
     }
   },
-  created () {
-    this.systems = [{ code: 'test', accessedRouters: asyncRouters }]
+  computed: {
+    ...mapState({
+      // 系统菜单
+      systems: state => state.permission.systems
+    })
   },
   methods: {
     handleMediaQuery (val) {

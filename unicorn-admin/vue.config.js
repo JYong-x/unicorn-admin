@@ -55,7 +55,7 @@ module.exports = {
     // 添加别名
     config.resolve.alias
       .set('@unicorn-admin/layout-pro', resolve('../layout-pro/src'))
-      .set('@unicorn-admin/auth', resolve('../auth/src'))
+      .set('@unicorn-admin/utils', resolve('../utils/src'))
       .set('vue$', 'vue/dist/vue.esm.js')
       .set('@', resolve('src'))
       .set('api', resolve('src/api'))
@@ -164,7 +164,7 @@ module.exports = {
       errors: true
     },
     open: true, // 是否自动打开浏览器
-    port: '1000', // 代理端口
+    port: '8092', // 代理端口
     https: false,
     hotOnly: true, // 热更新
     proxy: {
@@ -178,7 +178,7 @@ module.exports = {
         }
       },
       '/auth': {
-        target: 'http://10.254.9.31:8888',
+        target: 'http://172.20.216.74:8888',
         changeOrigin: true,
         pathRewrite: {
           '^/auth': '/'

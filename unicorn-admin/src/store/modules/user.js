@@ -1,5 +1,5 @@
 // 用户信息相关模块（登录信息，个人信息等）
-import { getUserInfo } from '@unicorn-admin/auth'
+import Vue from 'vue'
 
 const user = {
   state: {
@@ -27,14 +27,28 @@ const user = {
     // 获取用户信息
     GetUserInfo ({ commit }) {
       return new Promise((resolve, reject) => {
-        getUserInfo.then(userInfo => {
+        Vue.loginUtils.getUserInfo().then(userInfo => {
           if (userInfo.roleNames && userInfo.roleNames.length > 0) {
             commit('SET_ROLES', userInfo.roleNames)
             commit('SET_INFO', userInfo)
+            resolve(userInfo)
           } else {
             reject(new Error('getUserInfo: roles must be a non-null array !'))
           }
         })
+      })
+    },
+
+    SetUserInfo ({ commit }, userInfo) {
+      return new Promise((resolve, reject) => {
+        const { roleNames } = userInfo
+        if (roleNames && roleNames.length > 0) {
+          commit('SET_ROLES', roleNames)
+          commit('SET_INFO', userInfo)
+          resolve()
+        } else {
+          reject(new Error('getUserInfo: roles must be a non-null array !'))
+        }
       })
     },
 

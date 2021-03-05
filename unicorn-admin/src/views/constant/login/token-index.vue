@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import { httpConfig } from '@/config'
 export default {
   name: 'TokenIndex',
   data () {
@@ -26,8 +26,9 @@ export default {
         this.$message.error('获取识别码失败')
         return
       }
-      this.$store.dispatch('Login', this.code).then(() => {
-        let redirect = sessionStorage.getItem('redirect1')
+      console.log(this, this.$loginUtils)
+      this.$loginUtils.login(this.code, httpConfig).then(data => {
+        let redirect = sessionStorage.getItem('redirect')
         for (let i = 0; i < this.excludeRedirects.length; i++) {
           if (this.excludeRedirects[i].indexOf(redirect) !== -1) {
             redirect = '/'
@@ -38,8 +39,6 @@ export default {
         } else {
           this.$router.push('/').catch(() => '')
         }
-      }).catch(err => {
-        this.$message.error(err.data && err.data.error)
       })
     }
   }

@@ -1,7 +1,7 @@
+import Vue from 'vue'
 import router from './router'
 import store from './store'
 
-import login, { authUtils, loginRequest } from '@unicorn-admin/auth'
 // import { Message } from 'ant-design-vue'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
@@ -12,16 +12,9 @@ const whiteList = ['login', 'tokenIndex', 'cas']
 const defaultRoutePath = '/'
 const loginRoutePath = '/login'
 
-console.log(authUtils, loginRequest)
-
 router.beforeEach((to, from, next) => {
   NProgress.start()
-  login().then(() => {
-    next()
-    NProgress.done()
-  })
-  const hasToken = authUtils.getLocalToken()
-  console.log(hasToken)
+  const hasToken = Vue.loginUtils.getLocalToken()
   if (hasToken) {
     if (to.path === loginRoutePath) {
       next({ path: defaultRoutePath })
