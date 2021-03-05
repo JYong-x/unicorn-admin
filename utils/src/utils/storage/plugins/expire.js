@@ -1,4 +1,4 @@
-var namespace = 'expire'
+var namespace = 'EXPIRE_'
 
 module.exports = expirePlugin
 

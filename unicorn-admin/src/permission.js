@@ -6,7 +6,7 @@ import store from './store'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
-NProgress.configure({ showSpinner: false })
+NProgress.configure({ showSpinner: false, color: '#e6f7ff' })
 
 const whiteList = ['login', 'tokenIndex', 'cas']
 const defaultRoutePath = '/'

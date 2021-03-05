@@ -57,7 +57,7 @@ var storeAPI = {
 
 	// hasNamespace returns true if this store instance has the given namespace.
 	hasNamespace: function(namespace) {
-		return (this._namespacePrefix == '__u_'+namespace+'_')
+		return (this._namespacePrefix == namespace)
 	},
 
 	// createStore creates a store.js instance with the first
@@ -94,7 +94,7 @@ function createStore(storages, plugins, namespace) {
 		plugins = [plugins]
 	}
 
-	var namespacePrefix = (namespace ? '__u_'+namespace+'_' : '')
+	var namespacePrefix = (namespace ? namespace : '')
 	var namespaceRegexp = (namespace ? new RegExp('^'+namespacePrefix) : null)
 	var legalNamespaces = /^[a-zA-Z0-9_\-]*$/ // alpha-numeric + underscore and dash
 	if (!legalNamespaces.test(namespace)) {

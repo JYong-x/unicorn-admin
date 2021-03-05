@@ -10,7 +10,16 @@
             slot="menu"
             :is-mobile="isMobile"
             :menus="menus"
-          ></DropdownMenu>
+          >
+            <template slot="systemMenu">
+              <SystemMenu
+                :systems="systems"
+                :cur-system="curSystem"
+                class="system-menu"
+                @change="changeSystem"
+              ></SystemMenu>
+            </template>
+          </DropdownMenu>
         </GlobalHeader>
         <Layout>
           <Drawer
@@ -24,18 +33,37 @@
             @close="() => handleCollapse(true)"
           >
             <SideMenu
+              :systems="systems"
               :show-system-menu="showSystemMenu"
               :menus="menus"
-              @changeSystem="changeSystem"
-            ></SideMenu>
+            >
+              <template slot="systemMenu">
+                <SystemMenu
+                  :systems="systems"
+                  :cur-system="curSystem"
+                  class="system-menu"
+                  @change="changeSystem"
+                ></SystemMenu>
+              </template>
+            </SideMenu>
           </Drawer>
           <SideMenu
             v-else
+            :systems="systems"
             :show-system-menu="showSystemMenu"
             :menus="menus"
             @collapse="handleCollapse"
-            @changeSystem="changeSystem"
-          ></SideMenu>
+            @change="changeSystem"
+          >
+            <template slot="systemMenu">
+              <SystemMenu
+                :systems="systems"
+                :cur-system="curSystem"
+                class="system-menu"
+                @change="changeSystem"
+              ></SystemMenu>
+            </template>
+          </SideMenu>
           <Layout class="layout-main" :style="{paddingLeft: collapsed ? '0' : '180px'}">
             <content-wrap>
               <slot></slot>
@@ -61,10 +89,12 @@ import SideMenu from './components/SideMenu'
 import DropdownMenu from './components/DropdownMenu'
 import ContentWrap from './components/ContentWrap'
 import { processMenu } from './utils/menu'
+import SystemMenu from './components/SystemMenu/SystemMenu'
 const { Footer } = Layout
 export default {
   name: 'BasicLayout',
   components: {
+    SystemMenu,
     ContentWrap,
     ConfigProvider,
     ContainerQuery,
@@ -154,7 +184,10 @@ export default {
       }
       return 0
     },
-    changeSystem (system) {},
+    changeSystem (system) {
+      this.curSystem = system
+      this.menus = processMenu(system, this.systems)
+    },
     handleCollapse (collapsed) {
       this.$emit('collapse', collapsed)
     }

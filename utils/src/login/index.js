@@ -9,7 +9,7 @@ const LoginUtils = {
     const _options = {
       ...options,
       name: options.name || 'loginUtils',
-      storageNamespace: options.storageNamespace || 'u'
+      storageNamespace: options.storageNamespace || 'U'
     }
 
     const _config = utils.getConfig(_options)
@@ -17,6 +17,9 @@ const LoginUtils = {
     const _auth = auth(_options)
 
     const _request = request(_options, _auth)
+
+    // 登录过期控制
+    _request.listenExpires(_options)
 
     const loginUtils = {
       ..._request,

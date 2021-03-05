@@ -1,19 +1,18 @@
 import axios from 'axios'
 
 export default function (options, authUtils) {
-  const config = options
-
-  const { getLocalToken, getLocalRefreshToken, removeAuth, getAuth, setUserInfo, setAuth } = authUtils
+  const { storage, getLocalToken, getLocalRefreshToken, removeAuth, getAuth, setUserInfo, setAuth } = authUtils
 
   return {
-    config,
+    options,
     login,
     getToken,
     getUserInfo,
     logout,
     refreshToken,
     loginRedirect,
-    casLoginRedirect
+    casLoginRedirect,
+    listenExpires
   }
 
   function login (code, config = options) {
@@ -38,6 +37,7 @@ export default function (options, authUtils) {
         }
         getToken(code, config).then(auth => {
           setAuth(auth)
+          listenExpires()
           resolve({
             auth
           })
@@ -124,39 +124,9 @@ export default function (options, authUtils) {
       })
     })
   }
-  function refreshToken(config = options) {
-    return new Promise(resolve => {
-      const refreshToken = getLocalRefreshToken()
-      axios(
-        {
-          method: 'POST',
-          url: config.refreshTokenUri,
-          auth: {
-            username: config.clientId,
-            password: config.client_secret
-          },
-          data: {
-            client_id: config.clientId,
-            client_secret: config.client_secret,
-            grant_type: 'refresh_token',
-            refresh_token: refreshToken
-          },
-          transformRequest: [function (data) {
-            let ret = ''
-            for (const it in data) {
-              if (data[it] === null) {
-                continue
-              }
-              ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
-            }
-            return ret
-          }]
-        }
-      ).then(res => {
-        resolve(res.data)
-      })
-    })
-  }
+  // function refreshToken(config = options) {
+  //   return _refreshToken(config)
+  // }
 
 // 跳转统一登录地址
   function loginRedirect(config = options) {
@@ -169,4 +139,76 @@ export default function (options, authUtils) {
 
     window.location.href = authorUrl
   }
+
+  function listenExpires (config = options) {
+    if (!getAuth().accessToken) {
+      return
+    }
+    setInterval(() => {
+      const {accessToken, tokenExpire} = getAuth()
+      if (accessToken) {
+        const now = new Date().getTime()
+        // 当前时间与token过期时间间隔少于10分钟时刷新token
+        if (tokenExpire - now < 10 * 60 * 1000) {
+          document.addEventListener('mousemove', refreshToken(config, storage, getLocalRefreshToken()))
+        }
+      } else if (getLocalRefreshToken()) {
+        refreshToken(config, authUtils.storage)
+      } else if (config.router) {
+        setTimeout(() => {
+          config.router.replace('/login')
+        }, 3000)
+      } else {
+        throw new Error('token is expired')
+      }
+    }, 10 * 1000)
+  }
+}
+
+function refreshToken(config, storage, refreshToken) {
+  const { router } = config
+  refreshTokenRequest(config, refreshToken).then(data => {
+    _setAuth(data, storage)
+  }).catch(() => {
+    if (router) {
+      setTimeout(() => {
+        router.replace('/login')
+      }, 3000)
+    } else {
+      throw new Error('refreshToken error')
+    }
+  })
+}
+
+function refreshTokenRequest(config, refreshToken) {
+  return new Promise((resolve, reject) => {
+    axios({
+        url: config.refreshTokenUri,
+        method: 'POST',
+        auth: {
+          username: config.clientId,
+          password: config.client_secret
+        },
+        data: {
+          client_id: config.clientId,
+          client_secret: config.client_secret,
+          grant_type: 'refresh_token',
+          refresh_token: refreshToken
+        },
+        transformRequest: [function (data) {
+          let ret = ''
+          for (const it in data) {
+            if (data[it] === null) {
+              continue
+            }
+            ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+          }
+          return ret
+        }]
+      }).then(res => {
+      resolve(res.data)
+    }).catch(() => {
+      reject()
+    })
+  })
 }

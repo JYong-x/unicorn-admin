@@ -14,7 +14,7 @@
     >
       <Icon :type="collapsed ? 'right' : 'left'"></Icon>
     </span>
-    <SystemMenu class="system-menu" @change="(system) => $emit('changeSystem', system)"></SystemMenu>
+    <slot name="systemMenu"></slot>
     <RouteMenu
       class="route-menu"
       :menus="menus"
@@ -29,7 +29,6 @@ import 'ant-design-vue/es/layout/style'
 import Layout from 'ant-design-vue/es/layout'
 import 'ant-design-vue/es/icon/style'
 import Icon from 'ant-design-vue/es/icon'
-import SystemMenu from '../SystemMenu'
 import RouteMenu from '../RouteMenu'
 const { Sider } = Layout
 export default {
@@ -37,7 +36,6 @@ export default {
   components: {
     Sider,
     Icon,
-    SystemMenu,
     RouteMenu
   },
   props: {

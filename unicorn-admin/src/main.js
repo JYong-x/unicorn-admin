@@ -32,9 +32,10 @@ Vue.config.productionTip = false
 Vue.use(VueStorage, storageOptions)
 Vue.use(loginUtils,
   { ...httpConfig,
-    storageNamespace: 'CQUEDU',
+    storageNamespace: 'CQUEDU_',
     env: process.env.NODE_ENV,
-    name: 'loginUtils' })
+    name: 'loginUtils',
+    router })
 // Vue.use(Dialog)
 
 new Vue({
