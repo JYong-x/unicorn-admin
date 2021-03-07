@@ -161,7 +161,7 @@ export default function (options, authUtils) {
       } else {
         throw new Error('token is expired')
       }
-    }, 10 * 1000)
+    }, 60 * 1000)
   }
 }
 

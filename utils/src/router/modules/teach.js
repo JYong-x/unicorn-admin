@@ -1,421 +1,419 @@
-import { httpConfig } from '@/config'
-
-const teachEvaUrl = httpConfig.appRoot + '/teach/portal'
-const testUrl = httpConfig.appRoot + '/test/portal'
+const teachEvaUrl = '/portal'
+const testUrl = '/portal'
 const teachEvaRouterMap = [
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 1,
-    coordinateY: 1,
-    iconCls: 'icon-zhuye',
+    x: 1,
+    y: 1,
+    icon: 'icon-zhuye',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '主页',
+      title: '主页',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 3,
-    coordinateY: 2,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 3,
+    y: 2,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '查询/统计',
+      title: '查询/统计',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 3,
-    coordinateY: 3,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 3,
+    y: 3,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '评教结果查询',
+      title: '评教结果查询',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 3,
-    coordinateY: 4,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 3,
+    y: 4,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '评教进度',
+      title: '评教进度',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 3,
-    coordinateY: 5,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 3,
+    y: 5,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '评教统计',
+      title: '评教统计',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 3,
-    coordinateY: 6,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 3,
+    y: 6,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '评学统计',
+      title: '评学统计',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 3,
-    coordinateY: 7,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 3,
+    y: 7,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '问卷调查',
+      title: '问卷调查',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 1,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 2,
+    y: 1,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '评教管理',
+      title: '评教管理',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 2,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 2,
+    y: 2,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '评教课程管理',
+      title: '评教课程管理',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 3,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 2,
+    y: 3,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '评教结果管理',
+      title: '评教结果管理',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 4,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 2,
+    y: 4,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '问卷管理',
+      title: '问卷管理',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 5,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 2,
+    y: 5,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '问卷设置',
+      title: '问卷设置',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 6,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 2,
+    y: 6,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '问卷填写',
+      title: '问卷填写',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 7,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 2,
+    y: 7,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '问卷结果管理',
+      title: '问卷结果管理',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 1,
-    coordinateY: 1,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 1,
+    y: 1,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '评教/评学',
+      title: '评教/评学',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 1,
-    coordinateY: 2,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 1,
+    y: 2,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '评教设置',
+      title: '评教设置',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 1,
-    coordinateY: 3,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 1,
+    y: 3,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '指标管理',
+      title: '指标管理',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 1,
-    coordinateY: 4,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 1,
+    y: 4,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '学生评教',
+      title: '学生评教',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 1,
-    coordinateY: 5,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 1,
+    y: 5,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '同步评教',
+      title: '同步评教',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 1,
-    coordinateY: 6,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 1,
+    y: 6,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '专家评教',
+      title: '专家评教',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 1,
-    coordinateY: 7,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 1,
+    y: 7,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '领导评教',
+      title: '领导评教',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 1,
-    coordinateY: 8,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 1,
+    y: 8,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '评学设置',
+      title: '评学设置',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 1,
-    coordinateY: 9,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 1,
+    y: 9,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '学生评学',
+      title: '学生评学',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 1,
-    coordinateY: 10,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 1,
+    y: 10,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '教师评学',
+      title: '教师评学',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 4,
-    coordinateY: 1,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 4,
+    y: 1,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '管理台',
+      title: '管理台',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 4,
-    coordinateY: 2,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 4,
+    y: 2,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '类别',
+      title: '类别',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 4,
-    coordinateY: 3,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 4,
+    y: 3,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '时间',
+      title: '时间',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 4,
-    coordinateY: 4,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 4,
+    y: 4,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '用户',
+      title: '用户',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 4,
-    coordinateY: 5,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 4,
+    y: 5,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '角色',
+      title: '角色',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 4,
-    coordinateY: 6,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 4,
+    y: 6,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '权限',
+      title: '权限',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 4,
-    coordinateY: 7,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 4,
+    y: 7,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '日志',
+      title: '日志',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: teachEvaUrl,
     name: '',
-    coordinateX: 4,
-    coordinateY: 8,
-    iconCls: 'icon-zhutiqiehuanicon',
+    x: 4,
+    y: 8,
+    icon: 'icon-zhutiqiehuanicon',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '工作流',
+      title: '工作流',
       matched: [{ path: '', name: '' }]
     }
   }
@@ -426,5 +424,7 @@ export default {
   code: 'tams',
   namespace: 'KR_TEACH',
   icon: 'icon-jiaoshixinxi',
+  baseUrl: '/teach',
+  isOld: true,
   originRouters: teachEvaRouterMap
 }

@@ -1,5 +1,6 @@
 <template>
   <LayoutPro
+    :config="httpConfig"
     :systems="systems"
     :self-system="appConfig.code"
     :collapsed="collapsed"
@@ -15,7 +16,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { appConfig } from '@/config'
+import { appConfig, httpConfig } from '@/config'
 import LayoutPro from '@unicorn-admin/layout-pro'
 export default {
   name: 'BasicLayout',
@@ -25,6 +26,7 @@ export default {
   data () {
     return {
       appConfig,
+      httpConfig,
       // 侧边栏是否收起
       collapsed: false,
       // 媒体查询

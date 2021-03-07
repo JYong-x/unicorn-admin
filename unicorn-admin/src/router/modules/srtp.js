@@ -7,519 +7,519 @@ const srtpRouterMap = [
   {
     path: srtpUrl + '/project?methodToCall=getCommonHome&amp;viewId=ProjectView',
     name: 'Name',
-    coordinateX: 1,
-    coordinateY: 2,
-    iconCls: 'icon-xuejiguanli1',
+    x: 1,
+    y: 2,
+    icon: 'icon-xuejiguanli1',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '报名'
+      title: '报名'
     }
   },
   {
     path: srtpUrl + '/project?methodToCall=getProjectList&amp;viewId=ProjectListView',
     name: 'srtpProjectList',
-    coordinateX: 1,
-    coordinateY: 2,
-    iconCls: 'icon-xiangmu',
+    x: 1,
+    y: 2,
+    icon: 'icon-xiangmu',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewProjectListPage'],
-      pageTitle: '项目'
+      title: '项目'
     }
   },
   {
     path: srtpUrl + '/project?methodToCall=getPrjQueryPage&amp;viewId=ProjectListView',
     name: 'ProjectQuery',
-    coordinateX: 1,
-    coordinateY: 3,
-    iconCls: 'icon-sousuo2',
+    x: 1,
+    y: 3,
+    icon: 'icon-sousuo2',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewProjectQueryPage'],
-      pageTitle: '项目查询'
+      title: '项目查询'
     }
   },
   {
     path: srtpUrl + '/project?methodToCall=getTeaProjectPage&amp;viewId=SubjectView',
     name: 'Subject',
-    coordinateX: 1,
-    coordinateY: 4,
-    iconCls: 'icon-zuoye',
+    x: 1,
+    y: 4,
+    icon: 'icon-zuoye',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '课题'
+      title: '课题'
     }
   },
   {
     path: srtpUrl + '/admin?methodToCall=getFundsPage&amp;viewId=AdminView',
     name: 'srtpFundsManagement',
-    coordinateX: 1,
-    coordinateY: 5,
-    iconCls: 'icon-xiangmu',
+    x: 1,
+    y: 5,
+    icon: 'icon-xiangmu',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewFundsManagementPage'],
-      pageTitle: '经费'
+      title: '经费'
     }
   },
   {
     path: srtpUrl + '/project?methodToCall=getReviewProjectForBatchPage&amp;viewId=ProjectView',
     name: 'PackageReviewRanking',
-    coordinateX: 1,
-    coordinateY: 6,
-    iconCls: 'icon-xuqiupingshen',
+    x: 1,
+    y: 6,
+    icon: 'icon-xuqiupingshen',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewPackageReviewRankingPage'],
-      pageTitle: '审核'
+      title: '审核'
     }
   },
   {
     path: srtpUrl + '/project?methodToCall=getPersonalProjectPage&amp;viewId=ProjectListView',
     name: 'PersonalProjectInquiry',
-    coordinateX: 1,
-    coordinateY: 6,
-    iconCls: 'icon-sousuo2',
+    x: 1,
+    y: 6,
+    icon: 'icon-sousuo2',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewPersonalProjectInquiryPage'],
-      pageTitle: '创新创业成果查询'
+      title: '创新创业成果查询'
     }
   },
   {
     path: srtpUrl + '/contest?methodToCall=getContestCategoryPage&amp;viewId=ContestView',
     name: 'srtpContest',
-    coordinateX: 2,
-    coordinateY: 1,
-    iconCls: 'icon-jiangli3',
+    x: 2,
+    y: 1,
+    icon: 'icon-jiangli3',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '竞赛'
+      title: '竞赛'
     }
   },
   {
     path: srtpUrl + '/contest?methodToCall=getMainDataImportPage&amp;viewId=ContestView',
     name: 'srtpStudentContestList',
-    coordinateX: 2,
-    coordinateY: 2,
-    iconCls: 'icon-daoru',
+    x: 2,
+    y: 2,
+    icon: 'icon-daoru',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewCompetitionInfoDataImportPage'],
-      pageTitle: '数据导入'
+      title: '数据导入'
     }
   },
   {
     path: srtpUrl + '/contest?methodToCall=getContestSignUpSelectionListPage&amp;viewId=ContestView',
     name: 'srtpStudentContestList',
-    coordinateX: 2,
-    coordinateY: 3,
-    iconCls: 'icon-zhiwumingcheng',
+    x: 2,
+    y: 3,
+    icon: 'icon-zhiwumingcheng',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewStudentContestListPage'],
-      pageTitle: '竞赛报名'
+      title: '竞赛报名'
     }
   },
   {
     path: srtpUrl + '/contest?methodToCall=getContestListPage&amp;viewId=ContestView',
     name: 'ContestManagement',
-    coordinateX: 2,
-    coordinateY: 4,
-    iconCls: 'icon-jiangli3',
+    x: 2,
+    y: 4,
+    icon: 'icon-jiangli3',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewContestManagementPage'],
-      pageTitle: '竞赛管理'
+      title: '竞赛管理'
     }
   },
   {
     path: srtpUrl + '/contest?methodToCall=getContestLevelPage&amp;viewId=ContestView',
     name: 'srtpStudentContestList',
-    coordinateX: 2,
-    coordinateY: 5,
-    iconCls: 'icon-pingjia',
+    x: 2,
+    y: 5,
+    icon: 'icon-pingjia',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewContestLevelPage'],
-      pageTitle: '竞赛级别'
+      title: '竞赛级别'
     }
   },
   {
     path: srtpUrl + '/contest?methodToCall=getContestTypeInfoList&amp;viewId=ContestView',
     name: 'ContestManagement',
-    coordinateX: 2,
-    coordinateY: 6,
-    iconCls: 'icon-jindu13',
+    x: 2,
+    y: 6,
+    icon: 'icon-jindu13',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewContestTypeInfoPage'],
-      pageTitle: '竞赛类别'
+      title: '竞赛类别'
     }
   },
   {
     path: srtpUrl + '/contest?methodToCall=getContestTypeLabelPage&amp;viewId=ContestView',
     name: 'srtpStudentContestList',
-    coordinateX: 2,
-    coordinateY: 7,
-    iconCls: 'icon-jindu13',
+    x: 2,
+    y: 7,
+    icon: 'icon-jindu13',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewContestLabelCategoryPage'],
-      pageTitle: '竞赛标签类别'
+      title: '竞赛标签类别'
     }
   },
   {
     path: srtpUrl + '/admin?methodToCall=getExpertModuleConsolePage&amp;viewId=AdminView',
     name: 'ExpertModuleConsole',
-    coordinateX: 3,
-    coordinateY: 1,
-    iconCls: 'icon-zhiwumingcheng',
+    x: 3,
+    y: 1,
+    icon: 'icon-zhiwumingcheng',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewExpertModuleConsolePage'],
-      pageTitle: '专家'
+      title: '专家'
     }
   },
   {
     path: srtpUrl + '/admin?methodToCall=getExpertGroupPage&amp;viewId=AdminView',
     name: 'StudentContestList',
-    coordinateX: 3,
-    coordinateY: 2,
-    iconCls: 'icon-peixun',
+    x: 3,
+    y: 2,
+    icon: 'icon-peixun',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewExpertGroupPage'],
-      pageTitle: '专家小组'
+      title: '专家小组'
     }
   },
   {
     path: srtpUrl + '/admin?methodToCall=getExpertOpinionChoicePage&amp;viewId=AdminView',
     name: 'ManagerExpertOpinion',
-    coordinateX: 3,
-    coordinateY: 3,
-    iconCls: 'icon-renwujibie',
+    x: 3,
+    y: 3,
+    icon: 'icon-renwujibie',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewExpertOpinionPage', 'ViewManagerExpertOpinion'],
-      pageTitle: '专家意见'
+      title: '专家意见'
     }
   },
   {
     path: srtpUrl + '/statistics?methodToCall=getStatisticsManagePage&amp;viewId=StatisticView',
     name: 'srtpStatisticManage',
-    coordinateX: 4,
-    coordinateY: 1,
-    iconCls: 'icon-tongji',
+    x: 4,
+    y: 1,
+    icon: 'icon-tongji',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewStatisticManagePage'],
-      pageTitle: '统计'
+      title: '统计'
     }
   },
   {
     path: srtpUrl + '/statistics?methodToCall=getStuDistributionStatisticsPage&amp;viewId=StatisticView',
     name: 'StudentStatistic',
-    coordinateX: 4,
-    coordinateY: 2,
-    iconCls: 'icon-xuejiguanli1',
+    x: 4,
+    y: 2,
+    icon: 'icon-xuejiguanli1',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewStudentStatisticPage'],
-      pageTitle: '学生'
+      title: '学生'
     }
   },
   {
     path: srtpUrl + '/statistics?methodToCall=getInstDistributionStatisticsPage&amp;viewId=StatisticView',
     name: 'TeacherStatistic',
-    coordinateX: 4,
-    coordinateY: 3,
-    iconCls: 'icon-iconfont-jiaoshi',
+    x: 4,
+    y: 3,
+    icon: 'icon-iconfont-jiaoshi',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewTeacherStatisticPage'],
-      pageTitle: '教师'
+      title: '教师'
     }
   },
   {
     path: srtpUrl + '/statistics?methodToCall=getProjectGradeStatisticsPage&amp;viewId=StatisticView',
     name: 'ProjectGrade',
-    coordinateX: 4,
-    coordinateY: 5,
-    iconCls: 'icon-yewumokuai',
+    x: 4,
+    y: 5,
+    icon: 'icon-yewumokuai',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewProjectGradePage'],
-      pageTitle: '项目成绩'
+      title: '项目成绩'
     }
   },
   {
     path: srtpUrl + '/statistics?methodToCall=getProjectInfoStatisticPage&amp;viewId=StatisticView',
     name: 'ProjectStatistics',
-    coordinateX: 4,
-    coordinateY: 6,
-    iconCls: 'icon-xiangmu',
+    x: 4,
+    y: 6,
+    icon: 'icon-xiangmu',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewProjectStatisticsPage'],
-      pageTitle: '项目'
+      title: '项目'
     }
   },
 
   {
     path: '',
     name: 'srtpConsole',
-    coordinateX: 5,
-    coordinateY: 1,
-    iconCls: 'icon-xiangmuguanli',
+    x: 5,
+    y: 1,
+    icon: 'icon-xiangmuguanli',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewManageConsole'],
-      pageTitle: '管理台'
+      title: '管理台'
     }
   },
   {
     path: srtpUrl + '/admin?methodToCall=getTermManagePage&amp;viewId=AdminView',
     name: 'TermManagement',
-    coordinateX: 5,
-    coordinateY: 2,
-    iconCls: 'icon-jieguotiaozheng_jieguotiaozheng',
+    x: 5,
+    y: 2,
+    icon: 'icon-jieguotiaozheng_jieguotiaozheng',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewTermManagementPage'],
-      pageTitle: '立项批次'
+      title: '立项批次'
     }
   },
   {
     path: srtpUrl + '/admin?methodToCall=getContestTimeInfo&amp;viewId=AdminView',
     name: 'ContestTimeInfo',
-    coordinateX: 5,
-    coordinateY: 3,
-    iconCls: 'icon-baogao',
+    x: 5,
+    y: 3,
+    icon: 'icon-baogao',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewContestTimeInfoPage'],
-      pageTitle: '竞赛批次'
+      title: '竞赛批次'
     }
   },
   {
     path: srtpUrl + '/admin?methodToCall=getReportTemplateManagementPage&amp;viewId=AdminView',
     name: 'ReportTemplateManagement',
-    coordinateX: 5,
-    coordinateY: 4,
-    iconCls: 'icon-caidantubiao-05',
+    x: 5,
+    y: 4,
+    icon: 'icon-caidantubiao-05',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewReportTemplateManagementPage'],
-      pageTitle: '模板'
+      title: '模板'
     }
   },
   {
     path: srtpUrl + '/admin?methodToCall=getImportingProjectPage&amp;viewId=AdminView',
     name: 'ImportingProject',
-    coordinateX: 5,
-    coordinateY: 5,
-    iconCls: 'icon-shenqingtijiao',
+    x: 5,
+    y: 5,
+    icon: 'icon-shenqingtijiao',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewImportingProjectPage'],
-      pageTitle: '项目导入'
+      title: '项目导入'
     }
   },
   {
     path: srtpUrl + '/admin?methodToCall=getConsolePage&amp;viewId=AdminView',
     name: 'strpConsoleCat',
-    coordinateX: 5,
-    coordinateY: 6,
-    iconCls: 'icon-msnui-module',
+    x: 5,
+    y: 6,
+    icon: 'icon-msnui-module',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewConsolePage'],
-      pageTitle: '类别'
+      title: '类别'
     }
   },
 
   {
     path: srtpUrl + '/admin?methodToCall=getPermissionManagementPage&amp;viewId=AdminView',
     name: 'srtpPermissionManagement',
-    coordinateX: 5,
-    coordinateY: 7,
-    iconCls: 'icon-zhaopin',
+    x: 5,
+    y: 7,
+    icon: 'icon-zhaopin',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewPermissionManagementPage'],
-      pageTitle: '权限'
+      title: '权限'
     }
   },
   {
     path: srtpUrl + '/admin?methodToCall=getRoleManagerPage&amp;viewId=AdminView',
     name: 'srtpRoleManager',
-    coordinateX: 5,
-    coordinateY: 8,
-    iconCls: 'icon-iconfont-jiaoshi',
+    x: 5,
+    y: 8,
+    icon: 'icon-iconfont-jiaoshi',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewRoleManagerPage'],
-      pageTitle: '角色'
+      title: '角色'
     }
   },
   {
     path: srtpUrl + '/admin?methodToCall=getUserRoleManagerPage&amp;viewId=AdminView',
     name: 'srtpUserRoleManager',
-    coordinateX: 5,
-    coordinateY: 9,
-    iconCls: 'icon-yonghu6',
+    x: 5,
+    y: 9,
+    icon: 'icon-yonghu6',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewUserRoleManagerPage'],
-      pageTitle: '用户'
+      title: '用户'
     }
   },
   {
     path: srtpUrl + '/admin?methodToCall=getTimeSetPage&amp;viewId=AdminView',
     name: 'srtpTimeSet',
-    coordinateX: 5,
-    coordinateY: 10,
-    iconCls: 'icon-pingjia6',
+    x: 5,
+    y: 10,
+    icon: 'icon-pingjia6',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewTimeSetPage'],
-      pageTitle: '时间'
+      title: '时间'
     }
   },
   {
     path: srtpUrl + '/admin?methodToCall=getWorkFlowManagePage&amp;viewId=AdminView',
     name: 'srtpWorkFlowManage',
-    coordinateX: 5,
-    coordinateY: 11,
-    iconCls: 'icon-pingjia6',
+    x: 5,
+    y: 11,
+    icon: 'icon-pingjia6',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewWorkFlowManagePage'],
-      pageTitle: '工作流'
+      title: '工作流'
     }
   },
   {
     path: srtpUrl + '/admin?methodToCall=getCertificateClosurePage&amp;viewId=AdminView',
     name: 'EndProjectCertificate',
-    coordinateX: 5,
-    coordinateY: 12,
-    iconCls: 'icon-pingjia6',
+    x: 5,
+    y: 12,
+    icon: 'icon-pingjia6',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewEndProjectCertificatePage'],
-      pageTitle: '结题证书'
+      title: '结题证书'
     }
   },
   {
     path: srtpUrl + '/admin?methodToCall=getPrjNumberRulePage&amp;viewId=AdminView',
     name: 'srtpProjectNumberRule',
-    coordinateX: 5,
-    coordinateY: 13,
-    iconCls: 'icon-pingjia6',
+    x: 5,
+    y: 13,
+    icon: 'icon-pingjia6',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_SRTP',
+      namespace: 'KR_SRTP',
       permission: ['ViewProjectNumberRulePage'],
-      pageTitle: '项目编号生成'
+      title: '项目编号生成'
     }
   }
 ]

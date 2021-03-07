@@ -32,8 +32,6 @@ const permission = {
           visibleSystems: appConfig.visibleSystems,
           permissions: data.permissionSet
         })
-        console.log(systems)
-        console.log(systems.find(system => system.code === appConfig.code))
         const curSystemRoutes = systems.find(system => system.code === appConfig.code).accessedRouters
         commit('SET_ROUTERS', curSystemRoutes)
         commit('SET_SYSTEMS', systems)

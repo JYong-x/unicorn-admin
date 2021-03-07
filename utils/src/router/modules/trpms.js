@@ -1,129 +1,128 @@
-import { httpConfig } from '@/config'
 /**
  * 教改管理系统路由
  */
-const trpmsUrl = httpConfig.appRoot + '/trpms/portal'
+const trpmsUrl = '/portal'
 
 export const trpmsRouterMap = [
   {
     path: trpmsUrl + '/Home',
     name: 'Home',
-    coordinateX: 1,
-    coordinateY: 1,
-    iconCls: 'fa fa-home',
+    x: 1,
+    y: 1,
+    icon: 'fa fa-home',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '主页',
+      title: '主页',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: trpmsUrl + '/ManageConsolo',
     name: 'ManageConsolo',
-    coordinateX: 4,
-    coordinateY: 1,
-    iconCls: 'icon-xiangmuguanli',
+    x: 4,
+    y: 1,
+    icon: 'icon-xiangmuguanli',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '管理台',
+      title: '管理台',
       requireAuth: true,
       permission: ['ViewManageConsoloPage'],
-      namespaceCode: 'KR_TRPMS',
+      namespace: 'KR_TRPMS',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: trpmsUrl + '/OffCampusStaff',
     name: 'OffCampusStaff',
-    coordinateX: 4,
-    coordinateY: 6,
-    iconCls: 'icon-shuangren',
+    x: 4,
+    y: 6,
+    icon: 'icon-shuangren',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '校外人员',
+      title: '校外人员',
       requireAuth: true,
       permission: ['ViewOffCampusStaffPage'],
-      namespaceCode: 'KR_TRPMS',
+      namespace: 'KR_TRPMS',
       matched: [{ path: '', name: '校外人员' }]
     }
   },
   {
     path: trpmsUrl + '/AnnouncementManagement',
     name: 'AnnouncementManagement',
-    coordinateX: 4,
-    coordinateY: 7,
-    iconCls: 'icon-xiugai4',
+    x: 4,
+    y: 7,
+    icon: 'icon-xiugai4',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '公告管理',
+      title: '公告管理',
       requireAuth: true,
       permission: ['ViewAnnouncementManagementPage'],
-      namespaceCode: 'KR_TRPMS',
+      namespace: 'KR_TRPMS',
       matched: [{ path: '', name: '公告管理' }]
     }
   },
   {
     path: trpmsUrl + '/NotificationFunction',
     name: 'NotificationFunction',
-    coordinateX: 4,
-    coordinateY: 8,
-    iconCls: 'icon-tongzhi_',
+    x: 4,
+    y: 8,
+    icon: 'icon-tongzhi_',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '通知功能',
+      title: '通知功能',
       requireAuth: true,
       permission: ['ViewNotificationFunctionPage'],
-      namespaceCode: 'KR_TRPMS',
+      namespace: 'KR_TRPMS',
       matched: [{ path: '', name: '通知功能' }]
     }
   },
   {
     path: '',
     name: 'EntryScore',
-    iconCls: 'icon-jindu14',
+    icon: 'icon-jindu14',
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewDataPreparationPage'],
-      namespaceCode: 'KR_TRPMS',
-      pageTitle: ''
+      namespace: 'KR_TRPMS',
+      title: ''
     }
   },
   {
     path: trpmsUrl + '/Category',
     name: 'Category',
-    coordinateX: 4,
-    coordinateY: 2,
-    iconCls: 'icon-msnui-module',
+    x: 4,
+    y: 2,
+    icon: 'icon-msnui-module',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       parentName: '',
-      pageTitle: '类别',
+      title: '类别',
       permission: ['ViewCategoryPage'],
-      namespaceCode: 'KR_TRPMS',
+      namespace: 'KR_TRPMS',
       matched: [{ path: '', name: '类别' }]
     }
   },
   {
     path: trpmsUrl + '/AdminPermission',
     name: 'AdminPermission',
-    coordinateX: 4,
-    coordinateY: 3,
-    iconCls: 'icon-zhaopin',
+    x: 4,
+    y: 3,
+    icon: 'icon-zhaopin',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       parentName: '',
-      pageTitle: '权限',
-      namespaceCode: 'KR_TRPMS',
+      title: '权限',
+      namespace: 'KR_TRPMS',
       permission: ['ViewAdminPermissionPage'],
       matched: [{ path: '', name: '权限' }]
     }
@@ -131,33 +130,33 @@ export const trpmsRouterMap = [
   {
     path: trpmsUrl + '/AdminRole',
     name: 'AdminRole',
-    coordinateX: 4,
-    coordinateY: 4,
-    iconCls: 'icon-iconfont-jiaoshi',
+    x: 4,
+    y: 4,
+    icon: 'icon-iconfont-jiaoshi',
     menuLevel: 2,
     meta: {
       target: '_blank',
       parentName: '',
-      pageTitle: '角色',
+      title: '角色',
       requireAuth: true,
       permission: ['ViewAdminRolePage'],
-      namespaceCode: 'KR_TRPMS',
+      namespace: 'KR_TRPMS',
       matched: [{ path: '', name: '角色' }]
     }
   },
   {
     path: trpmsUrl + '/AdminUser',
     name: 'AdminUser',
-    coordinateX: 4,
-    coordinateY: 5,
-    iconCls: 'icon-yonghu',
+    x: 4,
+    y: 5,
+    icon: 'icon-yonghu',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       parentName: '',
-      pageTitle: '用户',
-      namespaceCode: 'KR_TRPMS',
+      title: '用户',
+      namespace: 'KR_TRPMS',
       permission: ['ViewAdminUserPage'],
       matched: [{ path: '', name: '用户' }]
     }
@@ -165,33 +164,33 @@ export const trpmsRouterMap = [
   {
     path: trpmsUrl + '/ProjectBatch',
     name: 'ProjectBatch',
-    coordinateX: 4,
-    coordinateY: 5,
-    iconCls: 'icon-xiangmu2',
+    x: 4,
+    y: 5,
+    icon: 'icon-xiangmu2',
     menuLevel: 2,
     meta: {
       target: '_blank',
       parentName: '',
-      pageTitle: '项目批次',
+      title: '项目批次',
       requireAuth: true,
       permission: ['ViewProjectBatchPage'],
-      namespaceCode: 'KR_TRPMS',
+      namespace: 'KR_TRPMS',
       matched: [{ path: '', name: '项目批次' }]
     }
   },
   {
     path: trpmsUrl + '/Expert',
     name: 'Expert',
-    coordinateX: 2,
-    coordinateY: 1,
-    iconCls: 'icon-zhaopin',
+    x: 2,
+    y: 1,
+    icon: 'icon-zhaopin',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
       parentName: '',
-      pageTitle: '专家评价管理',
-      namespaceCode: 'KR_TRPMS',
+      title: '专家评价管理',
+      namespace: 'KR_TRPMS',
       permission: ['ViewExpertPage'],
       matched: [{ path: '', name: '专家评价管理' }]
     }
@@ -199,16 +198,16 @@ export const trpmsRouterMap = [
   {
     path: trpmsUrl + '/ExpertReviewBatch',
     name: 'ExpertReviewBatch',
-    coordinateX: 2,
-    coordinateY: 3,
-    iconCls: 'icon-xiangmu2',
+    x: 2,
+    y: 3,
+    icon: 'icon-xiangmu2',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       parentName: '',
-      pageTitle: '专家评审批次',
-      namespaceCode: 'KR_TRPMS',
+      title: '专家评审批次',
+      namespace: 'KR_TRPMS',
       permission: ['ViewExpertReviewBatchPage'],
       matched: [{ path: '', name: '专家评审批次' }]
     }
@@ -216,16 +215,16 @@ export const trpmsRouterMap = [
   {
     path: trpmsUrl + '/ExpertReview',
     name: 'ExpertReview',
-    coordinateX: 2,
-    coordinateY: 4,
-    iconCls: 'icon-confirm',
+    x: 2,
+    y: 4,
+    icon: 'icon-confirm',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       parentName: '',
-      pageTitle: '专家评审',
-      namespaceCode: 'KR_TRPMS',
+      title: '专家评审',
+      namespace: 'KR_TRPMS',
       permission: ['ViewExpertReviewPage'],
       matched: [{ path: '', name: '专家评审' }]
     }
@@ -233,16 +232,16 @@ export const trpmsRouterMap = [
   {
     path: trpmsUrl + '/EvaluateStandard',
     name: 'EvaluateStandard',
-    coordinateX: 2,
-    coordinateY: 2,
-    iconCls: 'icon-pingjia5',
+    x: 2,
+    y: 2,
+    icon: 'icon-pingjia5',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       parentName: '',
-      pageTitle: '评价指标',
-      namespaceCode: 'KR_TRPMS',
+      title: '评价指标',
+      namespace: 'KR_TRPMS',
       permission: ['ViewEvaluateStandardPage'],
       matched: [{ path: '', name: '评价指标' }]
     }
@@ -250,16 +249,16 @@ export const trpmsRouterMap = [
   {
     path: trpmsUrl + '/Project',
     name: 'Project',
-    coordinateX: 1,
-    coordinateY: 2,
-    iconCls: 'icon-xiangmu2',
+    x: 1,
+    y: 2,
+    icon: 'icon-xiangmu2',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
       parentName: '',
-      pageTitle: '项目',
-      namespaceCode: 'KR_TRPMS',
+      title: '项目',
+      namespace: 'KR_TRPMS',
       permission: ['ViewProjectPage'],
       matched: [{ path: '', name: '项目' }]
     }
@@ -267,16 +266,16 @@ export const trpmsRouterMap = [
   {
     path: trpmsUrl + '/ProjectManagement',
     name: 'ProjectManagement',
-    coordinateX: 1,
-    coordinateY: 3,
-    iconCls: 'icon-xiangmuguanli',
+    x: 1,
+    y: 3,
+    icon: 'icon-xiangmuguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       parentName: '',
-      pageTitle: '项目管理',
-      namespaceCode: 'KR_TRPMS',
+      title: '项目管理',
+      namespace: 'KR_TRPMS',
       permission: ['ViewProjectManagementPage'],
       matched: [{ path: '', name: '项目管理' }]
     }
@@ -284,16 +283,16 @@ export const trpmsRouterMap = [
   {
     path: trpmsUrl + '/ProjectChangeManagement',
     name: 'ProjectChangeManagement',
-    coordinateX: 1,
-    coordinateY: 4,
-    iconCls: 'icon-change',
+    x: 1,
+    y: 4,
+    icon: 'icon-change',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       parentName: '',
-      pageTitle: '项目变更管理',
-      namespaceCode: 'KR_TRPMS',
+      title: '项目变更管理',
+      namespace: 'KR_TRPMS',
       permission: ['ViewProjectChangeManagementPage'],
       matched: [{ path: '', name: '项目变更管理' }]
     }
@@ -301,16 +300,16 @@ export const trpmsRouterMap = [
   {
     path: trpmsUrl + '/ProjectImport',
     name: 'ProjectImport',
-    coordinateX: 1,
-    coordinateY: 5,
-    iconCls: 'icon-daoru1',
+    x: 1,
+    y: 5,
+    icon: 'icon-daoru1',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       parentName: '',
-      pageTitle: '项目导入',
-      namespaceCode: 'KR_TRPMS',
+      title: '项目导入',
+      namespace: 'KR_TRPMS',
       permission: ['ViewProjectImportPage'],
       matched: [{ path: '', name: '项目导入' }]
     }
@@ -322,5 +321,7 @@ export default {
   code: 'trpms',
   namespace: 'KR_TRPMS',
   icon: 'icon-kechengguanli',
+  baseUrl: '/trpms',
+  isOld: true,
   originRouters: trpmsRouterMap
 }

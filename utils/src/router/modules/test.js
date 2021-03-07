@@ -1,212 +1,210 @@
-import { httpConfig } from '@/config'
-
-const testUrl = httpConfig.appRoot + '/test/portal'
+const testUrl = '/portal'
 const testRouterMap = [
   {
     path: testUrl,
     name: '',
-    coordinateX: 1,
-    coordinateY: 1,
-    iconCls: 'icon-zhuye',
+    x: 1,
+    y: 1,
+    icon: 'icon-zhuye',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '主页',
+      title: '主页',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 1,
-    iconCls: 'icon-chengji-',
+    x: 2,
+    y: 1,
+    icon: 'icon-chengji-',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '考试管理',
+      title: '考试管理',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 1,
-    coordinateY: 2,
-    iconCls: 'icon-jingshi6',
+    x: 1,
+    y: 2,
+    icon: 'icon-jingshi6',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '考试违纪管理',
+      title: '考试违纪管理',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 1,
-    coordinateY: 3,
-    iconCls: 'icon-tongji',
+    x: 1,
+    y: 3,
+    icon: 'icon-tongji',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '考试违纪统计',
+      title: '考试违纪统计',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 1,
-    coordinateY: 4,
-    iconCls: 'icon-jingshi6',
+    x: 1,
+    y: 4,
+    icon: 'icon-jingshi6',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '考试违纪等级',
+      title: '考试违纪等级',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 2,
-    iconCls: 'icon-peixun5',
+    x: 2,
+    y: 2,
+    icon: 'icon-peixun5',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '校外监考教师维护',
+      title: '校外监考教师维护',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 3,
-    iconCls: 'icon-shijian1',
+    x: 2,
+    y: 3,
+    icon: 'icon-shijian1',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '考试时间模式设置',
+      title: '考试时间模式设置',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 4,
-    iconCls: 'icon-kecheng10',
+    x: 2,
+    y: 4,
+    icon: 'icon-kecheng10',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '考试课程管理',
+      title: '考试课程管理',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 5,
-    iconCls: 'icon-kecheng10',
+    x: 2,
+    y: 5,
+    icon: 'icon-kecheng10',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '考次管理',
+      title: '考次管理',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 6,
-    iconCls: 'icon-shijian1',
+    x: 2,
+    y: 6,
+    icon: 'icon-shijian1',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '智能排考',
+      title: '智能排考',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 7,
-    iconCls: 'icon-zhaopin',
+    x: 2,
+    y: 7,
+    icon: 'icon-zhaopin',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '排考参数设置',
+      title: '排考参数设置',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 8,
-    iconCls: 'icon-zhaopin',
+    x: 2,
+    y: 8,
+    icon: 'icon-zhaopin',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '监考教师安排',
+      title: '监考教师安排',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 9,
-    iconCls: 'icon-zhuanjia',
+    x: 2,
+    y: 9,
+    icon: 'icon-zhuanjia',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '学生考试安排',
+      title: '学生考试安排',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 9,
-    iconCls: 'icon-shujuziyuan-chuangxinjigou',
+    x: 2,
+    y: 9,
+    icon: 'icon-shujuziyuan-chuangxinjigou',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '考试地点管理 ',
+      title: '考试地点管理 ',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 10,
-    iconCls: 'icon-shijian',
+    x: 2,
+    y: 10,
+    icon: 'icon-shijian',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '考试时间安排',
+      title: '考试时间安排',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 2,
-    coordinateY: 11,
-    iconCls: 'icon-dayin4',
+    x: 2,
+    y: 11,
+    icon: 'icon-dayin4',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '打印管理 ',
+      title: '打印管理 ',
       matched: [{ path: '', name: '' }]
     }
   },
@@ -214,78 +212,78 @@ const testRouterMap = [
   {
     path: testUrl,
     name: '',
-    coordinateX: 3,
-    coordinateY: 1,
-    iconCls: 'icon-yonghu4',
+    x: 3,
+    y: 1,
+    icon: 'icon-yonghu4',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '管理台',
+      title: '管理台',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 3,
-    coordinateY: 2,
-    iconCls: 'icon-yonghu4',
+    x: 3,
+    y: 2,
+    icon: 'icon-yonghu4',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '用户',
+      title: '用户',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 3,
-    coordinateY: 3,
-    iconCls: 'icon-yonghu4',
+    x: 3,
+    y: 3,
+    icon: 'icon-yonghu4',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '角色',
+      title: '角色',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 3,
-    coordinateY: 4,
-    iconCls: 'icon-yonghu4',
+    x: 3,
+    y: 4,
+    icon: 'icon-yonghu4',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '权限',
+      title: '权限',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 3,
-    coordinateY: 5,
-    iconCls: 'icon-yonghu4',
+    x: 3,
+    y: 5,
+    icon: 'icon-yonghu4',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '日志',
+      title: '日志',
       matched: [{ path: '', name: '' }]
     }
   },
   {
     path: testUrl,
     name: '',
-    coordinateX: 3,
-    coordinateY: 6,
-    iconCls: 'icon-yonghu4',
+    x: 3,
+    y: 6,
+    icon: 'icon-yonghu4',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      pageTitle: '工作流',
+      title: '工作流',
       matched: [{ path: '', name: '' }]
     }
   }
@@ -296,6 +294,8 @@ export default {
   code: 'tams',
   namespace: 'KR_TEST',
   icon: 'icon-jiaoshixinxi',
+  baseUrl: '/test',
+  isOld: true,
   originRouters: testRouterMap
 }
 

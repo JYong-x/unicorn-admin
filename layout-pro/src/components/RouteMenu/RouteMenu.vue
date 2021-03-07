@@ -4,10 +4,16 @@
     :class="[`${prefix}-layout-menu`, type === 'side' ? 'menu-side' : 'menu-dropdown']"
     :open-keys="openKeys"
     :selected-keys="selectedKeys"
+    @openChange="onOpenChange"
+    @select="onMenuSelect"
     v-on="$listeners"
   >
     <template v-for="menu of menus">
-      <SubMenu v-if="menu.children && !menu.hideChildrenInMenu" :key="menu.name">
+      <SubMenu
+        v-if="menu.children && !menu.hideChildrenInMenu"
+        :key="menu.name"
+        class="layout-menu-sub-menu-item"
+      >
         <span slot="title">
           <Icon
             v-if="menu.meta && menu.meta.icon"
@@ -20,7 +26,7 @@
           <Item
             v-for="childMenu of menu.children"
             :key="childMenu.name"
-            class="menu-item"
+            class="layout-menu-item"
           >
             <a
               v-if="childMenu.meta.target"
@@ -48,7 +54,7 @@
       <Item
         v-else
         :key="menu.name"
-        class="menu-item"
+        class="layout-menu-item"
       >
         <a
           v-if="menu.meta && menu.meta.target"
@@ -111,6 +117,13 @@ export default {
       openKeys: []
     }
   },
+  computed: {
+    rootSubmenuKeys: vm => {
+      const keys = []
+      vm.menus.forEach(item => keys.push(item.path))
+      return keys
+    }
+  },
   watch: {
     $route: {
       handler () {
@@ -138,6 +151,17 @@ export default {
       })
 
       this.openKeys = openKeys
+    },
+    onOpenChange (openKeys) {
+      const latestOpenKey = openKeys.find(key => !this.openKeys.includes(key))
+      if (!this.rootSubmenuKeys.includes(latestOpenKey)) {
+        this.openKeys = openKeys
+      } else {
+        this.openKeys = latestOpenKey ? [latestOpenKey] : []
+      }
+    },
+    onMenuSelect (obj) {
+      this.selectedKeys = [obj.key]
     }
   }
 }
@@ -152,13 +176,6 @@ export default {
     border-right: 0;
     ::v-deep .ant-menu-submenu-title{
       width: 100%;
-    }
-    .menu-item {
-      width: 100%;
-      a {
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
     }
   }
 </style>

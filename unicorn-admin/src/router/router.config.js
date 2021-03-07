@@ -93,6 +93,7 @@ const curSystemRouters = {
   code,
   namespace,
   icon,
+  baseUrl: process.env.BASE_URL,
   originRouters: asyncRouters
 }
 

@@ -20,11 +20,11 @@ export const enrollRouterMap = [
         y: 1,
         meta: {
           target: '_blank',
-          iconCls: 'fa icon-zhuye',
+          icon: 'fa icon-zhuye',
           hiddenTitleInPage: true,
           hiddenHeaderContent: true,
-          namespaceCode: 'KR_ENRL',
-          pageTitle: '主页',
+          namespace: 'KR_ENRL',
+          title: '主页',
           hiddenTab: true
         }
       },
@@ -37,10 +37,10 @@ export const enrollRouterMap = [
         meta: {
           target: '_blank',
           'requireAuth': true,
-          iconCls: 'icon-xuanke1',
+          icon: 'icon-xuanke1',
           permission: ['ViewCourseEnrlSettingPage'],
-          namespaceCode: 'KR_ENRL',
-          pageTitle: '选课设置'
+          namespace: 'KR_ENRL',
+          title: '选课设置'
         },
         children: [
           {
@@ -51,10 +51,10 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank',
               'requireAuth': true,
-              iconCls: 'icon-yewumokuai',
+              icon: 'icon-yewumokuai',
               permission: ['ViewCourseEnrlBatchPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '选课批次'
+              namespace: 'KR_ENRL',
+              title: '选课批次'
             }
           },
           {
@@ -63,10 +63,10 @@ export const enrollRouterMap = [
             name: 'BatchInfo',
             meta: {
               target: '_blank',
-              iconCls: 'icon-jindu12',
+              icon: 'icon-jindu12',
               permission: ['ViewCourseBatchInfoPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '选课参数'
+              namespace: 'KR_ENRL',
+              title: '选课参数'
             }
           },
           {
@@ -78,8 +78,8 @@ export const enrollRouterMap = [
               target: '_blank',
               'requireAuth': true,
               permission: ['ViewApplicationPeriodPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '申请设置',
+              namespace: 'KR_ENRL',
+              title: '申请设置',
               matched: [{ path: '', name: '申请设置' }]
             },
             children: [
@@ -91,8 +91,8 @@ export const enrollRouterMap = [
                   target: '_blank',
                   'requireAuth': true,
                   permission: ['ViewApplicationPeriodPage'],
-                  namespaceCode: 'KR_ENRL',
-                  pageTitle: '申请时段'
+                  namespace: 'KR_ENRL',
+                  title: '申请时段'
                 }
               },
               {
@@ -103,9 +103,9 @@ export const enrollRouterMap = [
                   target: '_blank',
                   // 'requireAuth': true,
                   // permission: ['ViewApplyConfigurationPage'],
-                  iconCls: 'icon-jindu12',
-                  namespaceCode: 'KR_ENRL',
-                  pageTitle: '申请设置'
+                  icon: 'icon-jindu12',
+                  namespace: 'KR_ENRL',
+                  title: '申请设置'
                 }
               }
             ]
@@ -116,10 +116,10 @@ export const enrollRouterMap = [
             name: 'ClassBind',
             meta: {
               target: '_blank', 'requireAuth': true,
-              iconCls: 'fa fa-user',
+              icon: 'fa fa-user',
               permission: ['ViewClassBind'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '教学班绑定'
+              namespace: 'KR_ENRL',
+              title: '教学班绑定'
             }
           },
           {
@@ -129,8 +129,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewStudentCourseStartEnrlPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '刷新&重修规则'
+              namespace: 'KR_ENRL',
+              title: '刷新&重修规则'
             }
           },
           {
@@ -140,8 +140,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewEnglishLevelSettingPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '学生英语等级设置'
+              namespace: 'KR_ENRL',
+              title: '学生英语等级设置'
             }
           }
         ]
@@ -154,10 +154,10 @@ export const enrollRouterMap = [
         y: 1,
         meta: {
           target: '_blank', 'requireAuth': true,
-          iconCls: 'icon-chakan7',
+          icon: 'icon-chakan7',
           permission: ['ViewCourseEnrollManagePage'],
-          namespaceCode: 'KR_ENRL',
-          pageTitle: '选课管理'
+          namespace: 'KR_ENRL',
+          title: '选课管理'
         },
         children: [
           {
@@ -167,8 +167,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewCourseDropPoolPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '退课池'
+              namespace: 'KR_ENRL',
+              title: '退课池'
             }
           },
           {
@@ -178,8 +178,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewCourseEnrlClassPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '教学班管理'
+              namespace: 'KR_ENRL',
+              title: '教学班管理'
             }
           },
           {
@@ -189,8 +189,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewCourseEnrlStudentPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '为学生选课'
+              namespace: 'KR_ENRL',
+              title: '为学生选课'
             }
           },
           {
@@ -200,8 +200,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewCourseEnrlDropReviewPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '选/退课审核'
+              namespace: 'KR_ENRL',
+              title: '选/退课审核'
             }
           },
           {
@@ -211,8 +211,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewCourseEnrollmentResultPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '学生选课结果'
+              namespace: 'KR_ENRL',
+              title: '学生选课结果'
             }
           },
           {
@@ -222,8 +222,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewSelectCourseProgressPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '学生选课进度'
+              namespace: 'KR_ENRL',
+              title: '学生选课进度'
             }
           },
           {
@@ -233,8 +233,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewElectiveWithdrawalApplicationLogPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '选/退课记录'
+              namespace: 'KR_ENRL',
+              title: '选/退课记录'
             }
           },
           {
@@ -244,8 +244,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewImportCenterPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '导入管理'
+              namespace: 'KR_ENRL',
+              title: '导入管理'
             }
           },
           {
@@ -255,8 +255,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewCourseEnrlConfictCheckPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '冲突检测'
+              namespace: 'KR_ENRL',
+              title: '冲突检测'
             }
           }
         ]
@@ -269,10 +269,10 @@ export const enrollRouterMap = [
         y: 0,
         meta: {
           target: '_blank', 'requireAuth': true,
-          iconCls: 'icon-yonghu4',
+          icon: 'icon-yonghu4',
           permission: ['ViewManageConsoloPage'],
-          namespaceCode: 'KR_ENRL',
-          pageTitle: '管理台'
+          namespace: 'KR_ENRL',
+          title: '管理台'
         },
         children: [
           {
@@ -283,8 +283,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewAdminCategoryPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '类别'
+              namespace: 'KR_ENRL',
+              title: '类别'
             },
             children: [
               {
@@ -294,8 +294,8 @@ export const enrollRouterMap = [
                 meta: {
                   target: '_blank', 'requireAuth': true,
                   permission: ['ViewAdminCategoryPage'],
-                  namespaceCode: 'KR_ENRL',
-                  pageTitle: '类别',
+                  namespace: 'KR_ENRL',
+                  title: '类别',
                   hiddenInBreadcrumb: true
                 }
               },
@@ -307,8 +307,8 @@ export const enrollRouterMap = [
                   target: '_blank',
                   'requireAuth': true,
                   permission: ['ViewWorkFlowCategoryPage'],
-                  namespaceCode: 'KR_ENRL',
-                  pageTitle: '工作流类别'
+                  namespace: 'KR_ENRL',
+                  title: '工作流类别'
                 }
               },
               {
@@ -318,8 +318,8 @@ export const enrollRouterMap = [
                 meta: {
                   target: '_blank', 'requireAuth': true,
                   permission: ['ViewClassTagTypePage'],
-                  namespaceCode: 'KR_ENRL',
-                  pageTitle: '申请选/退课类别原因'
+                  namespace: 'KR_ENRL',
+                  title: '申请选/退课类别原因'
                 }
               }
             ]
@@ -331,8 +331,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewAdminPermissionPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '权限'
+              namespace: 'KR_ENRL',
+              title: '权限'
             }
           },
           {
@@ -342,8 +342,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewRolePage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '角色' }
+              namespace: 'KR_ENRL',
+              title: '角色' }
           },
           {
             path: enrlUrl + '/AdminUser',
@@ -353,8 +353,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewUserPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '用户'
+              namespace: 'KR_ENRL',
+              title: '用户'
             },
             children: [
               {
@@ -364,8 +364,8 @@ export const enrollRouterMap = [
                 meta: {
                   target: '_blank', 'requireAuth': true,
                   permission: ['ViewUserPage'],
-                  namespaceCode: 'KR_ENRL',
-                  pageTitle: '用户',
+                  namespace: 'KR_ENRL',
+                  title: '用户',
                   hiddenInBreadcrumb: true
                 }
               },
@@ -376,8 +376,8 @@ export const enrollRouterMap = [
                 meta: {
                   target: '_blank', 'requireAuth': true,
                   permission: ['ViewEditUserPage'],
-                  namespaceCode: 'KR_ENRL',
-                  pageTitle: '用户编辑'
+                  namespace: 'KR_ENRL',
+                  title: '用户编辑'
                 }
               }
             ]
@@ -388,8 +388,8 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewWorkflowPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '工作流'
+              namespace: 'KR_ENRL',
+              title: '工作流'
             }
           },
           {
@@ -401,8 +401,8 @@ export const enrollRouterMap = [
               target: '_blank',
               'requireAuth': true,
               permission: ['ViewAdminEditBulletinBoardPage'],
-              namespaceCode: 'KR_ENRL',
-              pageTitle: '公告管理'
+              namespace: 'KR_ENRL',
+              title: '公告管理'
             },
             children: [
               {
@@ -413,8 +413,8 @@ export const enrollRouterMap = [
                   target: '_blank',
                   'requireAuth': true,
                   permission: ['ViewAdminEditBulletinBoardPage'],
-                  namespaceCode: 'KR_ENRL',
-                  pageTitle: '公告管理',
+                  namespace: 'KR_ENRL',
+                  title: '公告管理',
                   hiddenInBreadcrumb: true
                 }
               },
@@ -426,8 +426,8 @@ export const enrollRouterMap = [
                   target: '_blank',
                   'requireAuth': true,
                   permission: ['ViewAnnouncementEditPage'],
-                  namespaceCode: 'KR_ENRL',
-                  pageTitle: '新增公告栏'
+                  namespace: 'KR_ENRL',
+                  title: '新增公告栏'
                 }
               },
               {
@@ -438,8 +438,8 @@ export const enrollRouterMap = [
                   target: '_blank',
                   'requireAuth': true,
                   permission: ['ViewAnnouncementEditPage'],
-                  namespaceCode: 'KR_ENRL',
-                  pageTitle: '编辑公告栏'
+                  namespace: 'KR_ENRL',
+                  title: '编辑公告栏'
                 }
               }
             ]
@@ -454,8 +454,8 @@ export const enrollRouterMap = [
         meta: {
           target: '_blank', 'requireAuth': true,
           permission: ['ViewStudenEnrlCourseListPage'],
-          namespaceCode: 'KR_ENRL',
-          pageTitle: '选课列表'
+          namespace: 'KR_ENRL',
+          title: '选课列表'
         }
       },
       {
@@ -466,8 +466,8 @@ export const enrollRouterMap = [
         meta: {
           target: '_blank', 'requireAuth': true,
           permission: ['ViewCourseSelectionApplication'],
-          namespaceCode: 'KR_ENRL',
-          pageTitle: '特殊选课申请'
+          namespace: 'KR_ENRL',
+          title: '特殊选课申请'
         }
       },
       {
@@ -478,8 +478,8 @@ export const enrollRouterMap = [
         meta: {
           target: '_blank', 'requireAuth': true,
           permission: ['ViewCourseDropRuleOuterApplyPage'],
-          namespaceCode: 'KR_ENRL',
-          pageTitle: '特殊退课申请'
+          namespace: 'KR_ENRL',
+          title: '特殊退课申请'
         }
       }
     ]

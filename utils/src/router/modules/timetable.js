@@ -1,693 +1,731 @@
-import { httpConfig } from '@/config'
 /**
  * 排课权限路由
  * @type { *[] }
  */
-const timeUrl = httpConfig.appRoot + `/${process.env === 'production' ? 'tt' : 'timetable'}`
 const timeTableRouterMap = [
   {
-    path: timeUrl + '/Home',
+    path: '/Home',
     name: 'Home',
-    coordinateX: 1,
-    coordinateY: 1,
-    iconCls: 'fa fa-home',
+    x: 1,
+    y: 1,
+    icon: 'fa-home',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewHomePage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '主页',
+      namespace: 'KR_TT',
+      title: '主页',
       matched: [{ path: '', name: '' }]
     }
-  }, {
-    path: '/WorkSpaceHome',
-    name: 'WorkSpaceHome',
-    coordinateX: 1,
-    coordinateY: 1,
-    iconCls: 'fa fa-home',
-    menuLevel: 1,
-    meta: {
-      target: '_blank',
-      requireAuth: true,
-      permission: ['ViewWorkSpaceHomePage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '公共主页',
-      matched: [{ path: '', name: '' }]
-    }
-  }, {
-    path: timeUrl + '/CourseClassSettingInfo',
+  },{
+    path: '/CourseClassSettingInfo',
     name: 'CourseClassSettingInfo',
-    coordinateX: 1,
-    coordinateY: 2,
-    iconCls: 'icon-xiangmuguanli',
+    x: 1,
+    y: 2,
+    icon: 'icon-xiangmuguanli',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewCourseClassSettingInfoPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '参数设置',
+      namespace: 'KR_TT',
+      title: '参数设置',
       parentName: '参数设置',
       matched: [{ path: '', name: '参数设置' }]
     }
   }, {
-    path: timeUrl + '/CourseSessionInfo',
+    path: '/CourseSessionInfo',
     name: 'CourseSessionInfo',
-    coordinateX: 1,
-    coordinateY: 3,
-    iconCls: 'icon-xiangqingchakan',
+    x: 1,
+    y: 3,
+    icon: 'icon-xiangqingchakan',
     menuLevel: 2,
     meta: {
       'requireAuth': true,
       permission: ['ViewCourseSessionInfoPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '学期信息',
+      namespace: 'KR_TT',
+      title: '学期信息',
       parentName: '学期信息',
       matched: [{path: '', name: '学期信息'}]}
   }, {
-    path: timeUrl + '/CourseTimePattern',
+    path: '/CourseTimePattern',
     name: 'CourseTimePattern',
-    coordinateX: 1,
-    coordinateY: 3,
-    iconCls: 'icon-jindu11',
+    x: 1,
+    y: 3,
+    icon: 'icon-jindu11',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewCourseTimePatternPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '上课节次及时间',
+      namespace: 'KR_TT',
+      title: '上课节次及时间',
       parentName: '排课设置',
       matched: [{ path: '/CourseClassSettingInfo', name: '排课设置' }, { path: '', name: '上课节次及时间' }]
     }
   }, {
-    path: timeUrl + '/CourseExperimentAndProject',
+    path: '/CourseExperimentAndProject',
     name: 'CourseExperimentAndProject',
-    coordinateX: 1,
-    coordinateY: 4,
-    iconCls: 'icon-kecheng3',
+    x: 1,
+    y: 4,
+    icon: 'icon-kecheng3',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewCourseExperimentAndProjectPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '实验课程及项目',
+      namespace: 'KR_TT',
+      title: '实验课程及项目',
       parentName: '排课设置',
       matched: [{ path: '/CourseClassSettingInfo', name: '排课设置' }, { path: '', name: '实验课程及项目' }]
     }
   }, {
-    path: timeUrl + '/CourseBlockedTimePeriodStu',
+    path: '/CourseBlockedTimePeriodStu',
     name: 'CourseBlockedTimePeriodStu',
-    coordinateX: 1,
-    coordinateY: 5,
-    iconCls: 'icon-weishenqing',
+    x: 1,
+    y: 5,
+    icon: 'icon-weishenqing',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewCourseBlockedTimePeriodStuPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '屏蔽排课时间',
+      namespace: 'KR_TT',
+      title: '屏蔽排课时间',
       parentName: '排课设置',
       matched: [{ path: '/CourseClassSettingInfo', name: '排课设置' }, { path: '', name: '屏蔽排课时间' }]
     }
   },
   {
-    path: timeUrl + '/FullTimeTeacher',
+    path: '/FullTimeTeacher',
     name: 'FullTimeTeacher',
-    coordinateX: 1,
-    coordinateY: 6,
-    iconCls: 'icon-jiaoshixinxi',
+    x: 1,
+    y: 6,
+    icon: 'icon-jiaoshixinxi',
     menuLevel: 2,
     meta: {
       'requireAuth': true,
       permission: ['ViewFullTimeTeacherPage'],
-      pageTitle: '专任教师列表',
-      namespaceCode: 'KR_TT',
+      title: '专任教师列表',
+      namespace: 'KR_TT',
       parentName: '专任教师',
       matched: [{path: '', name: '专任教师列表'}]}
   }, {
-    path: timeUrl + '/CourseInstructionalResource',
+    path: '/CourseInstructionalResource',
     name: 'CourseInstructionalResource',
-    coordinateX: 1,
-    coordinateY: 6,
-    iconCls: 'icon-jiaoxuebanguanli',
+    x: 1,
+    y: 6,
+    icon: 'icon-jiaoxuebanguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewCourseInstructionalResourcePage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '教学资源',
+      namespace: 'KR_TT',
+      title: '教学资源',
       matched: [{ path: '', name: '教学资源' }]
     }
   }, {
-    path: timeUrl + '/SetClassParameters',
+    path: '/SetClassParameters',
     name: 'SetClassParameters',
-    coordinateX: 1,
-    coordinateY: 7,
-    iconCls: 'icon-xiugai4',
+    x: 1,
+    y: 7,
+    icon: 'icon-xiugai4',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewSetClassParametersPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '排课控制',
+      namespace: 'KR_TT',
+      title: '排课控制',
       parentName: '排课设置',
       matched: [{ path: '/CourseClassSettingInfo', name: '排课设置' }, { path: '', name: '排课控制' }]
     }
   }, {
-    path: timeUrl + '/CourseArrangementTitle',
+    path: '/CourseArrangementTitle',
     name: 'CourseArrangementTitle',
-    coordinateX: 1,
-    coordinateY: 10,
-    iconCls: 'icon-jiaoxueziyuan',
+    x: 1,
+    y: 10,
+    icon: 'icon-jiaoxueziyuan',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewCourseArrangementTitlePage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '课表编排'
+      namespace: 'KR_TT',
+      title: '课表编排'
     }
   },
   {
-    path: timeUrl + '/CourseDistributableExperiment',
+    path: '/CourseDistributableExperiment',
     name: 'CourseDistributableExperiment',
-    coordinateX: 1,
-    coordinateY: 11,
-    iconCls: 'icon-yaopinjiance',
+    x: 1,
+    y: 11,
+    icon: 'icon-yaopinjiance',
     menuLevel: 2,
     meta: {
       'requireAuth': true,
       permission: ['ViewCourseDistributableExperimentPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '分配实验任务',
+      namespace: 'KR_TT',
+      title: '分配实验任务',
       parentName: '主页',
       matched: [{path: '', name: '分配实验任务'}]}
   }, {
-    path: timeUrl + '/TeachingTaskRequirements',
+    path: '/TeachingTaskRequirements',
     name: 'TeachingTaskRequirements',
-    coordinateX: 1,
-    coordinateY: 11,
-    iconCls: 'icon-yaopinjiance',
+    x: 1,
+    y: 11,
+    icon: 'icon-yaopinjiance',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewTeachingTaskRequirementsPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '教学任务需求',
+      namespace: 'KR_TT',
+      title: '教学任务需求',
       parentName: '主页',
       matched: [{ path: '', name: '教学任务需求' }]
     }
   }, {
-    path: timeUrl + '/ComprehensiveArrangeCourse',
+    path: '/ComprehensiveArrangeCourse',
     name: 'ComprehensiveArrangeCourse',
-    coordinateX: 1,
-    coordinateY: 12,
-    iconCls: 'icon-xiangqingchakan',
+    x: 1,
+    y: 12,
+    icon: 'icon-xiangqingchakan',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewMultipleArrangeClassPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '综合排课',
+      namespace: 'KR_TT',
+      title: '综合排课',
       parentName: '综合排课',
       matched: [{ path: '', name: '综合排课' }]
     }
   }, {
-    path: timeUrl + '/CourseAssistArrangementClass',
+    path: '/CourseAssistArrangementClass',
     name: 'CourseAssistArrangementClass',
-    coordinateX: 1,
-    coordinateY: 13,
-    iconCls: 'icon-xuankejieguo',
+    x: 1,
+    y: 13,
+    icon: 'icon-xuankejieguo',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewCourseAssistArrangementClassPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '辅助排课',
+      namespace: 'KR_TT',
+      title: '辅助排课',
       parentName: '课程编排',
       matched: [{ path: '/CourseStudySchedule', name: '教学安排' }, { path: '', name: '辅助排课' }]
     }
   }, {
-    path: timeUrl + '/Schedule',
+    path: '/Schedule',
     name: 'Schedule',
-    coordinateX: 1,
-    coordinateY: 13,
-    iconCls: 'icon-xiangqingchakan',
+    x: 1,
+    y: 13,
+    icon: 'icon-xiangqingchakan',
     menuLevel: 2,
     meta: {'requireAuth': true,
       permission: ['ViewSchedulePage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '排课进度',
+      namespace: 'KR_TT',
+      title: '排课进度',
       parentName: '排课进度',
       matched: [{path: '', name: '排课进度'}]}
   }, {
-    path: timeUrl + '/TeachingClassManagement',
+    path: '/TeachingClassManagement',
     name: 'TeachingClassManagement',
-    coordinateX: 1,
-    coordinateY: 14,
-    iconCls: 'icon-msnui-copy-file',
+    x: 1,
+    y: 14,
+    icon: 'icon-msnui-copy-file',
     menuLevel: 2,
     meta: {'requireAuth': true,
       permission: ['ViewTeachingClassManagementPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '教学班管理',
+      namespace: 'KR_TT',
+      title: '教学班管理',
       matched: [{path: '', name: '教学班管理'}]
     }
   }, {
-    path: timeUrl + '/EditClassRoom',
+    path: '/EditClassRoom',
     name: 'EditClassRoom',
-    coordinateX: 1,
-    coordinateY: 14,
-    iconCls: 'icon-jieguo',
+    x: 1,
+    y: 14,
+    icon: 'icon-jieguo',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewEditClassRoomPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '编排教室',
+      namespace: 'KR_TT',
+      title: '编排教室',
       parentName: '编排教室',
       matched: [{ path: '', name: '编排教室' }]
     }
   }, {
-    path: timeUrl + '/RescheduleAndSuspendClasses',
-    name: '',
-    coordinateX: 2,
-    coordinateY: 5,
-    iconCls: 'icon-kechengdingzhi',
+    path: '/RescheduleAndSuspendClasses',
+    name: 'RescheduleAndSuspendClasses',
+    x: 2,
+    y: 5,
+    icon: 'icon-kechengdingzhi',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
-      pageTitle: '调停课'
+      title: '调停课'
     }
   },
   {
-    path: timeUrl + '/RescheduleAndSuspendClassesApply',
+    path: '/RescheduleAndSuspendClassesApply',
     name: 'RescheduleAndSuspendClassesApply',
-    coordinateX: 2,
-    coordinateY: 6,
-    iconCls: 'icon-tubiaolunkuo_huaban',
+    x: 2,
+    y: 6,
+    icon: 'icon-tubiaolunkuo_huaban',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      pageTitle: '调停课申请',
+      title: '调停课申请',
       permission: ['ViewRescheduleAndSuspendClassesApplyPage'],
-      namespaceCode: 'KR_TT',
+      namespace: 'KR_TT',
       parentName: '调停课',
       matched: [{ path: '', name: '调停课' }, { path: '', name: '调停课申请' }]
     }
   },
   {
-    path: timeUrl + '/RescheduleAndSuspendClassesApplyManagement',
+    path: '/RescheduleAndSuspendClassesApplyManagement',
     name: 'RescheduleAndSuspendClassesApplyManagement',
-    coordinateX: 2,
-    coordinateY: 7,
-    iconCls: 'icon-caidantubiao-05',
+    x: 2,
+    y: 7,
+    icon: 'icon-caidantubiao-05',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      pageTitle: '调停课申请管理',
+      title: '调停课申请管理',
       permission: ['ViewRescheduleAndSuspendClassesApplyManagementPage'],
-      namespaceCode: 'KR_TT',
+      namespace: 'KR_TT',
       parentName: '调停课',
       matched: [{ path: '', name: '调停课' }, { path: '', name: '调停课申请管理' }]
     }
   },
   {
-    path: timeUrl + '/RescheduleAndSuspendClassesCountSet',
+    path: '/RescheduleAndSuspendClassesCountSet',
     name: 'RescheduleAndSuspendClassesCountSet',
-    coordinateX: 2,
-    coordinateY: 8,
-    iconCls: 'icon-punishment',
+    x: 2,
+    y: 8,
+    icon: 'icon-punishment',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      pageTitle: '调停课次数设置',
+      title: '调停课次数设置',
       permission: ['ViewRescheduleAndSuspendClassesCountSetPage'],
-      namespaceCode: 'KR_TT',
+      namespace: 'KR_TT',
       parentName: '调停课',
       matched: [{ path: '', name: '调停课' }, { path: '', name: '调停课次数设置' }]
     }
   },
   {
-    path: timeUrl + '/RescheduleAndSuspendClassesStatistics',
+    path: '/RescheduleAndSuspendClassesStatistics',
     name: 'RescheduleAndSuspendClassesStatistics',
-    coordinateX: 2,
-    coordinateY: 9,
-    iconCls: 'icon-tongji1',
+    x: 2,
+    y: 9,
+    icon: 'icon-tongji1',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      pageTitle: '调停课统计',
+      title: '调停课统计',
       permission: ['ViewRescheduleAndSuspendClassesStatisticsPage'],
-      namespaceCode: 'KR_TT',
+      namespace: 'KR_TT',
       parentName: '调停课',
       matched: [{ path: '', name: '调停课' }, { path: '', name: '调停课统计' }]
     }
   }, {
-    path: timeUrl + '/TimeTabChangeLog',
+    path: '/TimeTabChangeLog',
     name: 'TimeTabChangeLog',
-    coordinateX: 2,
-    coordinateY: 10,
-    iconCls: 'icon-rizhi',
+    x: 2,
+    y: 10,
+    icon: 'icon-rizhi',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      pageTitle: '课表调整记录',
+      title: '课表调整记录',
       permission: ['ViewTimeTabChangeLogPage'],
-      namespaceCode: 'KR_TT',
+      namespace: 'KR_TT',
       parentName: '调停课',
       matched: [{ path: '', name: '调停课' }, { path: '', name: '课表调整记录' }]
     }
   },
   {
     path: '',
-    name: '',
-    coordinateX: 2,
-    coordinateY: 11,
-    iconCls: 'icon-xiaoyuanhuodong',
+    name: 'ApplicationTemporaryActivities',
+    x: 2,
+    y: 11,
+    icon: 'icon-xiaoyuanhuodong',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
-      pageTitle: '临时活动',
-      namespaceCode: 'KR_TT',
+      title: '临时活动',
+      namespace: 'KR_TT',
       parentName: '临时活动',
       permission: ['ViewApplicationTemporaryActivitiesPage'],
       matched: [{ path: '', name: '临时活动' }]
     }
   }, {
-    path: timeUrl + '/ApplicationTemporaryActivities',
+    path: '/ApplicationTemporaryActivities',
     name: 'ApplicationTemporaryActivities',
-    coordinateX: 2,
-    coordinateY: 12,
-    iconCls: 'icon-shenqing5',
+    x: 2,
+    y: 12,
+    icon: 'icon-shenqing5',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      pageTitle: '临时活动申请',
+      title: '临时活动申请',
       permission: ['ViewApplicationTemporaryActivitiesPage'],
-      namespaceCode: 'KR_TT',
+      namespace: 'KR_TT',
       parentName: '临时活动',
       matched: [{ path: '', name: '临时活动' }, { path: '', name: '临时活动申请' }]
     }
   },
   {
-    path: timeUrl + '/TemporaryActivitiesApplyManage',
+    path: '/TemporaryActivitiesApplyManage',
     name: 'TemporaryActivitiesApplyManage',
-    coordinateX: 2,
-    coordinateY: 13,
-    iconCls: 'icon-kechengguanli5',
+    x: 2,
+    y: 13,
+    icon: 'icon-kechengguanli5',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      pageTitle: '临时活动申请管理',
+      title: '临时活动申请管理',
       permission: ['ViewTemporaryActivitiesApplyManagePage'],
-      namespaceCode: 'KR_TT',
+      namespace: 'KR_TT',
       parentName: '临时活动',
       matched: [{ path: '', name: '临时活动' }, { path: '', name: '临时活动申请管理' }]
     }
   }, {
-    path: timeUrl + '/StartPlanTitle',
+    path: '/StartPlanTitle',
     name: 'StartPlanTitle',
-    coordinateX: 3,
-    coordinateY: 1,
-    iconCls: 'icon-jindu14',
+    x: 3,
+    y: 1,
+    icon: 'icon-jindu14',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewStartPlanTitlePage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '查询统计'
+      namespace: 'KR_TT',
+      title: '查询统计'
     }
   }, {
-    path: timeUrl + '/AllCourseSchedule',
+    path: '/AllCourseSchedule',
     name: 'AllCourseSchedule',
-    coordinateX: 3,
-    coordinateY: 3,
-    iconCls: 'icon-xuanke1',
+    x: 3,
+    y: 3,
+    icon: 'icon-xuanke1',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewCourseTeacherSchedulePage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '课表查询',
+      namespace: 'KR_TT',
+      title: '课表查询',
       parentName: '查询统计',
       matched: [{ path: '', name: '课表查询' }, { path: '', name: '快速查询' }]
     }
   }, {
-    path: timeUrl + '/FreeTimeSchedule',
+    path: '/FreeTimeSchedule',
     name: 'FreeTimeSchedule',
-    coordinateX: 3,
-    coordinateY: 3,
-    iconCls: 'icon-xuanke1',
+    x: 3,
+    y: 3,
+    icon: 'icon-xuanke1',
     menuLevel: 2,
     meta: {
       'requireAuth': true,
       permission: ['ViewFreeTimeSchedulePage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '空闲时间查询',
+      namespace: 'KR_TT',
+      title: '空闲时间查询',
       parentName: '查询统计',
       matched: [{path: '', name: '空闲时间查询'}]}
   },
   {
-    path: timeUrl + '/CourseInspection',
+    path: '/CourseInspection',
     name: 'CourseInspection',
-    coordinateX: 3,
-    coordinateY: 4,
-    iconCls: 'icon-jiance1',
+    x: 3,
+    y: 4,
+    icon: 'icon-jiance1',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewCourseInspectionPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '排课检测',
+      namespace: 'KR_TT',
+      title: '排课检测',
       matched: [{ path: '', name: '排课检测' }]
     }
   }, {
-    path: timeUrl + '/ClassHourBalance',
+    path: '/ClassHourBalance',
     name: 'ClassHourBalance',
-    coordinateX: 3,
-    coordinateY: 5,
-    iconCls: 'icon-kecheng1',
+    x: 3,
+    y: 5,
+    icon: 'icon-kecheng1',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewClassHourBalancePage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '学时平衡',
+      namespace: 'KR_TT',
+      title: '学时平衡',
       matched: [{ path: '', name: '学时平衡' }]
     }
   },
   {
-    path: timeUrl + '/GeneralCourseStatus',
+    path: '/GeneralCourseStatus',
     name: 'GeneralCourseStatus',
-    coordinateX: 3,
-    coordinateY: 6,
-    iconCls: 'icon-moban',
+    x: 3,
+    y: 6,
+    icon: 'icon-moban',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewGeneralCourseStatusPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '通识课程修读情况',
+      namespace: 'KR_TT',
+      title: '通识课程修读情况',
       matched: [{ path: '', name: '通识课程修读情况' }]
     }
+  },
+  {
+    path: '',
+    name: 'TeachMaterialManagement',
+    x: 3,
+    y: 7,
+    icon: 'icon-kecheng10',
+    menuLevel: 1,
+    meta: { 'requireAuth': true, permission: ['ViewTeachMaterialManagementPage'], namespace: 'KR_TT', title: '教材管理' }
+  },
+  {
+    path: '/TextbookLibrary',
+    name: 'TextbookLibrary',
+    x: 3,
+    y: 8,
+    icon: 'icon-ku1',
+    menuLevel: 2,
+    meta: {
+      target: '_blank',
+      requireAuth: true,
+      permission: ['ViewTextbookLibraryPage'],
+      namespace: 'KR_TT',
+      title: '教材库',
+      matched: [{path: '', name: '教材管理'}, {path: '', name: '教材库'}]
+    }
   }, {
-    path: timeUrl + '/DataImport',
-    name: 'StartPlanTitle',
-    coordinateX: 3,
-    coordinateY: 7,
-    iconCls: 'icon-jindu14',
+    path: '/PublishingLibrary',
+    name: 'PublishingLibrary',
+    x: 3,
+    y: 9,
+    icon: 'icon-ku1',
+    menuLevel: 2,
+    meta: {
+      target: '_blank',
+      requireAuth: true,
+      permission: ['ViewPublishingLibraryTaskPage'],
+      namespace: 'KR_TT',
+      title: '出版社库',
+      matched: [{path: '', name: '教材管理'}, {path: '', name: '出版社库'}]
+    }
+  }, {
+    path: '/CurriculumTextbook',
+    name: 'CurriculumTextbook',
+    x: 3,
+    y: 10,
+    icon: 'icon-ku1',
+    menuLevel: 2,
+    meta: {
+      target: '_blank',
+      requireAuth: true,
+      permission: ['ViewCurriculumTextbookTaskPage'],
+      namespace: 'KR_TT',
+      title: '课程对教材',
+      matched: [{path: '', name: '教材管理'}, {path: '', name: '课程对教材'}]
+    }
+  }, {
+    path: '/DataImport',
+    name: 'DataImport',
+    x: 3,
+    y: 11,
+    icon: 'icon-jindu14',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewStartPlanTitlePage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '数据导入'
+      namespace: 'KR_TT',
+      title: '数据导入'
     }
   }, {
-    path: timeUrl + '/ImportTeachingTask',
+    path: '/ImportTeachingTask',
     name: 'ImportTeachingTask',
-    coordinateX: 3,
-    coordinateY: 8,
-    iconCls: 'icon-ku1',
+    x: 3,
+    y: 12,
+    icon: 'icon-ku1',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewImportTeachingTaskPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '排课结果导入',
+      namespace: 'KR_TT',
+      title: '排课结果导入',
       parentName: '数据导入',
       matched: [{ path: '', name: '数据导入' }, { path: '', name: '排课结果导入' }]
     }
   },
   {
-    path: timeUrl + '/timeTableManageConsolo',
+    path: '/timeTableManageConsolo',
     name: 'timeTableManageConsolo',
-    coordinateX: 4,
-    coordinateY: 1,
-    iconCls: 'icon-yonghu4',
+    x: 4,
+    y: 1,
+    icon: 'icon-yonghu4',
     menuLevel: 1,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewManageConsoloTimeTablePage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '管理台',
+      namespace: 'KR_TT',
+      title: '管理台',
       parentName: '管理台',
       matched: [{ path: '', name: '管理台' }]
     }
   }, {
-    path: timeUrl + '/AdminPermission',
+    path: '/AdminPermission',
     name: 'AdminPermission',
-    coordinateX: 4,
-    coordinateY: 3,
-    iconCls: 'fa fa-user-secret',
+    x: 4,
+    y: 3,
+    icon: 'fa fa-user-secret',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      namespaceCode: 'KR_TT',
-      pageTitle: '权限',
+      namespace: 'KR_TT',
+      title: '权限',
       parentName: '管理台',
       matched: [{ path: '', name: '权限' }]
     }
   }, {
-    path: timeUrl + '/AdminRole',
+    path: '/AdminRole',
     name: 'AdminRole',
-    coordinateX: 4,
-    coordinateY: 4,
-    iconCls: 'fa fa-male',
+    x: 4,
+    y: 4,
+    icon: 'fa fa-male',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      namespaceCode: 'KR_TT',
-      pageTitle: '角色',
+      namespace: 'KR_TT',
+      title: '角色',
       parentName: '管理台',
       matched: [{ path: '', name: '角色' }]
     }
   }, {
-    path: timeUrl + '/AdminUser',
+    path: '/AdminUser',
     name: 'AdminUser',
-    coordinateX: 4,
-    coordinateY: 5,
-    iconCls: 'fa fa-user',
+    x: 4,
+    y: 5,
+    icon: 'fa fa-user',
     menuLevel: 2,
     meta: {
       target: '_blank',
-      namespaceCode: 'KR_TT',
-      pageTitle: '用户',
+      namespace: 'KR_TT',
+      title: '用户',
       entrance: 'timeTableEnter',
       parentName: '管理台',
       matched: [{ path: '', name: '用户' }]
     }
   }, {
-    path: timeUrl + '/timeTableAdminUpdateUser',
+    path: '/timeTableAdminUpdateUser',
     name: 'timeTableAdminUpdateUser',
-    coordinateX: 0,
-    coordinateY: 0,
-    iconCls: null,
+    x: 0,
+    y: 0,
+    icon: null,
     menuLevel: 0,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewEditUserPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '用户编辑',
+      namespace: 'KR_TT',
+      title: '用户编辑',
       matched: [{ path: '/timeTableAdminUser', name: '用户' }, { path: '', name: '用户编辑' }]
     }
   },
   {
-    path: timeUrl + '/AdminTimeManagement',
+    path: '/AdminTimeManagement',
     name: 'AdminTimeManagement',
-    coordinateX: 4,
-    coordinateY: 7,
-    iconCls: 'icon-shijian1',
+    x: 4,
+    y: 7,
+    icon: 'icon-shijian1',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewAdminTimeManagementPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '时间',
+      namespace: 'KR_TT',
+      title: '时间',
       parentName: '排课设置',
       matched: [{ path: '', name: '时间' }]
     }
   }, {
-    path: timeUrl + '/AdminCategory',
+    path: '/AdminCategory',
     name: 'AdminCategory',
-    coordinateX: 4,
-    coordinateY: 2,
-    iconCls: 'fa fa-asterisk',
+    x: 4,
+    y: 2,
+    icon: 'fa fa-asterisk',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewAdminCategoryPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '类别',
+      namespace: 'KR_TT',
+      title: '类别',
       parentName: '管理台',
       matched: [{ path: '', name: '类别' }]
     }
   }, {
-    path: timeUrl + '/AdminWorkManage',
+    path: '/AdminWorkManage',
     name: 'AdminWorkManage',
-    coordinateX: 4,
-    coordinateY: 6,
-    iconCls: 'fa fa-random',
+    x: 4,
+    y: 6,
+    icon: 'fa fa-random',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewWorkflowPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '工作流',
+      namespace: 'KR_TT',
+      title: '工作流',
       parentName: '管理台',
       matched: [{ path: '', name: '工作流' }]
     }
   }, {
-    path: timeUrl + '/AdminEditBulletinBoard',
+    path: '/AdminEditBulletinBoard',
     name: 'AdminEditBulletinBoard',
-    coordinateX: 4,
-    coordinateY: 7,
-    iconCls: 'fa fa-random',
+    x: 4,
+    y: 7,
+    icon: 'fa fa-random',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
       permission: ['ViewAdminEditBulletinBoardPage'],
-      namespaceCode: 'KR_TT',
-      pageTitle: '公告管理',
+      namespace: 'KR_TT',
+      title: '公告管理',
       parentName: '管理台',
       matched: [{ path: '', name: '公告管理' }]
     }
   },
   {
-    path: timeUrl + '*',
+    path: '*',
     redirect: '/page404'
   }
 ]
@@ -697,5 +735,7 @@ export default {
   code: 'timetable',
   namespace: 'KR_TT',
   icon: 'icon-server_05',
+  baseUrl: `/tt`,
+  isOld: true,
   originRouters: timeTableRouterMap
 }

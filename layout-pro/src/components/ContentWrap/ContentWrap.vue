@@ -37,6 +37,7 @@ export default {
       min-height: 100%;
       margin: 0 12px;
       background: #ffffff;
+      border-radius: 6px;
     }
   }
 </style>

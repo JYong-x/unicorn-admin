@@ -13,8 +13,10 @@
           >
             <template slot="systemMenu">
               <SystemMenu
+                type="dropdown"
                 :systems="systems"
                 :cur-system="curSystem"
+                :config="config"
                 class="system-menu"
                 @change="changeSystem"
               ></SystemMenu>
@@ -65,6 +67,7 @@
             </template>
           </SideMenu>
           <Layout class="layout-main" :style="{paddingLeft: collapsed ? '0' : '180px'}">
+            <div class="layout-main-header"></div>
             <content-wrap>
               <slot></slot>
             </content-wrap>
@@ -133,6 +136,10 @@ export default {
     showSystemMenu: {
       type: Boolean,
       default: true
+    },
+    config: {
+      type: Object,
+      default: () => {}
     }
   },
   data () {
@@ -170,8 +177,13 @@ export default {
     systems: {
       handler (systems) {
         this.$nextTick(() => {
-          this.menus = processMenu(this.curSystem, systems)
-          console.log(this.menus, systems)
+          this.menus = processMenu({
+            systemCode: this.curSystem,
+            systems,
+            selfSystem: this.selfSystem,
+            appRoot: this.config.appRoot
+          })
+          console.log(this.menus, systems, this.config)
         })
       },
       immediate: true
@@ -186,7 +198,12 @@ export default {
     },
     changeSystem (system) {
       this.curSystem = system
-      this.menus = processMenu(system, this.systems)
+      this.menus = processMenu({
+        systemCode: system, // 系统切换的当前系统code
+        systems: this.systems, // 全部系统菜单
+        selfSystem: this.selfSystem, // 当前vue app 系统
+        appRoot: this.config.appRoot // 服务器根地址
+      })
     },
     handleCollapse (collapsed) {
       this.$emit('collapse', collapsed)
@@ -195,9 +212,7 @@ export default {
 }
 </script>
 <style lang="less">
-  .ant-layout {
-    background-color: #e6effa;
-  }
+  @import "./global.less";
 </style>
 <style lang="less" scoped>
   @import "./config/style.less";
@@ -210,6 +225,9 @@ export default {
     .layout-main {
       overflow: visible;
       transition: all .2s;
+    }
+    .layout-main-header {
+      min-height: 12px;
     }
     .layout-footer {
       padding: 12px 0 0;

@@ -7,394 +7,394 @@ const cetRouterMap = [
   {
     path: '',
     name: 'SignUp',
-    coordinateX: 1,
-    coordinateY: 2,
-    iconCls: 'icon-xuejiguanli1',
+    x: 1,
+    y: 2,
+    icon: 'icon-xuejiguanli1',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '报名'
+      title: '报名'
     }
   },
   {
     path: examUrl + '/invigilate?viewId=InvigilateView&amp;methodToCall=getInvigilatorApplicant&amp;pageId=pageInvigilatorApplicant',
     name: 'InvigilatorApplicant',
-    coordinateX: 1,
-    coordinateY: 2,
-    iconCls: 'icon-shenqing6',
+    x: 1,
+    y: 2,
+    icon: 'icon-shenqing6',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewInvigilatorApplicantPagePermission'],
-      pageTitle: '申请监考'
+      title: '申请监考'
     }
   },
   {
     path: examUrl + '/?methodToCall=getCetApplyPage&amp;viewId=PortalView&amp;pageId=pageInfoBeforeCetApply',
     name: 'CetApplyPagePermission',
-    coordinateX: 1,
-    coordinateY: 2,
-    iconCls: 'icon-shenqing6',
+    x: 1,
+    y: 2,
+    icon: 'icon-shenqing6',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewCetApplyPagePermission'],
-      pageTitle: '四六级报名'
+      title: '四六级报名'
     }
   },
   {
     path: '',
     name: 'mange',
-    coordinateX: 2,
-    coordinateY: 1,
-    iconCls: 'icon-xuejiguanli1',
+    x: 2,
+    y: 1,
+    icon: 'icon-xuejiguanli1',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '管理'
+      title: '管理'
     }
   },
   {
     path: examUrl + '/?methodToCall=getSetTimeInfoPage&amp;viewId=PortalView&amp;pageId=pageSetExmTimeInfo',
     name: 'SetTimeInfoPage',
-    coordinateX: 2,
-    coordinateY: 2,
-    iconCls: 'icon-shijian2',
+    x: 2,
+    y: 2,
+    icon: 'icon-shijian2',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewSetTimeInfoPagePermission'],
-      pageTitle: '考次'
+      title: '考次'
     }
   },
   {
     path: examUrl + '/?methodToCall=getRoleManagerPage&amp;viewId=PortalView&amp;pageId=pageRoleManager',
     name: 'examRoleManagerPage',
-    coordinateX: 2,
-    coordinateY: 3,
-    iconCls: 'icon-iconfont-jiaoshi',
+    x: 2,
+    y: 3,
+    icon: 'icon-iconfont-jiaoshi',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewRoleManagerPagePermission'],
-      pageTitle: '角色'
+      title: '角色'
     }
   },
   {
     path: examUrl + '/?methodToCall=getUserRoleManagerPageAll&amp;viewId=PortalView&amp;pageId=pageUserRoleManager',
     name: 'examUserRoleManager',
-    coordinateX: 2,
-    coordinateY: 4,
-    iconCls: 'icon-yonghu6',
+    x: 2,
+    y: 4,
+    icon: 'icon-yonghu6',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewUserRoleManagerPagePermission'],
-      pageTitle: '用户'
+      title: '用户'
     }
   },
   {
     path: examUrl + '/?methodToCall=getPermissionManagementPage&amp;viewId=PortalView&amp;pageId=pagePermissionManagement',
     name: 'examPermissionManagementPage',
-    coordinateX: 2,
-    coordinateY: 5,
-    iconCls: 'icon-zhaopin',
+    x: 2,
+    y: 5,
+    icon: 'icon-zhaopin',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewPermissionManagementPagePermission'],
-      pageTitle: '权限'
+      title: '权限'
     }
   },
   {
     path: examUrl + '/?methodToCall=getSystemParameterPage&amp;viewId=PortalView&amp;pageId=pageSystemParameter',
     name: 'SystemParameter',
-    coordinateX: 2,
-    coordinateY: 6,
-    iconCls: 'icon-msnui-module',
+    x: 2,
+    y: 6,
+    icon: 'icon-msnui-module',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewSystemParameterPermission'],
-      pageTitle: '系统配置'
+      title: '系统配置'
     }
   },
   {
     path: examUrl + '/?methodToCall=getPermissionManagementPage&amp;viewId=PortalView&amp;pageId=pagePermissionManagement',
     name: 'PermissionManagementPage',
-    coordinateX: 2,
-    coordinateY: 5,
-    iconCls: 'icon-caozuorizhi',
+    x: 2,
+    y: 5,
+    icon: 'icon-caozuorizhi',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewPermissionManagementPagePermission'],
-      pageTitle: '日志'
+      title: '日志'
     }
   },
   {
     path: examUrl + '/?methodToCall=getSystemParameterPage&amp;viewId=PortalView&amp;pageId=pageSystemParameter/?methodToCall=getBaseInfoPage&amp;viewId=PortalView&amp;pageId=pageBaseInfo',
-    coordinateX: 2,
-    coordinateY: 6,
+    x: 2,
+    y: 6,
     name: 'BaseInfo',
-    iconCls: 'icon-chushihua',
+    icon: 'icon-chushihua',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewBaseInfoPagePermission'],
-      pageTitle: '数据同步'
+      title: '数据同步'
     }
   },
   {
     path: examUrl + '/syncUserInfo?viewId=SyncUserInfoView&amp;methodToCall=start&amp;pageId=pageSyncUserInfo',
-    coordinateX: 2,
-    coordinateY: 7,
+    x: 2,
+    y: 7,
     name: 'SyncUserInfo',
-    iconCls: 'icon-shijiantongbu',
+    icon: 'icon-shijiantongbu',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewSyncUserInfoPagePermission'],
-      pageTitle: '用户信息同步'
+      title: '用户信息同步'
     }
   },
   {
     path: examUrl + '/?methodToCall=getStudentGradeImportPage&amp;viewId=PortalView&amp;pageId=pageGradeImport',
-    coordinateX: 2,
-    coordinateY: 8,
+    x: 2,
+    y: 8,
     name: 'GradeImport',
-    iconCls: 'icon-xiangmujieduan',
+    icon: 'icon-xiangmujieduan',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewGradeImportPagePermission'],
-      pageTitle: '成绩导入'
+      title: '成绩导入'
     }
   },
   {
     path: '',
     name: 'Proctor',
-    coordinateX: 3,
-    coordinateY: 1,
-    iconCls: 'icon-xuejiguanli1',
+    x: 3,
+    y: 1,
+    icon: 'icon-xuejiguanli1',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '监考'
+      title: '监考'
     }
   },
   {
     path: examUrl + '/invigilate?viewId=InvigilateView&amp;methodToCall=getInvigilatePreset&amp;pageId=pageInvigilatorPreset',
     name: 'InvigilatorPreset',
-    coordinateX: 3,
-    coordinateY: 2,
-    iconCls: 'icon-c-apply',
+    x: 3,
+    y: 2,
+    icon: 'icon-c-apply',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewInvigilatorPresetPagePermission'],
-      pageTitle: '名额设置'
+      title: '名额设置'
     }
   },
   {
     path: examUrl + '/invigilate?viewId=InvigilateView&amp;methodToCall=getInvigilator&amp;pageId=pageInvigilatorManagement',
     name: 'examInvigilatorManagement',
-    coordinateX: 3,
-    coordinateY: 3,
-    iconCls: 'icon-zhaopin',
+    x: 3,
+    y: 3,
+    icon: 'icon-zhaopin',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewInvigilatorManagementPagePermission'],
-      pageTitle: '监考安排'
+      title: '监考安排'
     }
   },
   {
     path: examUrl + '/?methodToCall=getTimetablePage&amp;viewId=PortalView&amp;pageId=pageTimetable',
     name: 'Timetable',
-    coordinateX: 3,
-    coordinateY: 4,
-    iconCls: 'icon-jindu4',
+    x: 3,
+    y: 4,
+    icon: 'icon-jindu4',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewTimetablePagePermission'],
-      pageTitle: '考试编排'
+      title: '考试编排'
     }
   },
   {
     path: examUrl + '/?methodToCall=getSignCheckPage&amp;viewId=PortalView&amp;pageId=pageSignCheck',
     name: 'SignCheckPage',
-    coordinateX: 3,
-    coordinateY: 5,
-    iconCls: 'icon-jindu13',
+    x: 3,
+    y: 5,
+    icon: 'icon-jindu13',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewSignCheckPagePermission'],
-      pageTitle: '培训签到'
+      title: '培训签到'
     }
   },
   {
     path: examUrl + '/invigilate?viewId=InvigilateView&amp;methodToCall=getCollegeInvigilatorPage&amp;pageId=pageCollegeInvigilator',
     name: 'CollegeInvigilatorPage',
-    coordinateX: 3,
-    coordinateY: 6,
-    iconCls: 'icon-academy',
+    x: 3,
+    y: 6,
+    icon: 'icon-academy',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewCollegeInvigilatorPagePermission'],
-      pageTitle: '监考调整'
+      title: '监考调整'
     }
   },
   {
     path: examUrl + '/invigilate?viewId=InvigilateView&amp;methodToCall=getExamPatrolListPage&amp;pageId=pagePatrolExam',
     name: 'PatrolExam',
-    coordinateX: 3,
-    coordinateY: 6,
-    iconCls: 'icon-zhiwumingcheng',
+    x: 3,
+    y: 6,
+    icon: 'icon-zhiwumingcheng',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewPatrolExamPagePermission'],
-      pageTitle: '巡考'
+      title: '巡考'
     }
   },
   {
     path: examUrl + '/?methodToCall=getExamWorkerManagePage&amp;viewId=PortalView&amp;pageId=pageStaffMember',
-    coordinateX: 3,
-    coordinateY: 7,
+    x: 3,
+    y: 7,
     name: 'StaffMember',
-    iconCls: 'icon-bd_niuren',
+    icon: 'icon-bd_niuren',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewStaffMemberPagePermission'],
-      pageTitle: '工作人员'
+      title: '工作人员'
     }
   },
   {
     path: '',
     name: 'other',
-    coordinateX: 4,
-    coordinateY: 1,
-    iconCls: 'icon-xuejiguanli1',
+    x: 4,
+    y: 1,
+    icon: 'icon-xuejiguanli1',
     menuLevel: 1,
     meta: {
       target: '_blank',
-      pageTitle: '其他'
+      title: '其他'
     }
   },
   {
     path: examUrl + '/?methodToCall=getExmStudentPage&amp;viewId=PortalView&amp;pageId=pageExmStudent',
     name: 'ExmStudent',
-    coordinateX: 4,
-    coordinateY: 2,
-    iconCls: 'icon-jiaoxueziyuan',
+    x: 4,
+    y: 2,
+    icon: 'icon-jiaoxueziyuan',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewExmStudentPagePermission'],
-      pageTitle: '学籍信息'
+      title: '学籍信息'
     }
   },
   {
     path: examUrl + '/?methodToCall=getApplicantInfoPage&amp;viewId=PortalView&amp;pageId=pageApplicantInfo',
     name: 'ApplicantInfoPage',
-    coordinateX: 4,
-    coordinateY: 3,
-    iconCls: 'icon-rizhi1',
+    x: 4,
+    y: 3,
+    icon: 'icon-rizhi1',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewApplicantInfoPagePermission'],
-      pageTitle: '考生信息'
+      title: '考生信息'
     }
   },
   {
     path: examUrl + '/?methodToCall=getExamRoomPrintPage&amp;viewId=PortalView&amp;pageId=pageExamRoomPrint',
     name: 'ExamRoom',
-    coordinateX: 4,
-    coordinateY: 4,
-    iconCls: 'icon-dayin1',
+    x: 4,
+    y: 4,
+    icon: 'icon-dayin1',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewExamRoomPrintPagePermission'],
-      pageTitle: '报表打印'
+      title: '报表打印'
     }
   },
   {
     path: examUrl + '/?viewId=PortalView&amp;methodToCall=getStudentGradeDetailPage&amp;pageId=pageGradeView',
     name: 'GradeView',
-    coordinateX: 4,
-    coordinateY: 5,
-    iconCls: 'icon-chakan7',
+    x: 4,
+    y: 5,
+    icon: 'icon-chakan7',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewGradeViewPagePermission'],
-      pageTitle: '成绩查看'
+      title: '成绩查看'
     }
   },
   {
     path: examUrl + '/?viewId=PortalView&amp;methodToCall=getMessagePage&amp;pageId=pageMessage',
     name: 'examCollegeInvigilatorPage',
-    coordinateX: 4,
-    coordinateY: 6,
-    iconCls: 'icon-youxiang1',
+    x: 4,
+    y: 6,
+    icon: 'icon-youxiang1',
     menuLevel: 2,
     meta: {
       target: '_blank',
       requireAuth: true,
-      namespaceCode: 'KR_EXM',
+      namespace: 'KR_EXM',
       permission: ['ViewCollegeInvigilatorPagePermission'],
-      pageTitle: '发送信息'
+      title: '发送信息'
     }
   }
 ]

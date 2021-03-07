@@ -19,13 +19,16 @@
       height="auto"
       :body-style="{maxHeight: '80vh', padding: 0}"
       :wrap-style="{top: '60px'}"
+      :wrap-class-name="`${prefix}-layout-header-menu-drawer`"
     >
       <div
         :class="[`${prefix}-layout-header-menu-content`]"
         @mouseenter="menuEnter"
         @mouseleave="menuLeave"
       >
-        <div class="layout-systems-container"></div>
+        <div class="layout-systems-container">
+          <slot name="systemMenu"></slot>
+        </div>
         <div class="layout-menu-container">
           <template v-for="x of maxMenuX">
             <div
@@ -40,12 +43,13 @@
                 mode="inline"
                 theme="light"
                 @openChange="onOpenChange"
-                @click="onMenuClick"
+                @click="onMenuSelect"
               >
                 <template v-for="route of menuCol(x)">
-                  <sub-menu
+                  <SubMenu
                     v-if="!route.hideChildrenInMenu && !route.hidden && route.children && route.children.length"
-                    :key="route.path"
+                    :key="route.name"
+                    class="layout-menu-sub-menu-item"
                   >
                     <span slot="title">
                       <Icon
@@ -56,9 +60,10 @@
                       <span>{{ route.meta.title }}</span>
                     </span>
                     <template v-for="r of route.children">
-                      <item
+                      <Item
                         v-if="!r.hidden"
-                        :key="r.path"
+                        :key="r.name"
+                        class="layout-menu-item"
                       >
                         <router-link
                           v-if="!r.meta.target"
@@ -68,15 +73,16 @@
                         </router-link>
                         <a
                           v-else
-                          :href="r.absolutePath || r.path"
+                          :href="r.path"
                           :target="r.meta.target"
                         >{{ r.meta.title }}</a>
-                      </item>
+                      </Item>
                     </template>
-                  </sub-menu>
-                  <item
+                  </SubMenu>
+                  <Item
                     v-else-if="!route.hidden"
-                    :key="route.path"
+                    :key="route.name"
+                    class="layout-menu-item"
                   >
                     <router-link
                       v-if="!route.meta.target"
@@ -91,10 +97,10 @@
                     </router-link>
                     <a
                       v-else
-                      :href="route.absolutePath || route.path"
+                      :href="route.path"
                       :target="route.meta.target"
                     >{{ route.meta.title }}</a>
-                  </item>
+                  </Item>
                 </template>
               </Menu>
             </div>
@@ -135,6 +141,10 @@ export default {
     showSystemMenu: {
       type: Boolean,
       default: true
+    },
+    config: {
+      type: Object,
+      default: () => {}
     }
   },
   data () {
@@ -165,24 +175,44 @@ export default {
           if (item.x) {
             this.maxMenuX = Math.max(this.maxMenuX, item.x)
           }
-          console.log(menus)
+          this.menus.forEach(item => {
+            this.openKeys.push(item.name)
+          })
         })
-      }
+      },
+      immediate: true
+    },
+    $route: {
+      handler () {
+        this.updateMenu()
+      },
+      immediate: true
     }
   },
   created () {
   },
   mounted () {
-    this.setOpenKeys()
+    // this.setOpenKeys()
   },
   methods: {
-    setOpenKeys () {
-      this.menus.forEach(item => {
-        this.openKeys.push(item.name)
+    updateMenu () {
+      const routes = this.$route.matched.concat()
+      const { hidden } = this.$route.meta
+      if (routes.length >= 3 && hidden) {
+        routes.pop()
+        this.selectedKeys = [routes[routes.length - 1].name]
+      } else {
+        this.selectedKeys = [routes.pop().name]
+      }
+      const openKeys = []
+      routes.forEach(item => {
+        item.name && openKeys.push(item.name)
       })
+
+      this.openKeys = openKeys
     },
-    onOpenChange () {},
-    onMenuClick (obj) {
+    onOpenChange (openKeys) {},
+    onMenuSelect (obj) {
       this.selectedKeys = [obj.key]
       this.visible = false
     },
@@ -228,11 +258,17 @@ export default {
     min-height: 300px;
     .layout-systems-container {
       flex: 0 0 20%;
+      max-height: 80vh;
+      overflow-y: auto;
       background: #e6effa;
     }
     .layout-menu-container {
       display: flex;
+      flex: 1;
       width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      background: #ffffff;
       .menu-col {
         width: 25%;
         padding: 0 16px;
