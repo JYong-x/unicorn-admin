@@ -1,8 +1,8 @@
 <template>
   <Sider
-    v-model="collapsed"
+    v-model="stateCollapsed"
     theme="light"
-    :class="[`${prefix}-layout-sider`]"
+    :class="[`${prefix}-layout-sider`, {'is-mobile': isMobile}]"
     collapsible
     width="180px"
     :collapsed-width="0"
@@ -10,15 +10,17 @@
   >
     <span
       class="trigger"
-      @click="() => collapsed = !collapsed"
+      :style="!stateCollapsed && isMobile ? {display: 'none'} : {}"
+      @click="toggleCollapse"
     >
-      <Icon :type="collapsed ? 'right' : 'left'"></Icon>
+      <Icon :type="triggerType"></Icon>
     </span>
     <slot name="systemMenu"></slot>
     <RouteMenu
       class="route-menu"
       :menus="menus"
       mode="inline"
+      @menuClick="handleRouteMenuClick"
     ></RouteMenu>
   </Sider>
 </template>
@@ -46,17 +48,54 @@ export default {
     showSystemMenu: {
       type: Boolean,
       default: true
+    },
+    isMobile: {
+      type: Boolean,
+      default: false
+    },
+    collapsed: {
+      type: Boolean,
+      default: null
     }
   },
   data () {
     return {
       prefix: config.prefix,
-      collapsed: false
+      stateCollapsed: false
+    }
+  },
+  computed: {
+    triggerType () {
+      let type = ''
+      if (this.isMobile) {
+        type = 'menu'
+      } else {
+        if (this.stateCollapsed) {
+          type = 'right'
+        } else {
+          type = 'left'
+        }
+      }
+      return type
     }
   },
   watch: {
-    collapsed (collapsed) {
-      this.$emit('collapse', collapsed)
+    collapsed: {
+      handler (collapsed) {
+        this.stateCollapsed = collapsed
+      },
+      immediate: true
+    }
+  },
+  methods: {
+    toggleCollapse () {
+      this.stateCollapsed = !this.stateCollapsed
+      this.$emit('collapse', this.stateCollapsed)
+    },
+    handleRouteMenuClick () {
+      if (this.isMobile) {
+        this.toggleCollapse()
+      }
     }
   }
 }
@@ -76,9 +115,30 @@ export default {
       display: flex;
       flex-direction: column;
     }
+    &.is-mobile {
+      top: 0;
+      height: 100%;
+      .trigger {
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 60px;
+        background: transparent;
+        color: #ffffff;
+        transform: none;
+        font-size: 24px;
+        &::before {
+          display: none;
+        }
+        &::after {
+          display: none;
+        }
+      }
+    }
     .trigger {
       display: flex;
       align-items: center;
+      justify-content: center;
       position: absolute;
       top: 50%;
       right: -10px;

@@ -245,7 +245,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
+      width: 60px;
       height: 100%;
       .menu-icon {
         font-size: 24px;

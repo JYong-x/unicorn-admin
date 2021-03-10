@@ -6,10 +6,13 @@
     :collapsed="collapsed"
     :media-query="query"
     :is-mobile="isMobile"
+    :user-info="userInfo"
     :handle-media-query="handleMediaQuery"
     :sider-width="180"
     @collapse="handleCollapse"
   >
+    <div slot="globalHeaderSession">session</div>
+    <User slot="globalHeaderRight" :user-info="userInfo"></User>
     <router-view />
   </LayoutPro>
 </template>
@@ -17,11 +20,12 @@
 <script>
 import { mapState } from 'vuex'
 import { appConfig, httpConfig } from '@/config'
-import LayoutPro from '@unicorn-admin/layout-pro'
+import LayoutPro, { User } from '@unicorn-admin/layout-pro'
 export default {
   name: 'BasicLayout',
   components: {
-    LayoutPro
+    LayoutPro,
+    User
   },
   data () {
     return {
@@ -37,6 +41,7 @@ export default {
   },
   computed: {
     ...mapState({
+      userInfo: state => state.user.info,
       // 系统菜单
       systems: state => state.permission.systems
     })

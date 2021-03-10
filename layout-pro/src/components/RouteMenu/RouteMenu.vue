@@ -6,6 +6,7 @@
     :selected-keys="selectedKeys"
     @openChange="onOpenChange"
     @select="onMenuSelect"
+    @click="$emit('menuClick')"
     v-on="$listeners"
   >
     <template v-for="menu of menus">

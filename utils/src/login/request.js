@@ -107,17 +107,25 @@ export default function (options, authUtils) {
       removeAuth()
       axios({
         url: `${config.logoutUri}`,
-        method: 'GET'
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          Authorization: `Bearer ${token}`
+        },
       }).then(res => {
         if (res && res.status === 200) {
-          const token = getLocalToken()
           axios({
             url: `${config.removeTokenUri}?access_token=${token}`,
             method: 'GET',
             params: {
               redirect_uri: config.useCas ? config.redirect_cas_uri : config.redirect_uri
-            }
+            },
+            headers: {
+              Accept: 'application/json',
+              Authorization: `Bearer ${token}`
+            },
           }).then(() => {
+            config.useCas ? casLoginRedirect() : loginRedirect()
             resolve()
           })
         }

@@ -6,8 +6,12 @@
         :class="[`${prefix}-layout-basic`, {...mediaQuery}]"
       >
         <GlobalHeader>
+          <template v-if="$slots.globalHeaderLeft" slot="globalHeaderLeft">
+            <slot name="globalHeaderLeft"></slot>
+          </template>
           <DropdownMenu
-            slot="menu"
+            v-else
+            slot="globalHeaderLeft"
             :is-mobile="isMobile"
             :menus="menus"
           >
@@ -22,6 +26,23 @@
               ></SystemMenu>
             </template>
           </DropdownMenu>
+
+          <template v-if="$slots.globalHeaderContent" slot="globalHeaderContent">
+            <slot name="globalHeaderContent"></slot>
+          </template>
+          <div
+            v-else-if="!isMobile"
+            slot="globalHeaderContent"
+            class="layout-header-title"
+          >重庆大学教务管理系统</div>
+
+          <template v-if="$slots.globalHeaderSession" slot="globalHeaderSession">
+            <slot name="globalHeaderSession"></slot>
+          </template>
+
+          <template v-if="$slots.globalHeaderRight" slot="globalHeaderRight">
+            <slot name="globalHeaderRight"></slot>
+          </template>
         </GlobalHeader>
         <Layout>
           <Drawer
@@ -38,6 +59,9 @@
               :systems="systems"
               :show-system-menu="showSystemMenu"
               :menus="menus"
+              :is-mobile="isMobile"
+              :collapsed="collapsed"
+              @collapse="handleCollapse"
             >
               <template slot="systemMenu">
                 <SystemMenu
@@ -54,6 +78,7 @@
             :systems="systems"
             :show-system-menu="showSystemMenu"
             :menus="menus"
+            :collapsed="collapsed"
             @collapse="handleCollapse"
             @change="changeSystem"
           >
@@ -66,7 +91,7 @@
               ></SystemMenu>
             </template>
           </SideMenu>
-          <Layout class="layout-main" :style="{paddingLeft: collapsed ? '0' : '180px'}">
+          <Layout class="layout-main" :style="{paddingLeft: collapsed || isMobile ? '0' : '180px'}">
             <div class="layout-main-header"></div>
             <content-wrap>
               <slot></slot>

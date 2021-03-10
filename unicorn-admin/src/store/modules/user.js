@@ -55,6 +55,9 @@ const user = {
     // 登出
     Logout ({ commit, state }) {
       return new Promise(resolve => {
+        Vue.loginUtils.logout().then(res => {
+          resolve()
+        })
       })
     }
 

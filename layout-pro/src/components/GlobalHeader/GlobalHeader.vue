@@ -5,22 +5,31 @@
       :class="[`${prefix}-layout-header`]"
     >
       <div class="layout-header-left">
-        <div class="layout-header-menu">
-          <slot name="menu"></slot>
-        </div>
-        <div class="layout-header-title">教务管理系统</div>
-        <div class="layout-header-logo">
-          <a
-            href="http://www.cqu.edu.cn/"
-            target="_blank"
-          ><img
-            class="logo-img"
-            :src="logo"
-            alt="重庆大学"
-          ></a>
+        <template v-if="$slots.globalHeaderLeft">
+          <slot name="globalHeaderLeft"></slot>
+        </template>
+        <!--        <div class="layout-header-logo">-->
+        <!--          <a-->
+        <!--            href="http://www.cqu.edu.cn/"-->
+        <!--            target="_blank"-->
+        <!--          ><img-->
+        <!--            class="logo-img"-->
+        <!--            :src="logo"-->
+        <!--            alt="重庆大学"-->
+        <!--          ></a>-->
+        <!--        </div>-->
+      </div>
+      <div class="layout-header-content">
+        <template v-if="$slots.globalHeaderContent">
+          <slot name="globalHeaderContent"></slot>
+        </template>
+        <div v-if="$slots.globalHeaderSession" class="layout-header-session">
+          <slot name="globalHeaderSession"></slot>
         </div>
       </div>
-      <div class="layout-header-right"></div>
+      <div v-if="$slots.globalHeaderRight" class="layout-header-right">
+        <slot name="globalHeaderRight"></slot>
+      </div>
     </Header>
   </div>
 </template>
@@ -36,8 +45,8 @@ export default {
   },
   data () {
     return {
-      prefix: config.prefix,
-      logo: require('../../assets/images/logo.png')
+      // logo: require('../../assets/images/logo.png'),
+      prefix: config.prefix
     }
   }
 }
@@ -50,21 +59,18 @@ export default {
     position: fixed;
     top: 0;
     display: flex;
+    justify-content: space-between;
     width: 100%;
     height: 60px;
     line-height: 60px;
-    padding: 0 16px 0;
+    padding: 0 16px 0 0;
     background-color: #0052a8;
     z-index: 901;
     .layout-header-left {
+      min-width: 60px;
       display: flex;
       .layout-header-menu {
         width: 60px;
-      }
-      .layout-header-title {
-        padding-left: 12px;
-        color: #fff;
-        font-size: 24px;
       }
       .layout-header-logo {
         width: 128px;
@@ -73,6 +79,14 @@ export default {
         .logo-img {
           height: 40px;
         }
+      }
+    }
+    .layout-header-content {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      .layout-header-session {
+        padding-left: 24px;
       }
     }
   }
