@@ -8,11 +8,12 @@
       <Item
         v-for="system of systems"
         :key="system.code"
+        class="layout-system-item"
         @click="handleSystemClick(system.code)"
       >
         <Icon
           :type="system.icon"
-          class="fa menu-icon"
+          class="menu-icon"
         ></Icon>
         <span>{{ system.name }}</span>
       </Item>
@@ -20,7 +21,7 @@
     <div :class="`${prefix}-system-current`">
       <Icon
         :type="curSystemInfo.icon"
-        class="fa menu-icon"
+        class="menu-icon"
       ></Icon>
       <span class="system-name">{{ curSystemInfo.name }}</span>
       <Icon type="sync"></Icon>
@@ -57,8 +58,7 @@ import 'ant-design-vue/es/dropdown/style'
 import Dropdown from 'ant-design-vue/es/dropdown'
 import 'ant-design-vue/es/menu/style'
 import Menu from 'ant-design-vue/es/menu'
-import 'ant-design-vue/es/icon/style'
-import Icon from 'ant-design-vue/es/icon'
+import Icon from '../Icon'
 const { Item } = Menu
 
 export default {
@@ -130,7 +130,12 @@ export default {
       white-space: nowrap;
     }
   }
-  .@{system-menu-overlay} {}
+  .@{system-menu-overlay} {
+    .layout-system-item {
+      font-weight: 600;
+      line-height: 24px;
+    }
+  }
   .@{system-dropdown-wrap} {
     padding: 0 12px;
     line-height: 32px;
@@ -142,10 +147,14 @@ export default {
       margin-top: 8px;
       border-radius: 4px;
       cursor: pointer;
+      color: #0052a8;
       &:hover, &.system-dropdown-item-active {
         background: #0055aa;
         color: #ffffff;
       }
     }
+  }
+  .menu-icon {
+    margin-right: 10px;
   }
 </style>

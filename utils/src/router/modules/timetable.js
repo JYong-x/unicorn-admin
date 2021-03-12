@@ -8,9 +8,9 @@ const timeTableRouterMap = [
     name: 'Home',
     x: 1,
     y: 1,
-    icon: 'fa-home',
     menuLevel: 1,
     meta: {
+      icon: 'home',
       target: '_blank',
       requireAuth: true,
       permission: ['ViewHomePage'],
@@ -18,14 +18,14 @@ const timeTableRouterMap = [
       title: '主页',
       matched: [{ path: '', name: '' }]
     }
-  },{
+  },  {
     path: '/CourseClassSettingInfo',
     name: 'CourseClassSettingInfo',
     x: 1,
     y: 2,
-    icon: 'icon-xiangmuguanli',
     menuLevel: 1,
     meta: {
+      icon: 'canshuguanli',
       target: '_blank',
       requireAuth: true,
       permission: ['ViewCourseClassSettingInfoPage'],
@@ -39,7 +39,6 @@ const timeTableRouterMap = [
     name: 'CourseSessionInfo',
     x: 1,
     y: 3,
-    icon: 'icon-xiangqingchakan',
     menuLevel: 2,
     meta: {
       'requireAuth': true,
@@ -53,7 +52,6 @@ const timeTableRouterMap = [
     name: 'CourseTimePattern',
     x: 1,
     y: 3,
-    icon: 'icon-jindu11',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -69,7 +67,6 @@ const timeTableRouterMap = [
     name: 'CourseExperimentAndProject',
     x: 1,
     y: 4,
-    icon: 'icon-kecheng3',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -85,7 +82,6 @@ const timeTableRouterMap = [
     name: 'CourseBlockedTimePeriodStu',
     x: 1,
     y: 5,
-    icon: 'icon-weishenqing',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -102,7 +98,6 @@ const timeTableRouterMap = [
     name: 'FullTimeTeacher',
     x: 1,
     y: 6,
-    icon: 'icon-jiaoshixinxi',
     menuLevel: 2,
     meta: {
       'requireAuth': true,
@@ -116,7 +111,6 @@ const timeTableRouterMap = [
     name: 'CourseInstructionalResource',
     x: 1,
     y: 6,
-    icon: 'icon-jiaoxuebanguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -131,7 +125,6 @@ const timeTableRouterMap = [
     name: 'SetClassParameters',
     x: 1,
     y: 7,
-    icon: 'icon-xiugai4',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -147,9 +140,9 @@ const timeTableRouterMap = [
     name: 'CourseArrangementTitle',
     x: 1,
     y: 10,
-    icon: 'icon-jiaoxueziyuan',
     menuLevel: 1,
     meta: {
+      icon: 'lyq-zixun',
       target: '_blank',
       requireAuth: true,
       permission: ['ViewCourseArrangementTitlePage'],
@@ -162,7 +155,6 @@ const timeTableRouterMap = [
     name: 'CourseDistributableExperiment',
     x: 1,
     y: 11,
-    icon: 'icon-yaopinjiance',
     menuLevel: 2,
     meta: {
       'requireAuth': true,
@@ -176,7 +168,6 @@ const timeTableRouterMap = [
     name: 'TeachingTaskRequirements',
     x: 1,
     y: 11,
-    icon: 'icon-yaopinjiance',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -192,7 +183,6 @@ const timeTableRouterMap = [
     name: 'ComprehensiveArrangeCourse',
     x: 1,
     y: 12,
-    icon: 'icon-xiangqingchakan',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -208,7 +198,6 @@ const timeTableRouterMap = [
     name: 'CourseAssistArrangementClass',
     x: 1,
     y: 13,
-    icon: 'icon-xuankejieguo',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -224,7 +213,6 @@ const timeTableRouterMap = [
     name: 'Schedule',
     x: 1,
     y: 13,
-    icon: 'icon-xiangqingchakan',
     menuLevel: 2,
     meta: {'requireAuth': true,
       permission: ['ViewSchedulePage'],
@@ -237,7 +225,6 @@ const timeTableRouterMap = [
     name: 'TeachingClassManagement',
     x: 1,
     y: 14,
-    icon: 'icon-msnui-copy-file',
     menuLevel: 2,
     meta: {'requireAuth': true,
       permission: ['ViewTeachingClassManagementPage'],
@@ -250,7 +237,6 @@ const timeTableRouterMap = [
     name: 'EditClassRoom',
     x: 1,
     y: 14,
-    icon: 'icon-jieguo',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -266,12 +252,12 @@ const timeTableRouterMap = [
     name: 'RescheduleAndSuspendClasses',
     x: 2,
     y: 5,
-    icon: 'icon-kechengdingzhi',
     menuLevel: 1,
     meta: {
+      icon: 'shenqing5',
       target: '_blank',
       requireAuth: true,
-      title: '调停课'
+      title: '调课'
     }
   },
   {
@@ -279,7 +265,6 @@ const timeTableRouterMap = [
     name: 'RescheduleAndSuspendClassesApply',
     x: 2,
     y: 6,
-    icon: 'icon-tubiaolunkuo_huaban',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -296,7 +281,6 @@ const timeTableRouterMap = [
     name: 'RescheduleAndSuspendClassesApplyManagement',
     x: 2,
     y: 7,
-    icon: 'icon-caidantubiao-05',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -313,7 +297,6 @@ const timeTableRouterMap = [
     name: 'RescheduleAndSuspendClassesCountSet',
     x: 2,
     y: 8,
-    icon: 'icon-punishment',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -330,7 +313,6 @@ const timeTableRouterMap = [
     name: 'RescheduleAndSuspendClassesStatistics',
     x: 2,
     y: 9,
-    icon: 'icon-tongji1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -346,7 +328,6 @@ const timeTableRouterMap = [
     name: 'TimeTabChangeLog',
     x: 2,
     y: 10,
-    icon: 'icon-rizhi',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -363,9 +344,9 @@ const timeTableRouterMap = [
     name: 'ApplicationTemporaryActivities',
     x: 2,
     y: 11,
-    icon: 'icon-xiaoyuanhuodong',
     menuLevel: 1,
     meta: {
+      icon: 'linshihuodongguanli',
       target: '_blank',
       requireAuth: true,
       title: '临时活动',
@@ -379,7 +360,6 @@ const timeTableRouterMap = [
     name: 'ApplicationTemporaryActivities',
     x: 2,
     y: 12,
-    icon: 'icon-shenqing5',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -396,7 +376,6 @@ const timeTableRouterMap = [
     name: 'TemporaryActivitiesApplyManage',
     x: 2,
     y: 13,
-    icon: 'icon-kechengguanli5',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -412,9 +391,9 @@ const timeTableRouterMap = [
     name: 'StartPlanTitle',
     x: 3,
     y: 1,
-    icon: 'icon-jindu14',
     menuLevel: 1,
     meta: {
+      icon: 'tongji',
       target: '_blank',
       requireAuth: true,
       permission: ['ViewStartPlanTitlePage'],
@@ -426,7 +405,6 @@ const timeTableRouterMap = [
     name: 'AllCourseSchedule',
     x: 3,
     y: 3,
-    icon: 'icon-xuanke1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -442,7 +420,6 @@ const timeTableRouterMap = [
     name: 'FreeTimeSchedule',
     x: 3,
     y: 3,
-    icon: 'icon-xuanke1',
     menuLevel: 2,
     meta: {
       'requireAuth': true,
@@ -457,7 +434,6 @@ const timeTableRouterMap = [
     name: 'CourseInspection',
     x: 3,
     y: 4,
-    icon: 'icon-jiance1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -472,7 +448,6 @@ const timeTableRouterMap = [
     name: 'ClassHourBalance',
     x: 3,
     y: 5,
-    icon: 'icon-kecheng1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -488,7 +463,6 @@ const timeTableRouterMap = [
     name: 'GeneralCourseStatus',
     x: 3,
     y: 6,
-    icon: 'icon-moban',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -504,16 +478,14 @@ const timeTableRouterMap = [
     name: 'TeachMaterialManagement',
     x: 3,
     y: 7,
-    icon: 'icon-kecheng10',
     menuLevel: 1,
-    meta: { 'requireAuth': true, permission: ['ViewTeachMaterialManagementPage'], namespace: 'KR_TT', title: '教材管理' }
+    meta: { icon: 'kechengguanli', 'requireAuth': true, permission: ['ViewTeachMaterialManagementPage'], namespace: 'KR_TT', title: '教材管理' }
   },
   {
     path: '/TextbookLibrary',
     name: 'TextbookLibrary',
     x: 3,
     y: 8,
-    icon: 'icon-ku1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -528,7 +500,6 @@ const timeTableRouterMap = [
     name: 'PublishingLibrary',
     x: 3,
     y: 9,
-    icon: 'icon-ku1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -543,7 +514,6 @@ const timeTableRouterMap = [
     name: 'CurriculumTextbook',
     x: 3,
     y: 10,
-    icon: 'icon-ku1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -558,9 +528,9 @@ const timeTableRouterMap = [
     name: 'DataImport',
     x: 3,
     y: 11,
-    icon: 'icon-jindu14',
     menuLevel: 1,
     meta: {
+      icon: 'paikejieguodaoru',
       target: '_blank',
       requireAuth: true,
       permission: ['ViewStartPlanTitlePage'],
@@ -572,7 +542,6 @@ const timeTableRouterMap = [
     name: 'ImportTeachingTask',
     x: 3,
     y: 12,
-    icon: 'icon-ku1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -589,9 +558,9 @@ const timeTableRouterMap = [
     name: 'timeTableManageConsolo',
     x: 4,
     y: 1,
-    icon: 'icon-yonghu4',
     menuLevel: 1,
     meta: {
+      icon: 'guanli',
       target: '_blank',
       requireAuth: true,
       permission: ['ViewManageConsoloTimeTablePage'],
@@ -605,7 +574,6 @@ const timeTableRouterMap = [
     name: 'AdminPermission',
     x: 4,
     y: 3,
-    icon: 'fa fa-user-secret',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -619,7 +587,6 @@ const timeTableRouterMap = [
     name: 'AdminRole',
     x: 4,
     y: 4,
-    icon: 'fa fa-male',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -633,7 +600,6 @@ const timeTableRouterMap = [
     name: 'AdminUser',
     x: 4,
     y: 5,
-    icon: 'fa fa-user',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -664,7 +630,6 @@ const timeTableRouterMap = [
     name: 'AdminTimeManagement',
     x: 4,
     y: 7,
-    icon: 'icon-shijian1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -680,7 +645,6 @@ const timeTableRouterMap = [
     name: 'AdminCategory',
     x: 4,
     y: 2,
-    icon: 'fa fa-asterisk',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -696,7 +660,6 @@ const timeTableRouterMap = [
     name: 'AdminWorkManage',
     x: 4,
     y: 6,
-    icon: 'fa fa-random',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -712,7 +675,6 @@ const timeTableRouterMap = [
     name: 'AdminEditBulletinBoard',
     x: 4,
     y: 7,
-    icon: 'fa fa-random',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -734,7 +696,7 @@ export default {
   name: '排课管理',
   code: 'timetable',
   namespace: 'KR_TT',
-  icon: 'icon-server_05',
+  icon: 'server_05',
   baseUrl: `/tt`,
   isOld: true,
   originRouters: timeTableRouterMap

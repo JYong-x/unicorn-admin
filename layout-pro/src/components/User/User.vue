@@ -11,7 +11,7 @@
         icon="user"
       ></Avatar>
       <Icon
-        :type="visible ? 'caret-up' : 'caret-down'"
+        type="caret-down"
         class="direction-icon"
       ></Icon>
     </div>

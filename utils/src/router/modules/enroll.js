@@ -17,7 +17,7 @@ export const enrollRouterMap = [
         y: 1,
         meta: {
           target: '_blank',
-          icon: 'fa icon-zhuye',
+          icon: 'home',
           hiddenTitleInPage: true,
           hiddenHeaderContent: true,
           namespace: 'KR_ENRL',
@@ -33,7 +33,7 @@ export const enrollRouterMap = [
         meta: {
           target: '_blank',
           'requireAuth': true,
-          icon: 'icon-xuanke1',
+          icon: 'xuanke1',
           permission: ['ViewCourseEnrlSettingPage'],
           namespace: 'KR_ENRL',
           title: '选课设置'
@@ -46,7 +46,6 @@ export const enrollRouterMap = [
             meta: {
               target: '_blank',
               'requireAuth': true,
-              icon: 'icon-yewumokuai',
               permission: ['ViewCourseEnrlBatchPage'],
               namespace: 'KR_ENRL',
               title: '选课批次'
@@ -57,7 +56,6 @@ export const enrollRouterMap = [
             name: 'BatchInfo',
             meta: {
               target: '_blank',
-              icon: 'icon-jindu12',
               permission: ['ViewCourseBatchInfoPage'],
               namespace: 'KR_ENRL',
               title: '选课参数'
@@ -94,7 +92,6 @@ export const enrollRouterMap = [
                   target: '_blank',
                   // 'requireAuth': true,
                   // permission: ['ViewApplyConfigurationPage'],
-                  icon: 'icon-jindu12',
                   namespace: 'KR_ENRL',
                   title: '申请设置'
                 }
@@ -106,7 +103,6 @@ export const enrollRouterMap = [
             name: 'ClassBind',
             meta: {
               target: '_blank', 'requireAuth': true,
-              icon: 'fa fa-user',
               permission: ['ViewClassBind'],
               namespace: 'KR_ENRL',
               title: '教学班绑定'
@@ -141,7 +137,7 @@ export const enrollRouterMap = [
         y: 1,
         meta: {
           target: '_blank', 'requireAuth': true,
-          icon: 'icon-chakan7',
+          icon: 'chakan7',
           permission: ['ViewCourseEnrollManagePage'],
           namespace: 'KR_ENRL',
           title: '选课管理'
@@ -255,7 +251,7 @@ export const enrollRouterMap = [
         y: 0,
         meta: {
           target: '_blank', 'requireAuth': true,
-          icon: 'icon-yonghu4',
+          icon: 'guanli',
           permission: ['ViewManageConsoloPage'],
           namespace: 'KR_ENRL',
           title: '管理台'
@@ -473,6 +469,6 @@ export default {
   code: 'enroll',
   baseUrl: '/enroll/',
   namespace: 'KR_ENRL',
-  icon: 'icon-server_05',
+  icon: 'xuankejieguo',
   originRouters: enrollRouterMap
 }

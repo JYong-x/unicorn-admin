@@ -1,6 +1,13 @@
 {
-  "presets": [
-    ["env", { "modules": false }],
-    "stage-3"
-  ]
+    "env": {
+        "test": {
+            "presets": ["@babel/preset-env"],
+            "plugins": [
+                "@babel/plugin-transform-runtime",
+                "transform-vue-jsx",
+                "transform-object-assign",
+                "transform-class-properties"
+            ]
+        }
+    }
 }

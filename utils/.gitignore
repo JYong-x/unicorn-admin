@@ -10,3 +10,12 @@ yarn-error.log
 *.ntvs*
 *.njsproj
 *.sln
+
+# IDE
+/.idea
+
+lib/
+es/
+dist/
+build/
+.vscode

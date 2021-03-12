@@ -54,8 +54,8 @@ module.exports = {
 
     // 添加别名
     config.resolve.alias
-      .set('@unicorn-admin/layout-pro', resolve('../layout-pro/src'))
-      .set('@unicorn-admin/utils', resolve('../utils/src'))
+      // .set('@unicorn-admin/layout-pro', resolve('../layout-pro/src'))
+      // .set('@unicorn-admin/utils', resolve('../utils/src'))
       .set('vue$', 'vue/dist/vue.esm.js')
       .set('@', resolve('src'))
       .set('api', resolve('src/api'))

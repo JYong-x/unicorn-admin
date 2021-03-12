@@ -8,7 +8,7 @@
     >
       <Icon
         type="menu"
-        class="menu-icon"
+        class="menu-btn-icon"
       ></Icon>
     </div>
     <Drawer
@@ -51,7 +51,7 @@
                     :key="route.name"
                     class="layout-menu-sub-menu-item"
                   >
-                    <span slot="title">
+                    <span slot="title" class="layout-menu-level-1">
                       <Icon
                         v-if="route.meta && route.meta.icon"
                         :component="typeof route.meta.icon === 'object' ? route.meta.icon : undefined"
@@ -82,7 +82,7 @@
                   <Item
                     v-else-if="!route.hidden"
                     :key="route.name"
-                    class="layout-menu-item"
+                    class="layout-menu-item layout-menu-level-1"
                   >
                     <router-link
                       v-if="!route.meta.target"
@@ -115,10 +115,9 @@
 import config from '../../config'
 import 'ant-design-vue/es/drawer/style'
 import Drawer from 'ant-design-vue/es/drawer'
-import 'ant-design-vue/es/icon/style'
-import Icon from 'ant-design-vue/es/icon'
 import 'ant-design-vue/es/menu/style'
 import Menu from 'ant-design-vue/es/menu'
+import Icon from '../Icon'
 const { Item, SubMenu } = Menu
 export default {
   name: 'DropdownMenu',
@@ -247,7 +246,7 @@ export default {
       align-items: center;
       width: 60px;
       height: 100%;
-      .menu-icon {
+      .menu-btn-icon {
         font-size: 24px;
         color: #fff;
       }
@@ -273,6 +272,10 @@ export default {
         width: 25%;
         padding: 0 16px;
       }
+    }
+    .layout-menu-level-1, .layout-menu-level-1 a {
+      font-weight: 600;
+      color: rgba(0, 0, 0, .85)
     }
     .layout-menu {
       border-right: 0;

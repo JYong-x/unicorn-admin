@@ -1,6 +1,6 @@
 {
-  "name": "@unicorn-admin/auth",
-  "version": "0.0.1",
+  "name": "unicorn-admin-utils",
+  "version": "0.0.1-1",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "repository": {
@@ -13,50 +13,59 @@
   "license": "MIT",
   "scripts": {
     "start": "vc-tools run server",
-    "lint": "eslint -c .eslintrc.js --fix --ext .jsx,.js,.vue ./src",
+    "lint": "eslint -c ./.eslintrc --fix --ext .jsx,.js,.vue ./src",
     "compile": "vc-tools run compile --babel-runtime",
-    "prepublishOnly": "npm run lint && npm run test && npm run compile && np --no-cleanup --yolo --no-publish"
+    "test": "cross-env NODE_ENV=test jest --config .jest.js"
   },
   "files": [
     "es",
     "lib"
   ],
-  "peerDependencies": {
-  },
-  "dependencies": {
-    "axios": "^0.19.2",
-    "store": "^2.0.12"
-  },
   "devDependencies": {
+    "@ant-design-vue/tools": "^1.0.2-beta.2",
     "@babel/core": "^7.11.1",
     "@babel/plugin-syntax-jsx": "^7.12.1",
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@types/jest": "^24.0.17",
     "@types/node": "^10.5.5",
+    "@vue/server-test-utils": "1.0.0-beta.16",
+    "@vue/test-utils": "1.0.0-beta.16",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-plugin-transform-vue-jsx": "^4.0.1",
     "babel-runtime": "^6.26.0",
     "cross-env": "^5.2.0",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-vue": "^5.2.3",
     "jest": "^26.3.0",
+    "jest-serializer-vue": "^2.0.2",
     "np": "^5.1.1",
     "prettier": "^1.18.2",
     "regenerator-runtime": "^0.13.7",
     "webpack": "^5.4.0"
   },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "store": "^2.0.12"
+  },
   "config": {
-    "port": 9400,
+    "port": 9528,
     "entry": {
-      "@unicorn-admin/auth": [
+      "unicorn-admin-utils": [
         "./src/index.js"
       ]
     }
   },
-  "description": "unicorn-admin-auth"
+  "description": "unicorn-admin-utils.",
+  "directories": {
+    "lib": "lib"
+  },
+  "author": "jinyong"
 }

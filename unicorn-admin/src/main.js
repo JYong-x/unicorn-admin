@@ -15,7 +15,7 @@ import '@/plugins/antd'
 // import '@/utils/use'
 // import { Dialog } from '@/components'
 
-import { loginUtils } from '@unicorn-admin/utils'
+import { loginUtils } from 'unicorn-admin-utils'
 // const loginUtils = login({ ...httpConfig, namespace: 'CQUEDU', env: process.env.NODE_ENV })
 // console.log(loginUtils)
 

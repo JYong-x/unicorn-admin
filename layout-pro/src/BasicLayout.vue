@@ -92,7 +92,9 @@
             </template>
           </SideMenu>
           <Layout class="layout-main" :style="{paddingLeft: collapsed || isMobile ? '0' : '180px'}">
-            <div class="layout-main-header"></div>
+            <div class="layout-main-header">
+              <Breadcrumb></Breadcrumb>
+            </div>
             <content-wrap>
               <slot></slot>
             </content-wrap>
@@ -117,7 +119,8 @@ import SideMenu from './components/SideMenu'
 import DropdownMenu from './components/DropdownMenu'
 import ContentWrap from './components/ContentWrap'
 import { processMenu } from './utils/menu'
-import SystemMenu from './components/SystemMenu/SystemMenu'
+import SystemMenu from './components/SystemMenu'
+import Breadcrumb from './components/Breadcrumb'
 const { Footer } = Layout
 export default {
   name: 'BasicLayout',
@@ -131,7 +134,8 @@ export default {
     Footer,
     DropdownMenu,
     SideMenu,
-    Drawer
+    Drawer,
+    Breadcrumb
   },
   props: {
     systems: {

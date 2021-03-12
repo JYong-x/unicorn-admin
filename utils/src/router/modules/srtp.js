@@ -8,9 +8,9 @@ const srtpRouterMap = [
     name: 'Name',
     x: 1,
     y: 2,
-    icon: 'icon-xuejiguanli1',
     menuLevel: 1,
     meta: {
+      icon: 'xuejiguanli1',
       target: '_blank',
       title: '报名'
     }
@@ -20,9 +20,9 @@ const srtpRouterMap = [
     name: 'srtpProjectList',
     x: 1,
     y: 2,
-    icon: 'icon-xiangmu',
     menuLevel: 1,
     meta: {
+      icon: 'xiangmu',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SRTP',
@@ -35,7 +35,6 @@ const srtpRouterMap = [
     name: 'ProjectQuery',
     x: 1,
     y: 3,
-    icon: 'icon-sousuo2',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -50,9 +49,9 @@ const srtpRouterMap = [
     name: 'Subject',
     x: 1,
     y: 4,
-    icon: 'icon-zuoye',
     menuLevel: 1,
     meta: {
+      icon: 'zuoye',
       target: '_blank',
       title: '课题'
     }
@@ -62,9 +61,9 @@ const srtpRouterMap = [
     name: 'srtpFundsManagement',
     x: 1,
     y: 5,
-    icon: 'icon-xiangmu',
     menuLevel: 1,
     meta: {
+      icon: 'xiangmu',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SRTP',
@@ -77,9 +76,9 @@ const srtpRouterMap = [
     name: 'PackageReviewRanking',
     x: 1,
     y: 6,
-    icon: 'icon-xuqiupingshen',
     menuLevel: 1,
     meta: {
+      icon: 'xuqiupingshen',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SRTP',
@@ -92,9 +91,9 @@ const srtpRouterMap = [
     name: 'PersonalProjectInquiry',
     x: 1,
     y: 6,
-    icon: 'icon-sousuo2',
     menuLevel: 1,
     meta: {
+      icon: 'sousuo2',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SRTP',
@@ -107,9 +106,9 @@ const srtpRouterMap = [
     name: 'srtpContest',
     x: 2,
     y: 1,
-    icon: 'icon-jiangli3',
     menuLevel: 1,
     meta: {
+      icon: 'jiangli3',
       target: '_blank',
       title: '竞赛'
     }
@@ -119,7 +118,6 @@ const srtpRouterMap = [
     name: 'CompetitionInfoDataImport',
     x: 2,
     y: 2,
-    icon: 'icon-daoru',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -134,7 +132,6 @@ const srtpRouterMap = [
     name: 'StudentContestList',
     x: 2,
     y: 3,
-    icon: 'icon-zhiwumingcheng',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -149,7 +146,6 @@ const srtpRouterMap = [
     name: 'ContestManagement',
     x: 2,
     y: 4,
-    icon: 'icon-jiangli3',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -164,7 +160,6 @@ const srtpRouterMap = [
     name: 'ContestLevel',
     x: 2,
     y: 5,
-    icon: 'icon-pingjia',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -179,7 +174,6 @@ const srtpRouterMap = [
     name: 'ContestTypeInfo',
     x: 2,
     y: 6,
-    icon: 'icon-jindu13',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -194,7 +188,6 @@ const srtpRouterMap = [
     name: 'getContestTypeLabelPage',
     x: 2,
     y: 7,
-    icon: 'icon-jindu13',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -209,9 +202,9 @@ const srtpRouterMap = [
     name: 'ExpertModuleConsole',
     x: 3,
     y: 1,
-    icon: 'icon-zhiwumingcheng',
     menuLevel: 1,
     meta: {
+      icon: 'zhiwumingcheng',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SRTP',
@@ -224,7 +217,6 @@ const srtpRouterMap = [
     name: 'StudentContestList',
     x: 3,
     y: 2,
-    icon: 'icon-peixun',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -239,7 +231,6 @@ const srtpRouterMap = [
     name: 'ManagerExpertOpinion',
     x: 3,
     y: 3,
-    icon: 'icon-renwujibie',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -254,9 +245,9 @@ const srtpRouterMap = [
     name: 'srtpStatisticManage',
     x: 4,
     y: 1,
-    icon: 'icon-tongji',
     menuLevel: 1,
     meta: {
+      icon: 'tongji',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SRTP',
@@ -269,7 +260,6 @@ const srtpRouterMap = [
     name: 'StudentStatistic',
     x: 4,
     y: 2,
-    icon: 'icon-xuejiguanli1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -284,7 +274,6 @@ const srtpRouterMap = [
     name: 'TeacherStatistic',
     x: 4,
     y: 3,
-    icon: 'icon-iconfont-jiaoshi',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -299,7 +288,6 @@ const srtpRouterMap = [
     name: 'ProjectGrade',
     x: 4,
     y: 5,
-    icon: 'icon-yewumokuai',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -314,7 +302,6 @@ const srtpRouterMap = [
     name: 'ProjectStatistics',
     x: 4,
     y: 6,
-    icon: 'icon-xiangmu',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -330,9 +317,9 @@ const srtpRouterMap = [
     name: 'srtpConsole',
     x: 5,
     y: 1,
-    icon: 'icon-xiangmuguanli',
     menuLevel: 1,
     meta: {
+      icon: 'guanli',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SRTP',
@@ -345,7 +332,6 @@ const srtpRouterMap = [
     name: 'TermManagement',
     x: 5,
     y: 2,
-    icon: 'icon-jieguotiaozheng_jieguotiaozheng',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -360,7 +346,6 @@ const srtpRouterMap = [
     name: 'ContestTimeInfo',
     x: 5,
     y: 3,
-    icon: 'icon-baogao',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -375,7 +360,6 @@ const srtpRouterMap = [
     name: 'ReportTemplateManagement',
     x: 5,
     y: 4,
-    icon: 'icon-caidantubiao-05',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -390,7 +374,6 @@ const srtpRouterMap = [
     name: 'ImportingProject',
     x: 5,
     y: 5,
-    icon: 'icon-shenqingtijiao',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -405,7 +388,6 @@ const srtpRouterMap = [
     name: 'strpConsoleCat',
     x: 5,
     y: 6,
-    icon: 'icon-msnui-module',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -421,7 +403,6 @@ const srtpRouterMap = [
     name: 'srtpPermissionManagement',
     x: 5,
     y: 7,
-    icon: 'icon-zhaopin',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -436,7 +417,6 @@ const srtpRouterMap = [
     name: 'srtpRoleManager',
     x: 5,
     y: 8,
-    icon: 'icon-iconfont-jiaoshi',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -451,7 +431,6 @@ const srtpRouterMap = [
     name: 'srtpUserRoleManager',
     x: 5,
     y: 9,
-    icon: 'icon-yonghu6',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -466,7 +445,6 @@ const srtpRouterMap = [
     name: 'srtpTimeSet',
     x: 5,
     y: 10,
-    icon: 'icon-pingjia6',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -481,7 +459,6 @@ const srtpRouterMap = [
     name: 'srtpWorkFlowManage',
     x: 5,
     y: 11,
-    icon: 'icon-pingjia6',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -496,7 +473,6 @@ const srtpRouterMap = [
     name: 'EndProjectCertificate',
     x: 5,
     y: 12,
-    icon: 'icon-pingjia6',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -511,7 +487,6 @@ const srtpRouterMap = [
     name: 'srtpProjectNumberRule',
     x: 5,
     y: 13,
-    icon: 'icon-pingjia6',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -527,7 +502,7 @@ export default {
   name: '创新实践平台',
   code: 'srtp',
   namespace: 'KR_SRTP',
-  icon: 'icon-server_05',
+  icon: 'server_05',
   baseUrl: '/srtp',
   isOld: true,
   originRouters: srtpRouterMap

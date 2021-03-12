@@ -12,8 +12,6 @@ export default function (options = {}) {
     permissions: options.permissions || []
   }
 
-  console.log(...routers)
-
   const systems = [...routers, _options.systemRouter].filter(system => _options.visibleSystems.includes(system.code) || _options.visibleSystems.includes(system.name))
 
   const sortSystems = sortSystem(systems, _options.systemOrder)

@@ -11,7 +11,7 @@
   >
     <template v-for="menu of menus">
       <SubMenu
-        v-if="menu.children && !menu.hideChildrenInMenu"
+        v-if="!menu.hideChildrenInMenu && !menu.hidden && menu.children && menu.children.length"
         :key="menu.name"
         class="layout-menu-sub-menu-item"
       >
@@ -53,7 +53,7 @@
         </template>
       </SubMenu>
       <Item
-        v-else
+        v-else-if="!menu.hidden"
         :key="menu.name"
         class="layout-menu-item"
       >
@@ -86,8 +86,7 @@
 import config from '../../config'
 import 'ant-design-vue/es/menu/style'
 import Menu from 'ant-design-vue/es/menu'
-import 'ant-design-vue/es/icon/style'
-import Icon from 'ant-design-vue/es/icon'
+import Icon from '../Icon'
 const { Item, SubMenu } = Menu
 export default {
   name: 'BaseMenu',
@@ -133,16 +132,14 @@ export default {
       immediate: true
     }
   },
-  created () {
-    console.log(this.menus)
-  },
+  created () {},
   methods: {
     updateMenu () {
       const routes = this.$route.matched.concat()
-      const { hidden } = this.$route.meta
-      if (routes.length >= 3 && hidden) {
-        routes.pop()
-        this.selectedKeys = [routes[routes.length - 1].name]
+      // const { hidden } = this.$route.meta
+      if (routes.length >= 3) {
+        // routes.pop()
+        this.selectedKeys = [routes[2].name]
       } else {
         this.selectedKeys = [routes.pop().name]
       }

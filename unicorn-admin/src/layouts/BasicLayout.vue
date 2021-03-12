@@ -20,7 +20,8 @@
 <script>
 import { mapState } from 'vuex'
 import { appConfig, httpConfig } from '@/config'
-import LayoutPro, { User } from '@unicorn-admin/layout-pro'
+import 'unicorn-admin-layout-pro/lib/basic-layout.css'
+import LayoutPro, { User } from 'unicorn-admin-layout-pro'
 export default {
   name: 'BasicLayout',
   components: {

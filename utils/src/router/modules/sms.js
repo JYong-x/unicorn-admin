@@ -20,9 +20,9 @@ const smsRouterMap = [
     name: 'MySchoolRoll',
     x: 1,
     y: 2,
-    icon: 'icon-xuejiyidonggongzuoliucheng',
     menuLevel: 1,
     meta: {
+      icon: 'xuejiyidonggongzuoliucheng',
       target: '_blank',
       requireAuth: true,
       permission: ['ViewMySchoolRollPage'],
@@ -34,7 +34,6 @@ const smsRouterMap = [
     name: 'SchoolRollInformation',
     x: 1,
     y: 3,
-    icon: 'icon-gerenxinxi7',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -48,9 +47,9 @@ const smsRouterMap = [
     name: 'SchoolRollManagement',
     x: 1,
     y: 4,
-    icon: 'icon-xuejiguanli1',
     menuLevel: 1,
     meta: {
+      icon: 'xuesheng',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -63,7 +62,6 @@ const smsRouterMap = [
     name: 'smsSchoolRollLibrary',
     x: 1,
     y: 5,
-    icon: 'icon-kucun1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -78,7 +76,6 @@ const smsRouterMap = [
     name: 'StudentNumberGeneratio',
     x: 1,
     y: 6,
-    icon: 'icon-shengchengmulu',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -93,7 +90,6 @@ const smsRouterMap = [
     name: 'StudentStatistics',
     x: 1,
     y: 7,
-    icon: 'icon-tongji2',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -108,7 +104,6 @@ const smsRouterMap = [
     name: 'ApplyManagement',
     x: 1,
     y: 8,
-    icon: 'icon-xuejiyidonggongzuoliucheng',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -123,9 +118,9 @@ const smsRouterMap = [
     name: 'RewardAndPunish',
     x: 1,
     y: 9,
-    icon: 'icon-change',
     menuLevel: 1,
     meta: {
+      icon: 'tubiaozhizuomoban-42',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -138,7 +133,6 @@ const smsRouterMap = [
     name: 'Punish',
     x: 1,
     y: 10,
-    icon: 'icon-punishment',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -153,9 +147,9 @@ const smsRouterMap = [
     name: 'GraduationReviewManagement',
     x: 1,
     y: 10,
-    icon: 'icon-chakan7',
     menuLevel: 1,
     meta: {
+      icon: 'zhidushencha',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -168,7 +162,6 @@ const smsRouterMap = [
     name: 'GraduationReview',
     x: 1,
     y: 12,
-    icon: 'icon-biye',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -183,7 +176,6 @@ const smsRouterMap = [
     name: 'StudentNumberGeneration',
     x: 1,
     y: 13,
-    icon: 'icon-zhuanxue',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -198,9 +190,9 @@ const smsRouterMap = [
     name: 'AcademicAdvisorManagement',
     x: 2,
     y: 1,
-    icon: 'icon-tongji2',
     menuLevel: 1,
     meta: {
+      icon: 'tongji',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -213,7 +205,6 @@ const smsRouterMap = [
     name: 'ChoiceAcademy',
     x: 2,
     y: 2,
-    icon: 'icon-fenpei',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -228,7 +219,6 @@ const smsRouterMap = [
     name: 'GuidanceDetails',
     x: 2,
     y: 4,
-    icon: 'icon-caozuorizhi1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -243,7 +233,6 @@ const smsRouterMap = [
     name: 'smsMyAcademicAdvisor',
     x: 2,
     y: 5,
-    icon: 'icon-kucun1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -258,7 +247,6 @@ const smsRouterMap = [
     name: 'MyAcademicGuidance',
     x: 2,
     y: 4,
-    icon: 'icon-zhidao',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -273,7 +261,7 @@ const smsRouterMap = [
     name: 'LargeClassShunting',
     x: 2,
     y: 5,
-    icon: 'icon-tongji2',
+    icon: 'tongji',
     menuLevel: 1,
     meta: {
       target: '_blank',
@@ -288,7 +276,6 @@ const smsRouterMap = [
     name: 'LargeClassManagement',
     x: 2,
     y: 6,
-    icon: 'icon-renqunfenliu',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -303,7 +290,6 @@ const smsRouterMap = [
     name: 'DiversionVolunteer',
     x: 2,
     y: 7,
-    icon: 'icon-renqunfenliu',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -318,9 +304,9 @@ const smsRouterMap = [
     name: 'ShuntingSelect',
     x: 2,
     y: 8,
-    icon: 'icon-shuangren',
     menuLevel: 1,
     meta: {
+      icon: 'shuangren',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -333,7 +319,6 @@ const smsRouterMap = [
     name: 'LargeClassReleaseReview',
     x: 2,
     y: 9,
-    icon: 'icon-baogaoyishenhe',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -348,9 +333,9 @@ const smsRouterMap = [
     name: 'OverseasExchangeManagement',
     x: 4,
     y: 4,
-    icon: 'icon-zhuanxue',
     menuLevel: 1,
     meta: {
+      icon: 'zhuanxue',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -363,7 +348,6 @@ const smsRouterMap = [
     name: 'OverseasExchange',
     x: 4,
     y: 5,
-    icon: 'icon-chuguo',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -379,7 +363,6 @@ const smsRouterMap = [
     name: 'StudentOverseasExchange',
     x: 4,
     y: 6,
-    icon: 'icon-chuguo',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -394,9 +377,9 @@ const smsRouterMap = [
     name: 'ShortTermExchange',
     x: 4,
     y: 7,
-    icon: 'icon-fankui',
     menuLevel: 1,
     meta: {
+      icon: 'fankui',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -409,7 +392,6 @@ const smsRouterMap = [
     name: 'ShortTermExchangeProgram',
     x: 4,
     y: 7,
-    icon: 'icon-fankui',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -424,7 +406,6 @@ const smsRouterMap = [
     name: 'ShortTermExchangeCertManagement',
     x: 4,
     y: 8,
-    icon: 'icon-fankui',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -439,7 +420,6 @@ const smsRouterMap = [
     name: 'ShortTermExchangeCreditRecognition',
     x: 4,
     y: 9,
-    icon: 'icon-renzheng3',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -454,9 +434,9 @@ const smsRouterMap = [
     name: 'PostgraduateTutor',
     x: 4,
     y: 10,
-    icon: 'icon-daoshi1',
     menuLevel: 1,
     meta: {
+      icon: 'daoshi1',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -469,7 +449,6 @@ const smsRouterMap = [
     name: 'PostgraduateChoiceAcademy',
     x: 4,
     y: 11,
-    icon: 'icon-daoshiguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -484,7 +463,6 @@ const smsRouterMap = [
     name: 'PostgraduateWishFil',
     x: 4,
     y: 12,
-    icon: 'icon-daoshi1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -499,7 +477,6 @@ const smsRouterMap = [
     name: 'GuidePostgraduateSelect',
     x: 4,
     y: 13,
-    icon: 'icon-zhaopin2',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -514,9 +491,9 @@ const smsRouterMap = [
     name: 'smsReviewManagement',
     x: 3,
     y: 1,
-    icon: 'icon-tongji2',
     menuLevel: 1,
     meta: {
+      icon: 'tongji',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -529,7 +506,6 @@ const smsRouterMap = [
     name: 'ReviewApply',
     x: 3,
     y: 2,
-    icon: 'icon-xuqiupingshen',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -544,7 +520,6 @@ const smsRouterMap = [
     name: 'SchoolRollChangeReview',
     x: 3,
     y: 3,
-    icon: 'icon-tongji2',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -559,7 +534,6 @@ const smsRouterMap = [
     name: 'DocumentNumberManagement',
     x: 3,
     y: 4,
-    icon: 'icon-moban',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -574,7 +548,6 @@ const smsRouterMap = [
     name: 'SchoolWorkWarn',
     x: 3,
     y: 5,
-    icon: 'icon-jingshimian1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -589,7 +562,6 @@ const smsRouterMap = [
     name: 'ChangeWarningExceedSchoolYearLimit',
     x: 3,
     y: 6,
-    icon: 'icon-xuqiupingshen',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -604,7 +576,6 @@ const smsRouterMap = [
     name: 'ChangeApplicationDescriptionList',
     x: 3,
     y: 7,
-    icon: 'icon-shuoming',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -619,7 +590,6 @@ const smsRouterMap = [
     name: 'ChangeMajorSet',
     x: 3,
     y: 8,
-    icon: 'icon-qiehuanfanxiangnizhuanmianxing',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -634,9 +604,9 @@ const smsRouterMap = [
     name: 'CheckInAndRegisterManagement',
     x: 3,
     y: 9,
-    icon: 'icon-confirm',
     menuLevel: 1,
     meta: {
+      icon: 'confirm',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -649,7 +619,6 @@ const smsRouterMap = [
     name: 'StudentRegister',
     x: 3,
     y: 10,
-    icon: 'icon-kecheng8',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -664,7 +633,6 @@ const smsRouterMap = [
     name: 'StudentEnrolment',
     x: 3,
     y: 11,
-    icon: 'icon-baogaoyishenhe',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -679,9 +647,9 @@ const smsRouterMap = [
     name: 'StudentLabelManagement',
     x: 4,
     y: 1,
-    icon: 'icon-zhiwumingcheng',
     menuLevel: 1,
     meta: {
+      icon: 'zhiwumingcheng',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -694,7 +662,6 @@ const smsRouterMap = [
     name: 'StudentLabelSetting',
     x: 4,
     y: 2,
-    icon: 'icon-zhiwumingcheng',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -709,7 +676,6 @@ const smsRouterMap = [
     name: 'StudentLabelPermission',
     x: 4,
     y: 3,
-    icon: 'icon-xitongguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -724,9 +690,9 @@ const smsRouterMap = [
     name: 'smsConsole',
     x: 5,
     y: 1,
-    icon: 'icon-zhiwumingcheng',
     menuLevel: 1,
     meta: {
+      icon: 'guanli',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -739,7 +705,6 @@ const smsRouterMap = [
     name: 'RuleList',
     x: 5,
     y: 2,
-    icon: 'icon-zhaiyao',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -754,7 +719,6 @@ const smsRouterMap = [
     name: 'smsCategory',
     x: 5,
     y: 2,
-    icon: 'icon-msnui-module',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -769,7 +733,6 @@ const smsRouterMap = [
     name: 'LogList',
     x: 5,
     y: 3,
-    icon: 'icon-server_05',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -784,7 +747,6 @@ const smsRouterMap = [
     name: 'smsPermissionManagement',
     x: 5,
     y: 4,
-    icon: 'icon-zhaopin',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -799,7 +761,6 @@ const smsRouterMap = [
     name: 'smsRoleManager',
     x: 5,
     y: 5,
-    icon: 'icon-iconfont-jiaoshi',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -814,7 +775,6 @@ const smsRouterMap = [
     name: 'smsUserRoleManager',
     x: 5,
     y: 6,
-    icon: 'icon-yonghu',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -829,7 +789,6 @@ const smsRouterMap = [
     name: 'CounselorSetup',
     x: 5,
     y: 7,
-    icon: 'icon-iconfont-jiaoshi',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -845,7 +804,6 @@ const smsRouterMap = [
     name: 'smsTimeSet',
     x: 5,
     y: 8,
-    icon: 'icon-zhaiyao',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -860,7 +818,6 @@ const smsRouterMap = [
     name: 'ControlSwitch',
     x: 5,
     y: 9,
-    icon: 'icon-jindu12',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -875,7 +832,6 @@ const smsRouterMap = [
     name: 'smsWorkFlowManage',
     x: 5,
     y: 10,
-    icon: 'icon-zhaiyao',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -890,7 +846,6 @@ const smsRouterMap = [
     name: 'EditBulletinBoard',
     x: 5,
     y: 11,
-    icon: 'icon-xiugai4',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -905,7 +860,6 @@ const smsRouterMap = [
     name: 'UploadTemplate',
     x: 5,
     y: 12,
-    icon: 'icon-tijiao',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -920,7 +874,6 @@ const smsRouterMap = [
     name: 'AdministrativeClassManagement',
     x: 5,
     y: 13,
-    icon: 'icon-xuejiguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -935,7 +888,6 @@ const smsRouterMap = [
     name: 'ProfessionalManagement',
     x: 5,
     y: 14,
-    icon: 'icon-xiangmuguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -951,7 +903,7 @@ export default {
   name: '学籍管理',
   code: 'sms',
   namespace: 'KR_SMS',
-  icon: 'icon-gerenxinxi7',
+  icon: 'gerenxinxi7',
   baseUrl: '/sms',
   isOld: true,
   originRouters: smsRouterMap

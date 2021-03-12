@@ -9,9 +9,9 @@ const tamsRouterMap = [
     name: 'tamsHome',
     x: 1,
     y: 1,
-    icon: 'icon-zhuye',
     menuLevel: 1,
     meta: {
+      icon: 'home',
       target: '_blank',
       title: '主页'
     }
@@ -21,9 +21,9 @@ const tamsRouterMap = [
     name: 'ClassList',
     x: 1,
     y: 2,
-    icon: 'icon-xiangmuguanli',
     menuLevel: 1,
     meta: {
+      icon: 'xiangmuguanli',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_TAMS',
@@ -36,9 +36,9 @@ const tamsRouterMap = [
     name: 'TaList',
     x: 1,
     y: 3,
-    icon: 'icon-xiangmuguanli',
     menuLevel: 1,
     meta: {
+      icon: 'xiangmuguanli',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_TAMS',
@@ -51,9 +51,9 @@ const tamsRouterMap = [
     name: 'tamsFundsManagement',
     x: 1,
     y: 4,
-    icon: 'icon-xiangmuguanli',
     menuLevel: 1,
     meta: {
+      icon: 'xiangmuguanli',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_TAMS',
@@ -66,9 +66,9 @@ const tamsRouterMap = [
     name: 'Event',
     x: 1,
     y: 5,
-    icon: 'icon-bumen1',
     menuLevel: 1,
     meta: {
+      icon: 'bumen1',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_TAMS',
@@ -81,9 +81,9 @@ const tamsRouterMap = [
     name: 'TrainingConsole',
     x: 1,
     y: 5,
-    icon: 'icon-kecheng8',
     menuLevel: 1,
     meta: {
+      icon: 'kecheng8',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_TAMS',
@@ -97,7 +97,6 @@ const tamsRouterMap = [
     name: 'SelectTrainingCourse',
     x: 1,
     y: 6,
-    icon: 'icon-zhuanjia',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -112,7 +111,6 @@ const tamsRouterMap = [
     name: 'TrainInfoTableList',
     x: 1,
     y: 7,
-    icon: 'icon-peixun3',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -127,7 +125,6 @@ const tamsRouterMap = [
     name: 'TrainingCourseSeatDistribution',
     x: 1,
     y: 8,
-    icon: 'icon-peixun-copy',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -142,7 +139,6 @@ const tamsRouterMap = [
     name: 'TrainingTeachingAssistantsResultPage',
     x: 1,
     y: 9,
-    icon: 'icon-peixun2',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -157,9 +153,9 @@ const tamsRouterMap = [
     name: 'tpmsStatisticManage',
     x: 3,
     y: 1,
-    icon: 'icon-tongji',
     menuLevel: 1,
     meta: {
+      icon: 'tongji',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_TAMS',
@@ -172,7 +168,6 @@ const tamsRouterMap = [
     name: 'ActivityCount',
     x: 3,
     y: 2,
-    icon: 'icon-xiangmuguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -187,7 +182,6 @@ const tamsRouterMap = [
     name: 'ClassStatistics',
     x: 3,
     y: 3,
-    icon: 'icon-xiangmuguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -202,7 +196,6 @@ const tamsRouterMap = [
     name: 'AssistantStatistics',
     x: 3,
     y: 4,
-    icon: 'icon-xiangmuguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -218,9 +211,9 @@ const tamsRouterMap = [
     name: 'tamsReview',
     x: 2,
     y: 1,
-    icon: 'icon-pingjia3',
     menuLevel: 1,
     meta: {
+      icon: 'shenhe1',
       target: '_blank',
       title: '评审'
     }
@@ -230,7 +223,6 @@ const tamsRouterMap = [
     name: 'ReviewQuota',
     x: 2,
     y: 2,
-    icon: 'icon-zhuanjiaku',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -245,7 +237,6 @@ const tamsRouterMap = [
     name: 'ConfigureReviewTeacher',
     x: 2,
     y: 3,
-    icon: 'icon-xiugai',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -260,7 +251,6 @@ const tamsRouterMap = [
     name: 'ReviewPage',
     x: 2,
     y: 4,
-    icon: 'icon-xuqiupingshen',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -275,7 +265,6 @@ const tamsRouterMap = [
     name: 'TAIndicatorEntry',
     x: 2,
     y: 5,
-    icon: 'icon-pingjia4',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -291,7 +280,6 @@ const tamsRouterMap = [
     name: 'TAEvaluationInformation',
     x: 2,
     y: 6,
-    icon: 'icon-xiangqingchakan',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -306,7 +294,6 @@ const tamsRouterMap = [
     name: 'ExcAssistantRegistrationSet',
     x: 2,
     y: 7,
-    icon: 'icon-xueshengguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -321,9 +308,9 @@ const tamsRouterMap = [
     name: 'Review',
     x: 4,
     y: 1,
-    icon: 'icon-xiangmuguanli',
     menuLevel: 1,
     meta: {
+      icon: 'guanli',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_TAMS',
@@ -336,7 +323,6 @@ const tamsRouterMap = [
     name: 'tamsConsole',
     x: 4,
     y: 2,
-    icon: 'icon-msnui-module',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -351,7 +337,6 @@ const tamsRouterMap = [
     name: 'tamsRoleManager',
     x: 4,
     y: 3,
-    icon: 'icon-iconfont-jiaoshi',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -366,7 +351,6 @@ const tamsRouterMap = [
     name: 'tamsUserRoleManager',
     x: 4,
     y: 4,
-    icon: 'icon-yonghu6',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -381,7 +365,6 @@ const tamsRouterMap = [
     name: 'tamsPermissionManagement',
     x: 4,
     y: 5,
-    icon: 'icon-zhaopin',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -396,7 +379,6 @@ const tamsRouterMap = [
     name: 'TermManager',
     x: 4,
     y: 6,
-    icon: 'icon-xiangqingchakan',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -411,7 +393,6 @@ const tamsRouterMap = [
     name: 'tamsWorkFlowManage',
     x: 4,
     y: 7,
-    icon: 'icon-xueshengguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -426,7 +407,6 @@ const tamsRouterMap = [
     name: 'TimeSettings',
     x: 4,
     y: 8,
-    icon: 'icon-xiangqingchakan',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -441,7 +421,6 @@ const tamsRouterMap = [
     name: 'StudentNoticeInfo',
     x: 4,
     y: 9,
-    icon: 'icon-fabu',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -457,7 +436,6 @@ const tamsRouterMap = [
     name: 'SyncInfo',
     x: 4,
     y: 10,
-    icon: 'icon-xiangqingchakan',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -472,7 +450,6 @@ const tamsRouterMap = [
     name: 'BlackList',
     x: 4,
     y: 11,
-    icon: 'icon-xueshengguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -488,7 +465,7 @@ export default {
   name: '助教管理',
   code: 'tams',
   namespace: 'KR_TAMS',
-  icon: 'icon-jiaoshixinxi',
+  icon: 'jiaoshixinxi',
   baseUrl: '/tams',
   isOld: true,
   originRouters: tamsRouterMap

@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+axios.defaults.withCredentials = true
+
 export default function (options, authUtils) {
   const { storage, getLocalToken, getLocalRefreshToken, removeAuth, getAuth, setUserInfo, setAuth } = authUtils
 
@@ -109,7 +111,6 @@ export default function (options, authUtils) {
         url: `${config.logoutUri}`,
         method: 'GET',
         headers: {
-          Accept: 'application/json',
           Authorization: `Bearer ${token}`
         },
       }).then(res => {
@@ -121,11 +122,10 @@ export default function (options, authUtils) {
               redirect_uri: config.useCas ? config.redirect_cas_uri : config.redirect_uri
             },
             headers: {
-              Accept: 'application/json',
               Authorization: `Bearer ${token}`
             },
           }).then(() => {
-            config.useCas ? casLoginRedirect() : loginRedirect()
+            config.useCas ? casLoginRedirect() : logoutRedirect(options, token)
             resolve()
           })
         }
@@ -135,6 +135,12 @@ export default function (options, authUtils) {
   // function refreshToken(config = options) {
   //   return _refreshToken(config)
   // }
+
+  // 登出后返回地址
+  function logoutRedirect(config = options, token) {
+    const url =`${config.authHost}/authserver/logout?access_token=${token}&returnTo=http://${config.appUrl}`
+    window.location.href = url
+  }
 
 // 跳转统一登录地址
   function loginRedirect(config = options) {

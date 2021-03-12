@@ -8,9 +8,9 @@ const cetRouterMap = [
     name: 'SignUp',
     x: 1,
     y: 2,
-    icon: 'icon-xuejiguanli1',
     menuLevel: 1,
     meta: {
+      icon: 'baoming',
       target: '_blank',
       title: '报名'
     }
@@ -20,7 +20,6 @@ const cetRouterMap = [
     name: 'InvigilatorApplicant',
     x: 1,
     y: 2,
-    icon: 'icon-shenqing6',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -35,7 +34,6 @@ const cetRouterMap = [
     name: 'CetApplyPagePermission',
     x: 1,
     y: 2,
-    icon: 'icon-shenqing6',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -50,9 +48,9 @@ const cetRouterMap = [
     name: 'mange',
     x: 2,
     y: 1,
-    icon: 'icon-xuejiguanli1',
     menuLevel: 1,
     meta: {
+      icon: 'guanli',
       target: '_blank',
       title: '管理'
     }
@@ -62,7 +60,6 @@ const cetRouterMap = [
     name: 'SetTimeInfoPage',
     x: 2,
     y: 2,
-    icon: 'icon-shijian2',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -77,7 +74,6 @@ const cetRouterMap = [
     name: 'examRoleManagerPage',
     x: 2,
     y: 3,
-    icon: 'icon-iconfont-jiaoshi',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -92,7 +88,6 @@ const cetRouterMap = [
     name: 'examUserRoleManager',
     x: 2,
     y: 4,
-    icon: 'icon-yonghu6',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -107,7 +102,6 @@ const cetRouterMap = [
     name: 'examPermissionManagementPage',
     x: 2,
     y: 5,
-    icon: 'icon-zhaopin',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -122,7 +116,6 @@ const cetRouterMap = [
     name: 'SystemParameter',
     x: 2,
     y: 6,
-    icon: 'icon-msnui-module',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -137,7 +130,6 @@ const cetRouterMap = [
     name: 'PermissionManagementPage',
     x: 2,
     y: 5,
-    icon: 'icon-caozuorizhi',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -152,7 +144,6 @@ const cetRouterMap = [
     x: 2,
     y: 6,
     name: 'BaseInfo',
-    icon: 'icon-chushihua',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -167,7 +158,6 @@ const cetRouterMap = [
     x: 2,
     y: 7,
     name: 'SyncUserInfo',
-    icon: 'icon-shijiantongbu',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -182,7 +172,6 @@ const cetRouterMap = [
     x: 2,
     y: 8,
     name: 'GradeImport',
-    icon: 'icon-xiangmujieduan',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -197,9 +186,9 @@ const cetRouterMap = [
     name: 'Proctor',
     x: 3,
     y: 1,
-    icon: 'icon-xuejiguanli1',
     menuLevel: 1,
     meta: {
+      icon: 'benkexiaokaojiankaorenyuanbaoming',
       target: '_blank',
       title: '监考'
     }
@@ -209,7 +198,6 @@ const cetRouterMap = [
     name: 'InvigilatorPreset',
     x: 3,
     y: 2,
-    icon: 'icon-c-apply',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -224,7 +212,6 @@ const cetRouterMap = [
     name: 'examInvigilatorManagement',
     x: 3,
     y: 3,
-    icon: 'icon-zhaopin',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -239,7 +226,6 @@ const cetRouterMap = [
     name: 'Timetable',
     x: 3,
     y: 4,
-    icon: 'icon-jindu4',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -254,7 +240,6 @@ const cetRouterMap = [
     name: 'SignCheckPage',
     x: 3,
     y: 5,
-    icon: 'icon-jindu13',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -269,7 +254,6 @@ const cetRouterMap = [
     name: 'CollegeInvigilatorPage',
     x: 3,
     y: 6,
-    icon: 'icon-academy',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -284,7 +268,6 @@ const cetRouterMap = [
     name: 'PatrolExam',
     x: 3,
     y: 6,
-    icon: 'icon-zhiwumingcheng',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -299,7 +282,6 @@ const cetRouterMap = [
     x: 3,
     y: 7,
     name: 'StaffMember',
-    icon: 'icon-bd_niuren',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -314,9 +296,9 @@ const cetRouterMap = [
     name: 'other',
     x: 4,
     y: 1,
-    icon: 'icon-xuejiguanli1',
     menuLevel: 1,
     meta: {
+      icon: 'qita',
       target: '_blank',
       title: '其他'
     }
@@ -326,7 +308,6 @@ const cetRouterMap = [
     name: 'ExmStudent',
     x: 4,
     y: 2,
-    icon: 'icon-jiaoxueziyuan',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -341,7 +322,6 @@ const cetRouterMap = [
     name: 'ApplicantInfoPage',
     x: 4,
     y: 3,
-    icon: 'icon-rizhi1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -356,7 +336,6 @@ const cetRouterMap = [
     name: 'ExamRoom',
     x: 4,
     y: 4,
-    icon: 'icon-dayin1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -371,7 +350,6 @@ const cetRouterMap = [
     name: 'GradeView',
     x: 4,
     y: 5,
-    icon: 'icon-chakan7',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -386,7 +364,6 @@ const cetRouterMap = [
     name: 'examCollegeInvigilatorPage',
     x: 4,
     y: 6,
-    icon: 'icon-youxiang1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -402,7 +379,7 @@ export default {
   name: '四六级考试',
   code: 'cet',
   namespace: 'KR_EXM',
-  icon: 'icon-svgmoban58',
+  icon: 'svgmoban58',
   baseUrl: '/cet',
   isOld: true,
   originRouters: cetRouterMap
