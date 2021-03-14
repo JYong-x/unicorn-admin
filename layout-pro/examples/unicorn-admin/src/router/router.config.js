@@ -1,6 +1,6 @@
 import { appConfig } from '@/config'
 import { BasicLayout, RouteView } from '@/layouts'
-
+import { Login, Exception404, Redirect } from 'unicorn-admin-layout-pro'
 const { name, code, namespace, icon } = appConfig
 
 /**
@@ -78,7 +78,7 @@ export const constantRouters = [
     children: [
       {
         path: '/redirect/:path(.*)',
-        component: () => import('@/views/constant/redirect')
+        component: Redirect
       }
     ]
   },
@@ -86,23 +86,24 @@ export const constantRouters = [
     path: '/login',
     name: 'login',
     hidden: true,
-    component: () => import('@/views/constant/login/login')
+    component: Login
   },
   {
     path: '/token-index',
     name: 'tokenIndex',
-    hidden: true,
-    component: () => import('@/views/constant/login/token-index')
+    redirect: '/login',
+    hidden: true
   },
   {
     path: '/cas',
     name: 'cas',
-    hidden: true,
-    component: () => import('@/views/constant/login/cas')
+    redirect: '/login',
+    hidden: true
   },
   {
     path: '/404',
-    component: () => import(/* webpackChunkName: "fail" */ '@/views/constant/exception/404')
+    name: '404',
+    component: Exception404
   }
 ]
 

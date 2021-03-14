@@ -1,4 +1,4 @@
-import utils from '../utils'
+import { getConfig } from '../utils/utils'
 import auth from './auth'
 import request from './request'
 
@@ -12,7 +12,7 @@ const LoginUtils = {
       storageNamespace: options.storageNamespace || 'U'
     }
 
-    const _config = utils.getConfig(_options)
+    const _config = getConfig(_options)
 
     const _auth = auth(_options)
 

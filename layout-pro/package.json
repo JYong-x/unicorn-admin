@@ -1,6 +1,6 @@
 {
   "name": "unicorn-admin-layout-pro",
-  "version": "0.0.1-6",
+  "version": "0.0.1-10",
   "author": "jinyong <x-jinyong@hotmail.com>",
   "private": false,
   "main": "./lib/basic-layout.umd.min.js",

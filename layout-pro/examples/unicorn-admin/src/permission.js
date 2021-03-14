@@ -8,7 +8,7 @@ import 'nprogress/nprogress.css'
 
 NProgress.configure({ showSpinner: false, color: '#e6f7ff' })
 
-const whiteList = ['login', 'tokenIndex', 'cas']
+const whiteList = ['login', 'tokenIndex', 'cas', '404']
 const defaultRoutePath = '/'
 const loginRoutePath = '/login'
 

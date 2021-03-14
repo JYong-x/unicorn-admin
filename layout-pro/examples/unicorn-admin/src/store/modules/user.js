@@ -23,7 +23,9 @@ const user = {
   },
 
   actions: {
+    Login ({ commit }) {
 
+    },
     // 获取用户信息
     GetUserInfo ({ commit }) {
       return new Promise((resolve, reject) => {

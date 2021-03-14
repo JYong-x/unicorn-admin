@@ -4,12 +4,12 @@ import router from './router'
 import store from './store'
 
 import './permission'
-import { httpConfig } from '@/config'
+import config from '@/config'
 // import '@/styles/index.scss'
 import '@/plugins/antd'
 import '@/components/base'
-// import '@/utils/request'
-// import '@/api'
+import '@/utils/request'
+import '@/api'
 // import '@/directive'
 // import '@/utils/index'
 // import '@/utils/use'
@@ -23,8 +23,7 @@ Vue.config.productionTip = false
 // Vue.prototype.$loginUtils = loginUtils
 // console.log(Vue.prototype.$loginUtils)
 Vue.use(loginUtils,
-  { ...httpConfig,
-    storageNamespace: 'CQUEDU_',
+  { ...config,
     env: process.env.NODE_ENV,
     name: 'loginUtils',
     router })

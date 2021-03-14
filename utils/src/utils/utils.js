@@ -6,11 +6,11 @@ const envs = {
   prod
 }
 
-function getConfig (config) {
+export function getConfig (config) {
   return {...defaultUri(config.env), ...config}
 }
 
-function defaultUri(env) {
+export function defaultUri(env) {
   const envConfig = envs[env]
   if (!envConfig) return {}
   return {
@@ -42,6 +42,20 @@ function defaultUri(env) {
   }
 }
 
-export default {
-  getConfig
+// 去除无用参数（'undefined','null','NAN'）
+export function removeUselessParams (param) {
+  if (!param) return ''
+  let result
+  if (Array.isArray(param)) {
+    result = param.filter(p => p !== undefined && p !== null)
+  } else if (Object.prototype.toString.call(param) === '[object Object]') {
+    result = {}
+    for (const key in param) {
+      if (!param[key]) {
+        result[key] = param[key]
+      }
+    }
+  }
+
+  return result
 }

@@ -4,7 +4,10 @@
 
 <script>
 export default {
-  name: 'Page1'
+  name: 'Page1',
+  created () {
+    this.$api.finder.examType()
+  }
 }
 </script>
 

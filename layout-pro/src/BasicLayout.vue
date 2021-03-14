@@ -212,7 +212,6 @@ export default {
             selfSystem: this.selfSystem,
             appRoot: this.config.appRoot
           })
-          console.log(this.menus, systems, this.config)
         })
       },
       immediate: true

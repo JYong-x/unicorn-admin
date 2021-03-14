@@ -39,7 +39,6 @@ function defaultUri(env) {
 
 export function httpUri (config) {
   const result = {...defaultUri(config.env), ...config}
-  console.log(result)
   return result
 }
 

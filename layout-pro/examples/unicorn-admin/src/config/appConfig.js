@@ -3,7 +3,8 @@ const appConfig = {
   code: 'exam',
   namespace: 'KR_EXAM',
   icon: 'kaoshi1',
-  visibleSystems: ['cm', 'sms', 'timetable', 'enroll', 'exam', 'cet', 'tpms', 'tams', 'srtp', 'trpms']
+  visibleSystems: ['cm', 'sms', 'timetable', 'enroll', 'exam', 'cet', 'tpms', 'tams', 'srtp', 'trpms'],
+  storageNamespace: 'CQUEDU_'
 }
 
 module.exports = appConfig
