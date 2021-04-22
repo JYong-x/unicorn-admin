@@ -1,5 +1,7 @@
-const teachEvaUrl = '/portal'
-const testUrl = '/portal'
+import { httpConfig } from '@/config'
+
+const teachEvaUrl = httpConfig.appRoot + '/teach/portal'
+const testUrl = httpConfig.appRoot + '/test/portal'
 const teachEvaRouterMap = [
   {
     path: teachEvaUrl,
@@ -424,7 +426,5 @@ export default {
   code: 'tams',
   namespace: 'KR_TEACH',
   icon: 'icon-jiaoshixinxi',
-  baseUrl: '/teach',
-  isOld: true,
   originRouters: teachEvaRouterMap
 }

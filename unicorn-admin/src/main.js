@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-
+import UniConfig from 'uniConfig'
 import './permission'
 import { httpConfig } from '@/config'
 // import '@/styles/index.scss'
@@ -15,9 +15,7 @@ import '@/plugins/antd'
 // import '@/utils/use'
 // import { Dialog } from '@/components'
 
-import { loginUtils } from 'unicorn-admin-utils'
-// const loginUtils = login({ ...httpConfig, namespace: 'CQUEDU', env: process.env.NODE_ENV })
-// console.log(loginUtils)
+import { loginUtils } from '@unicorn-admin/utils'
 
 import VueStorage from 'vue-ls'
 const storageOptions = {

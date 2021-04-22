@@ -39,13 +39,14 @@ module.exports = {
     config.plugins = [...config.plugins, ...plugins]
 
     // 配置externals,防止打包到bundle中，用cdn形式引入
-    // config.externals = {
-    //   vue: 'Vue',
-    //   'element-ui': 'ELEMENT',
-    //   'vue-router': 'VueRouter',
-    //   vuex: 'Vuex',
-    //   axios: 'axios',
-    // }
+    config.externals = {
+      uniConfig: 'UniConfig',
+      // vue: 'Vue',
+      // 'element-ui': 'ELEMENT',
+      // 'vue-router': 'VueRouter',
+      // vuex: 'Vuex',
+      // axios: 'axios',
+    }
   },
 
   chainWebpack: (config) => {
@@ -54,8 +55,8 @@ module.exports = {
 
     // 添加别名
     config.resolve.alias
-      // .set('@unicorn-admin/layout-pro', resolve('../layout-pro/src'))
-      // .set('@unicorn-admin/utils', resolve('../utils/src'))
+      .set('@unicorn-admin/layout-pro', resolve('../layout-pro/src'))
+      .set('@unicorn-admin/utils', resolve('../utils/src'))
       .set('vue$', 'vue/dist/vue.esm.js')
       .set('@', resolve('src'))
       .set('api', resolve('src/api'))
@@ -112,26 +113,22 @@ module.exports = {
       ])
     }
 
-    // const cdn = {
-    //   // 访问https://unpkg.com/element-ui/lib/theme-chalk/index.css获取最新版本
-    //   css: ['//unpkg.com/element-ui@2.10.1/lib/theme-chalk/index.css'],
-    //   js: [
-    //     '//unpkg.com/vue@2.6.10/dist/vue.min.js', // 访问https://unpkg.com/vue/dist/vue.min.js获取最新版本
-    //     '//unpkg.com/vue-router@3.0.6/dist/vue-router.min.js',
-    //     '//unpkg.com/vuex@3.1.1/dist/vuex.min.js',
-    //     '//unpkg.com/axios@0.19.0/dist/axios.min.js',
-    //     '//unpkg.com/element-ui@2.10.1/lib/index.js',
-    //   ],
-    // }
+    const cdn = {
+      // 访问https://unpkg.com/element-ui/lib/theme-chalk/index.css获取最新版本
+      css: [],
+      js: [
+        `/config/index.js`
+      ],
+    }
     // 如果使用多页面打包，使用vue inspect --plugins查看html是否在结果数组中
-    // config.plugin('html').tap((args) => {
-    //   // html中添加cdn
-    //   args[0].cdn = cdn
-    //
-    //   // 修复 Lazy loading routes Error
-    //   args[0].chunksSortMode = 'none'
-    //   return args
-    // })
+    config.plugin('html').tap((args) => {
+      // html中添加cdn
+      args[0].cdn = cdn
+
+      // 修复 Lazy loading routes Error
+      args[0].chunksSortMode = 'none'
+      return args
+    })
 
     // 删除 moment 除 zh-cn 中文包外的其它语言包，无需在代码中手动引入 zh-cn 语言包。
     config.plugin('ignore').use(new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn$/))

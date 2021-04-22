@@ -12,7 +12,7 @@ import enroll from './enroll'
 import tpms from './tpms'
 import trpms from './trpms'
 
-export default [
+export {
   cm,
   // enroll,
   cet,
@@ -26,4 +26,4 @@ export default [
   enroll,
   tpms,
   trpms
-]
+}

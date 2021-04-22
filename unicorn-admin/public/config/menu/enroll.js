@@ -1,7 +1,9 @@
+import { httpConfig } from '@/config'
 /**
  * 选课权限路由
  * @type { *[] }
  */
+const enrlUrl = httpConfig.appRoot + `/enroll`
 export const enrollRouterMap = [
   {
     path: '/',
@@ -11,13 +13,14 @@ export const enrollRouterMap = [
       target: '_blank', title: '首页' },
     children: [
       {
-        path: '/Home',
+        path: enrlUrl + '/Home',
+        absolutePath: enrlUrl + '/Home',
         name: 'Home',
         x: 1,
         y: 1,
         meta: {
           target: '_blank',
-          icon: 'home',
+          icon: 'fa icon-zhuye',
           hiddenTitleInPage: true,
           hiddenHeaderContent: true,
           namespace: 'KR_ENRL',
@@ -26,14 +29,15 @@ export const enrollRouterMap = [
         }
       },
       {
-        path: '/CourseSetting',
+        path: enrlUrl + '/CourseSetting',
+        absolutePath: enrlUrl + '/CourseSetting',
         name: 'CourseSetting',
         x: 2,
         y: 1,
         meta: {
           target: '_blank',
           'requireAuth': true,
-          icon: 'xuanke1',
+          icon: 'icon-xuanke1',
           permission: ['ViewCourseEnrlSettingPage'],
           namespace: 'KR_ENRL',
           title: '选课设置'
@@ -41,28 +45,33 @@ export const enrollRouterMap = [
         children: [
           {
             path: '/CourseSelectBatch',
+            absolutePath: enrlUrl + '/CourseSelectBatch',
             name: 'CourseSelectBatch',
             menuLevel: 2,
             meta: {
               target: '_blank',
               'requireAuth': true,
+              icon: 'icon-yewumokuai',
               permission: ['ViewCourseEnrlBatchPage'],
               namespace: 'KR_ENRL',
               title: '选课批次'
             }
           },
           {
-            path: '/BatchInfo',
+            path: enrlUrl + '/BatchInfo',
+            absolutePath: enrlUrl + '/BatchInfo',
             name: 'BatchInfo',
             meta: {
               target: '_blank',
+              icon: 'icon-jindu12',
               permission: ['ViewCourseBatchInfoPage'],
               namespace: 'KR_ENRL',
               title: '选课参数'
             }
           },
           {
-            path: '/ApplicationPeriod',
+            path: enrlUrl + '/ApplicationPeriod',
+            absolutePath: enrlUrl + '/ApplicationPeriod',
             name: 'ApplyConfig',
             redirect: '/ApplicationPeriod',
             meta: {
@@ -75,7 +84,8 @@ export const enrollRouterMap = [
             },
             children: [
               {
-                path:  '/ApplicationPeriod',
+                path: enrlUrl + '/ApplicationPeriod',
+                absolutePath: enrlUrl + '/ApplicationPeriod',
                 name: 'ApplicationPeriod',
                 meta: {
                   target: '_blank',
@@ -86,12 +96,14 @@ export const enrollRouterMap = [
                 }
               },
               {
-                path:  '/ApplyConfiguration',
+                path: enrlUrl + '/ApplyConfiguration',
+                absolutePath: enrlUrl + '/ApplyConfiguration',
                 name: 'ApplyConfiguration',
                 meta: {
                   target: '_blank',
                   // 'requireAuth': true,
                   // permission: ['ViewApplyConfigurationPage'],
+                  icon: 'icon-jindu12',
                   namespace: 'KR_ENRL',
                   title: '申请设置'
                 }
@@ -99,17 +111,20 @@ export const enrollRouterMap = [
             ]
           },
           {
-            path:  '/ClassBind',
+            path: enrlUrl + '/ClassBind',
+            absolutePath: enrlUrl + '/ClassBind',
             name: 'ClassBind',
             meta: {
               target: '_blank', 'requireAuth': true,
+              icon: 'fa fa-user',
               permission: ['ViewClassBind'],
               namespace: 'KR_ENRL',
               title: '教学班绑定'
             }
           },
           {
-            path:  '/RefreshRepairRules',
+            path: enrlUrl + '/RefreshRepairRules',
+            absolutePath: enrlUrl + '/RefreshRepairRules',
             name: 'RefreshRepairRules',
             meta: {
               target: '_blank', 'requireAuth': true,
@@ -119,7 +134,8 @@ export const enrollRouterMap = [
             }
           },
           {
-            path:  '/EnglishLevelSetting',
+            path: enrlUrl + '/EnglishLevelSetting',
+            absolutePath: enrlUrl + '/EnglishLevelSetting',
             name: 'EnglishLevelSetting',
             meta: {
               target: '_blank', 'requireAuth': true,
@@ -131,21 +147,22 @@ export const enrollRouterMap = [
         ]
       },
       {
-        path:  '/CourseEnrollManage',
+        path: enrlUrl + '/CourseEnrollManage',
+        absolutePath: enrlUrl + '/CourseEnrollManage',
         name: 'CourseEnrollManage',
         x: 3,
         y: 1,
         meta: {
           target: '_blank', 'requireAuth': true,
-          icon: 'chakan7',
+          icon: 'icon-chakan7',
           permission: ['ViewCourseEnrollManagePage'],
           namespace: 'KR_ENRL',
           title: '选课管理'
         },
         children: [
           {
-            path:  '/CourseDropTotal',
-            absolutePath:  '/CourseDropTotal',
+            path: enrlUrl + '/CourseDropTotal',
+            absolutePath: enrlUrl + '/CourseDropTotal',
             name: 'CourseDropTotal',
             meta: {
               target: '_blank', 'requireAuth': true,
@@ -155,8 +172,8 @@ export const enrollRouterMap = [
             }
           },
           {
-            path:  '/CourseTeachingClass',
-            absolutePath:  '/CourseTeachingClass',
+            path: enrlUrl + '/CourseTeachingClass',
+            absolutePath: enrlUrl + '/CourseTeachingClass',
             name: 'CourseTeachingClass',
             meta: {
               target: '_blank', 'requireAuth': true,
@@ -166,8 +183,8 @@ export const enrollRouterMap = [
             }
           },
           {
-            path:  '/CourseStudent',
-            absolutePath:  '/CourseStudent',
+            path: enrlUrl + '/CourseStudent',
+            absolutePath: enrlUrl + '/CourseStudent',
             name: 'CourseStudent',
             meta: {
               target: '_blank', 'requireAuth': true,
@@ -177,8 +194,8 @@ export const enrollRouterMap = [
             }
           },
           {
-            path:  '/ElectionWithdrawalReview',
-            absolutePath:  '/ElectionWithdrawalReview',
+            path: enrlUrl + '/ElectionWithdrawalReview',
+            absolutePath: enrlUrl + '/ElectionWithdrawalReview',
             name: 'ElectionWithdrawalReview',
             meta: {
               target: '_blank', 'requireAuth': true,
@@ -188,8 +205,8 @@ export const enrollRouterMap = [
             }
           },
           {
-            path:  '/CourseSelectCheckResult',
-            absolutePath:  '/CourseSelectCheckResult',
+            path: enrlUrl + '/CourseSelectCheckResult',
+            absolutePath: enrlUrl + '/CourseSelectCheckResult',
             name: 'CourseSelectCheckResult',
             meta: {
               target: '_blank', 'requireAuth': true,
@@ -199,8 +216,8 @@ export const enrollRouterMap = [
             }
           },
           {
-            path:  '/SelectCourseProgress',
-            absolutePath:  '/SelectCourseProgress',
+            path: enrlUrl + '/SelectCourseProgress',
+            absolutePath: enrlUrl + '/SelectCourseProgress',
             name: 'CourseStudent',
             meta: {
               target: '_blank', 'requireAuth': true,
@@ -210,8 +227,8 @@ export const enrollRouterMap = [
             }
           },
           {
-            path:  '/ElectiveWithdrawalApplicationLog',
-            absolutePath:  '/ElectiveWithdrawalApplicationLog',
+            path: enrlUrl + '/ElectiveWithdrawalApplicationLog',
+            absolutePath: enrlUrl + '/ElectiveWithdrawalApplicationLog',
             name: 'ElectiveWithdrawalApplicationLog',
             meta: {
               target: '_blank', 'requireAuth': true,
@@ -221,8 +238,8 @@ export const enrollRouterMap = [
             }
           },
           {
-            path:  '/ImportManagement',
-            absolutePath:  '/ImportManagement',
+            path: enrlUrl + '/ImportManagement',
+            absolutePath: enrlUrl + '/ImportManagement',
             name: 'ImportManagement',
             meta: {
               target: '_blank', 'requireAuth': true,
@@ -232,8 +249,8 @@ export const enrollRouterMap = [
             }
           },
           {
-            path:  '/CourseStudentConflict',
-            absolutePath:  '/CourseStudentConflict',
+            path: enrlUrl + '/CourseStudentConflict',
+            absolutePath: enrlUrl + '/CourseStudentConflict',
             name: 'CourseStudentConflict',
             meta: {
               target: '_blank', 'requireAuth': true,
@@ -245,21 +262,22 @@ export const enrollRouterMap = [
         ]
       },
       {
-        path:  '/ManageConsolo',
+        path: enrlUrl + '/ManageConsolo',
+        absolutePath: enrlUrl + '/ManageConsolo',
         name: 'ManageConsolo',
         x: 4,
         y: 0,
         meta: {
           target: '_blank', 'requireAuth': true,
-          icon: 'guanli',
+          icon: 'icon-yonghu4',
           permission: ['ViewManageConsoloPage'],
           namespace: 'KR_ENRL',
           title: '管理台'
         },
         children: [
           {
-            path:  '/AdminCategory',
-            absolutePath:  '/AdminCategory',
+            path: enrlUrl + '/AdminCategory',
+            absolutePath: enrlUrl + '/AdminCategory',
             name: 'AdminCategory',
             redirect: '/AdminCategory',
             meta: {
@@ -270,8 +288,8 @@ export const enrollRouterMap = [
             },
             children: [
               {
-                path:  '/AdminCategory',
-                absolutePath:  '/AdminCategory',
+                path: enrlUrl + '/AdminCategory',
+                absolutePath: enrlUrl + '/AdminCategory',
                 name: 'AdminCategory',
                 meta: {
                   target: '_blank', 'requireAuth': true,
@@ -282,8 +300,8 @@ export const enrollRouterMap = [
                 }
               },
               {
-                path:  '/AdminWorkFlowCategory',
-                absolutePath:  '/AdminWorkFlowCategory',
+                path: enrlUrl + '/AdminWorkFlowCategory',
+                absolutePath: enrlUrl + '/AdminWorkFlowCategory',
                 name: 'AdminWorkFlowCategory',
                 meta: {
                   target: '_blank',
@@ -294,8 +312,8 @@ export const enrollRouterMap = [
                 }
               },
               {
-                path:  '/ReasonApplication',
-                absolutePath:  '/ReasonApplication',
+                path: enrlUrl + '/ReasonApplication',
+                absolutePath: enrlUrl + '/ReasonApplication',
                 name: 'ReasonApplication',
                 meta: {
                   target: '_blank', 'requireAuth': true,
@@ -307,8 +325,8 @@ export const enrollRouterMap = [
             ]
           },
           {
-            path:  '/AdminPermission',
-            absolutePath:  '/AdminPermission',
+            path: enrlUrl + '/AdminPermission',
+            absolutePath: enrlUrl + '/AdminPermission',
             name: 'AdminPermission',
             meta: {
               target: '_blank', 'requireAuth': true,
@@ -318,8 +336,8 @@ export const enrollRouterMap = [
             }
           },
           {
-            path:  '/AdminRole',
-            absolutePath:  '/AdminRole',
+            path: enrlUrl + '/AdminRole',
+            absolutePath: enrlUrl + '/AdminRole',
             name: 'AdminRole',
             meta: {
               target: '_blank', 'requireAuth': true,
@@ -328,8 +346,8 @@ export const enrollRouterMap = [
               title: '角色' }
           },
           {
-            path:  '/AdminUser',
-            absolutePath:  '/AdminUser',
+            path: enrlUrl + '/AdminUser',
+            absolutePath: enrlUrl + '/AdminUser',
             name: 'AdminUser',
             redirect: '/AdminUser',
             meta: {
@@ -340,8 +358,8 @@ export const enrollRouterMap = [
             },
             children: [
               {
-                path:  '/AdminUser',
-                absolutePath:  '/AdminUser',
+                path: enrlUrl + '/AdminUser',
+                absolutePath: enrlUrl + '/AdminUser',
                 name: 'AdminUser',
                 meta: {
                   target: '_blank', 'requireAuth': true,
@@ -352,8 +370,8 @@ export const enrollRouterMap = [
                 }
               },
               {
-                path:  '/AdminUpdateUser',
-                absolutePath:  '/AdminUpdateUser',
+                path: enrlUrl + '/AdminUpdateUser',
+                absolutePath: enrlUrl + '/AdminUpdateUser',
                 name: 'AdminUpdateUser',
                 meta: {
                   target: '_blank', 'requireAuth': true,
@@ -365,8 +383,8 @@ export const enrollRouterMap = [
             ]
           },
           {
-            path:  '/AdminWorkManage',
-            absolutePath:  '/AdminWorkManage',
+            path: enrlUrl + '/AdminWorkManage',
+            absolutePath: enrlUrl + '/AdminWorkManage',
             meta: {
               target: '_blank', 'requireAuth': true,
               permission: ['ViewWorkflowPage'],
@@ -375,8 +393,8 @@ export const enrollRouterMap = [
             }
           },
           {
-            path:  '/AdminEditBulletinBoard',
-            absolutePath:  '/AdminEditBulletinBoard',
+            path: enrlUrl + '/AdminEditBulletinBoard',
+            absolutePath: enrlUrl + '/AdminEditBulletinBoard',
             name: 'AdminEditBulletinBoard',
             redirect: '/AdminEditBulletinBoard',
             meta: {
@@ -388,8 +406,8 @@ export const enrollRouterMap = [
             },
             children: [
               {
-                path:  '/AdminEditBulletinBoard',
-                absolutePath:  '/AdminEditBulletinBoard',
+                path: enrlUrl + '/AdminEditBulletinBoard',
+                absolutePath: enrlUrl + '/AdminEditBulletinBoard',
                 name: 'AdminEditBulletinBoard',
                 meta: {
                   target: '_blank',
@@ -401,8 +419,8 @@ export const enrollRouterMap = [
                 }
               },
               {
-                path:  '/AddAdminUserEditBulletinBoard',
-                absolutePath:  '/AddAdminUserEditBulletinBoard',
+                path: enrlUrl + '/AddAdminUserEditBulletinBoard',
+                absolutePath: enrlUrl + '/AddAdminUserEditBulletinBoard',
                 name: 'AddAdminUserEditBulletinBoard',
                 meta: {
                   target: '_blank',
@@ -413,8 +431,8 @@ export const enrollRouterMap = [
                 }
               },
               {
-                path:  '/AdminUserEditBulletinBoard',
-                absolutePath:  '/AdminUserEditBulletinBoard',
+                path: enrlUrl + '/AdminUserEditBulletinBoard',
+                absolutePath: enrlUrl + '/AdminUserEditBulletinBoard',
                 name: 'AdminUserEditBulletinBoard',
                 meta: {
                   target: '_blank',
@@ -429,7 +447,8 @@ export const enrollRouterMap = [
         ]
       },
       {
-        path:  '/CourseStuSelectionList',
+        path: enrlUrl + '/CourseStuSelectionList',
+        absolutePath: enrlUrl + '/CourseStuSelectionList',
         name: 'CourseStuSelectionList',
         hidden: true,
         meta: {
@@ -440,7 +459,8 @@ export const enrollRouterMap = [
         }
       },
       {
-        path:  '/CourseSelectionApplication',
+        path: enrlUrl + '/CourseSelectionApplication',
+        absolutePath: enrlUrl + '/CourseSelectionApplication',
         name: 'CourseSelectionApplication',
         hidden: true,
         meta: {
@@ -451,7 +471,8 @@ export const enrollRouterMap = [
         }
       },
       {
-        path:  '/enrollCourseDropRuleOuterApply',
+        path: enrlUrl + '/enrollCourseDropRuleOuterApply',
+        absolutePath: enrlUrl + '/enrollCourseDropRuleOuterApply',
         name: 'CourseDropRuleOuterApply',
         hidden: true,
         meta: {
@@ -467,8 +488,7 @@ export const enrollRouterMap = [
 export default {
   name: '选课管理',
   code: 'enroll',
-  baseUrl: '/enroll/',
   namespace: 'KR_ENRL',
-  icon: 'xuankejieguo',
+  icon: 'icon-server_05',
   originRouters: enrollRouterMap
 }

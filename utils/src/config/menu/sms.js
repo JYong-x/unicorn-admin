@@ -1,10 +1,10 @@
 /**
  * 学籍路由
  */
-const smsUrl = '/portal'
-const smsRouterMap = [
+const subUrl = '/sms/portal'
+const routerMap = [
   {
-    path: smsUrl + '/home?methodToCall=getHomePage&amp;viewId=PortalView',
+    path: subUrl + '/home?methodToCall=getHomePage&amp;viewId=PortalView',
     name: 'smsHome',
     x: 1,
     y: 1,
@@ -16,13 +16,13 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getMySchoolRollPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/studentmanagement?methodToCall=getMySchoolRollPage&amp;viewId=StudentStatusView',
     name: 'MySchoolRoll',
     x: 1,
     y: 2,
+    icon: 'icon-xuejiyidonggongzuoliucheng',
     menuLevel: 1,
     meta: {
-      icon: 'xuejiyidonggongzuoliucheng',
       target: '_blank',
       requireAuth: true,
       permission: ['ViewMySchoolRollPage'],
@@ -30,10 +30,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getMySchoolRollInfoPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/studentmanagement?methodToCall=getMySchoolRollInfoPage&amp;viewId=StudentStatusView',
     name: 'SchoolRollInformation',
     x: 1,
     y: 3,
+    icon: 'icon-gerenxinxi7',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -43,13 +44,13 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getSchoolRollManagementPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/studentmanagement?methodToCall=getSchoolRollManagementPage&amp;viewId=StudentStatusView',
     name: 'SchoolRollManagement',
     x: 1,
     y: 4,
+    icon: 'icon-xuejiguanli1',
     menuLevel: 1,
     meta: {
-      icon: 'xuesheng',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -58,10 +59,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getSchoolRollInfoPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/studentmanagement?methodToCall=getSchoolRollInfoPage&amp;viewId=StudentStatusView',
     name: 'smsSchoolRollLibrary',
     x: 1,
     y: 5,
+    icon: 'icon-kucun1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -72,10 +74,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getStudentIdSettingPage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getStudentIdSettingPage&amp;viewId=AdminView',
     name: 'StudentNumberGeneratio',
     x: 1,
     y: 6,
+    icon: 'icon-shengchengmulu',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -86,10 +89,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/statistic?methodToCall=getStatisticStudentNumPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/statistic?methodToCall=getStatisticStudentNumPage&amp;viewId=StudentStatusView',
     name: 'StudentStatistics',
     x: 1,
     y: 7,
+    icon: 'icon-tongji2',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -100,10 +104,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/statistic?methodToCall=getStatisticStudentNumPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/statistic?methodToCall=getStatisticStudentNumPage&amp;viewId=StudentStatusView',
     name: 'ApplyManagement',
     x: 1,
     y: 8,
+    icon: 'icon-xuejiyidonggongzuoliucheng',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -114,13 +119,13 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getRewardAndPunishPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/studentmanagement?methodToCall=getRewardAndPunishPage&amp;viewId=StudentStatusView',
     name: 'RewardAndPunish',
     x: 1,
     y: 9,
+    icon: 'icon-change',
     menuLevel: 1,
     meta: {
-      icon: 'tubiaozhizuomoban-42',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -129,10 +134,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getSMPunishPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/studentmanagement?methodToCall=getSMPunishPage&amp;viewId=StudentStatusView',
     name: 'Punish',
     x: 1,
     y: 10,
+    icon: 'icon-punishment',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -143,13 +149,13 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/graduationReview?methodToCall=getGraduationReviewManagementPage&amp;viewId=GraduationReviewView',
+    path: subUrl + '/graduationReview?methodToCall=getGraduationReviewManagementPage&amp;viewId=GraduationReviewView',
     name: 'GraduationReviewManagement',
     x: 1,
     y: 10,
+    icon: 'icon-chakan7',
     menuLevel: 1,
     meta: {
-      icon: 'zhidushencha',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -158,10 +164,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/graduationReview?methodToCall=getGraduationReviewPage&amp;viewId=GraduationReviewView',
+    path: subUrl + '/graduationReview?methodToCall=getGraduationReviewPage&amp;viewId=GraduationReviewView',
     name: 'GraduationReview',
     x: 1,
     y: 12,
+    icon: 'icon-biye',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -172,10 +179,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/graduationReview?methodToCall=getStudentSelfCheckPage&amp;viewId=GraduationReviewView',
+    path: subUrl + '/graduationReview?methodToCall=getStudentSelfCheckPage&amp;viewId=GraduationReviewView',
     name: 'StudentNumberGeneration',
     x: 1,
     y: 13,
+    icon: 'icon-zhuanxue',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -186,13 +194,13 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/academicAdvisor?methodToCall=getAcademicAdvisorManagementPage&amp;viewId=AcademicAdvisorView',
+    path: subUrl + '/academicAdvisor?methodToCall=getAcademicAdvisorManagementPage&amp;viewId=AcademicAdvisorView',
     name: 'AcademicAdvisorManagement',
     x: 2,
     y: 1,
+    icon: 'icon-tongji2',
     menuLevel: 1,
     meta: {
-      icon: 'tongji',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -201,10 +209,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/academicAdvisor?methodToCall=getAcademicAdvisorAssignManagePage&amp;viewId=AcademicAdvisorView',
+    path: subUrl + '/academicAdvisor?methodToCall=getAcademicAdvisorAssignManagePage&amp;viewId=AcademicAdvisorView',
     name: 'ChoiceAcademy',
     x: 2,
     y: 2,
+    icon: 'icon-fenpei',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -215,10 +224,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/academicAdvisor?methodToCall=countAcademicAdvisorInfo&amp;viewId=AcademicAdvisorView',
+    path: subUrl + '/academicAdvisor?methodToCall=countAcademicAdvisorInfo&amp;viewId=AcademicAdvisorView',
     name: 'GuidanceDetails',
     x: 2,
     y: 4,
+    icon: 'icon-caozuorizhi1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -229,10 +239,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/academicAdvisor?methodToCall=getMyAcademicAdvisorPage&amp;viewId=AcademicAdvisorView',
+    path: subUrl + '/academicAdvisor?methodToCall=getMyAcademicAdvisorPage&amp;viewId=AcademicAdvisorView',
     name: 'smsMyAcademicAdvisor',
     x: 2,
     y: 5,
+    icon: 'icon-kucun1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -243,10 +254,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/academicAdvisor?methodToCall=getMyAcademicGuidancePage&amp;viewId=AcademicAdvisorView',
+    path: subUrl + '/academicAdvisor?methodToCall=getMyAcademicGuidancePage&amp;viewId=AcademicAdvisorView',
     name: 'MyAcademicGuidance',
     x: 2,
     y: 4,
+    icon: 'icon-zhidao',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -257,11 +269,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/majorLargeClass?methodToCall=getMajorLargeClassShuntingModulePage&amp;viewId=LargeClassView',
+    path: subUrl + '/majorLargeClass?methodToCall=getMajorLargeClassShuntingModulePage&amp;viewId=LargeClassView',
     name: 'LargeClassShunting',
     x: 2,
     y: 5,
-    icon: 'tongji',
+    icon: 'icon-tongji2',
     menuLevel: 1,
     meta: {
       target: '_blank',
@@ -272,10 +284,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/majorLargeClass?methodToCall=getMajorLargeClassManagePage&amp;viewId=LargeClassView',
+    path: subUrl + '/majorLargeClass?methodToCall=getMajorLargeClassManagePage&amp;viewId=LargeClassView',
     name: 'LargeClassManagement',
     x: 2,
     y: 6,
+    icon: 'icon-renqunfenliu',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -286,10 +299,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/majorLargeClass?methodToCall=getStudentWishFillInPage&amp;viewId=LargeClassView',
+    path: subUrl + '/majorLargeClass?methodToCall=getStudentWishFillInPage&amp;viewId=LargeClassView',
     name: 'DiversionVolunteer',
     x: 2,
     y: 7,
+    icon: 'icon-renqunfenliu',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -300,13 +314,13 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/majorLargeClass?methodToCall=getLargeClassShuntingSelectionPage&amp;viewId=LargeClassView',
+    path: subUrl + '/majorLargeClass?methodToCall=getLargeClassShuntingSelectionPage&amp;viewId=LargeClassView',
     name: 'ShuntingSelect',
     x: 2,
     y: 8,
+    icon: 'icon-shuangren',
     menuLevel: 1,
     meta: {
-      icon: 'shuangren',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -315,10 +329,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/majorLargeClass?methodToCall=getLargeClassPublishApplyReviewPage&amp;viewId=LargeClassView',
+    path: subUrl + '/majorLargeClass?methodToCall=getLargeClassPublishApplyReviewPage&amp;viewId=LargeClassView',
     name: 'LargeClassReleaseReview',
     x: 2,
     y: 9,
+    icon: 'icon-baogaoyishenhe',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -329,13 +344,13 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getOverseasExchangeManagementPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/studentmanagement?methodToCall=getOverseasExchangeManagementPage&amp;viewId=StudentStatusView',
     name: 'OverseasExchangeManagement',
     x: 4,
     y: 4,
+    icon: 'icon-zhuanxue',
     menuLevel: 1,
     meta: {
-      icon: 'zhuanxue',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -344,10 +359,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getOverseasExchangeProjectsPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/studentmanagement?methodToCall=getOverseasExchangeProjectsPage&amp;viewId=StudentStatusView',
     name: 'OverseasExchange',
     x: 4,
     y: 5,
+    icon: 'icon-chuguo',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -359,10 +375,11 @@ const smsRouterMap = [
   },
 
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getMyOverseasExchProjApplicationsPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/studentmanagement?methodToCall=getMyOverseasExchProjApplicationsPage&amp;viewId=StudentStatusView',
     name: 'StudentOverseasExchange',
     x: 4,
     y: 6,
+    icon: 'icon-chuguo',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -377,9 +394,9 @@ const smsRouterMap = [
     name: 'ShortTermExchange',
     x: 4,
     y: 7,
+    icon: 'icon-fankui',
     menuLevel: 1,
     meta: {
-      icon: 'fankui',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -388,10 +405,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/shortTermStudy?methodToCall=queryShortTermStudyProjectVOCondition&amp;viewId=StudentStatusView',
+    path: subUrl + '/shortTermStudy?methodToCall=queryShortTermStudyProjectVOCondition&amp;viewId=StudentStatusView',
     name: 'ShortTermExchangeProgram',
     x: 4,
     y: 7,
+    icon: 'icon-fankui',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -402,10 +420,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/shortTermStudy?methodToCall=queryShortTermStudyApproveApplyVOCondition&amp;viewId=StudentStatusView',
+    path: subUrl + '/shortTermStudy?methodToCall=queryShortTermStudyApproveApplyVOCondition&amp;viewId=StudentStatusView',
     name: 'ShortTermExchangeCertManagement',
     x: 4,
     y: 8,
+    icon: 'icon-fankui',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -416,10 +435,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/shortTermStudy?methodToCall=getStudentShortTermApplyVOList&amp;viewId=StudentStatusView',
+    path: subUrl + '/shortTermStudy?methodToCall=getStudentShortTermApplyVOList&amp;viewId=StudentStatusView',
     name: 'ShortTermExchangeCreditRecognition',
     x: 4,
     y: 9,
+    icon: 'icon-renzheng3',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -430,13 +450,13 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/home?methodToCall=getHomePage&amp;viewId=PortalView',
+    path: subUrl + '/home?methodToCall=getHomePage&amp;viewId=PortalView',
     name: 'PostgraduateTutor',
     x: 4,
     y: 10,
+    icon: 'icon-daoshi1',
     menuLevel: 1,
     meta: {
-      icon: 'daoshi1',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -445,10 +465,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/tutor?methodToCall=getTutorChoiceDeptPage&amp;viewId=AcademicAdvisorView',
+    path: subUrl + '/tutor?methodToCall=getTutorChoiceDeptPage&amp;viewId=AcademicAdvisorView',
     name: 'PostgraduateChoiceAcademy',
     x: 4,
     y: 11,
+    icon: 'icon-daoshiguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -459,10 +480,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/tutor?methodToCall=getStuTutorWishPage&amp;viewId=AcademicAdvisorView',
+    path: subUrl + '/tutor?methodToCall=getStuTutorWishPage&amp;viewId=AcademicAdvisorView',
     name: 'PostgraduateWishFil',
     x: 4,
     y: 12,
+    icon: 'icon-daoshi1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -473,10 +495,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/tutor?methodToCall=getGuidanceMasterSelectionPage&amp;viewId=AcademicAdvisorView',
+    path: subUrl + '/tutor?methodToCall=getGuidanceMasterSelectionPage&amp;viewId=AcademicAdvisorView',
     name: 'GuidePostgraduateSelect',
     x: 4,
     y: 13,
+    icon: 'icon-zhaopin2',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -487,13 +510,13 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getReviewManagementPage&amp;viewId=ReviewView',
+    path: subUrl + '/studentmanagement?methodToCall=getReviewManagementPage&amp;viewId=ReviewView',
     name: 'smsReviewManagement',
     x: 3,
     y: 1,
+    icon: 'icon-tongji2',
     menuLevel: 1,
     meta: {
-      icon: 'tongji',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -502,10 +525,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getStuApplicationsReviewPage&amp;viewId=ReviewView',
+    path: subUrl + '/studentmanagement?methodToCall=getStuApplicationsReviewPage&amp;viewId=ReviewView',
     name: 'ReviewApply',
     x: 3,
     y: 2,
+    icon: 'icon-xuqiupingshen',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -516,10 +540,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getEnrollmentModifyReviewPage&amp;viewId=ReviewView',
+    path: subUrl + '/studentmanagement?methodToCall=getEnrollmentModifyReviewPage&amp;viewId=ReviewView',
     name: 'SchoolRollChangeReview',
     x: 3,
     y: 3,
+    icon: 'icon-tongji2',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -530,10 +555,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=searchDocumentNumberManagementInfo&amp;viewId=StudentStatusView',
+    path: subUrl + '/studentmanagement?methodToCall=searchDocumentNumberManagementInfo&amp;viewId=StudentStatusView',
     name: 'DocumentNumberManagement',
     x: 3,
     y: 4,
+    icon: 'icon-moban',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -544,10 +570,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getStuSchoolWorkWarnPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/studentmanagement?methodToCall=getStuSchoolWorkWarnPage&amp;viewId=StudentStatusView',
     name: 'SchoolWorkWarn',
     x: 3,
     y: 5,
+    icon: 'icon-jingshimian1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -558,10 +585,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getStuEnrollChangeWarningPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/studentmanagement?methodToCall=getStuEnrollChangeWarningPage&amp;viewId=StudentStatusView',
     name: 'ChangeWarningExceedSchoolYearLimit',
     x: 3,
     y: 6,
+    icon: 'icon-xuqiupingshen',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -572,10 +600,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getCommonApplyInstructionPage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getCommonApplyInstructionPage&amp;viewId=AdminView',
     name: 'ChangeApplicationDescriptionList',
     x: 3,
     y: 7,
+    icon: 'icon-shuoming',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -586,10 +615,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getTransferMajorSettingPage&amp;viewId=ReviewView',
+    path: subUrl + '/studentmanagement?methodToCall=getTransferMajorSettingPage&amp;viewId=ReviewView',
     name: 'ChangeMajorSet',
     x: 3,
     y: 8,
+    icon: 'icon-qiehuanfanxiangnizhuanmianxing',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -600,13 +630,13 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getCheckInAndRegisterManagementPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/studentmanagement?methodToCall=getCheckInAndRegisterManagementPage&amp;viewId=StudentStatusView',
     name: 'CheckInAndRegisterManagement',
     x: 3,
     y: 9,
+    icon: 'icon-confirm',
     menuLevel: 1,
     meta: {
-      icon: 'confirm',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -615,10 +645,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getStudentCheckedInPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/studentmanagement?methodToCall=getStudentCheckedInPage&amp;viewId=StudentStatusView',
     name: 'StudentRegister',
     x: 3,
     y: 10,
+    icon: 'icon-kecheng8',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -629,10 +660,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/studentmanagement?methodToCall=getStudentRegisterPage&amp;viewId=StudentStatusView',
+    path: subUrl + '/studentmanagement?methodToCall=getStudentRegisterPage&amp;viewId=StudentStatusView',
     name: 'StudentEnrolment',
     x: 3,
     y: 11,
+    icon: 'icon-baogaoyishenhe',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -643,13 +675,13 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getStudentLabelManagementPage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getStudentLabelManagementPage&amp;viewId=AdminView',
     name: 'StudentLabelManagement',
     x: 4,
     y: 1,
+    icon: 'icon-zhiwumingcheng',
     menuLevel: 1,
     meta: {
-      icon: 'zhiwumingcheng',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -658,10 +690,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getStudentLabelSettingPage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getStudentLabelSettingPage&amp;viewId=AdminView',
     name: 'StudentLabelSetting',
     x: 4,
     y: 2,
+    icon: 'icon-zhiwumingcheng',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -672,10 +705,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getStudentLabelPermissionPage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getStudentLabelPermissionPage&amp;viewId=AdminView',
     name: 'StudentLabelPermission',
     x: 4,
     y: 3,
+    icon: 'icon-xitongguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -686,13 +720,13 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getManageConsolePage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getManageConsolePage&amp;viewId=AdminView',
     name: 'smsConsole',
     x: 5,
     y: 1,
+    icon: 'icon-zhiwumingcheng',
     menuLevel: 1,
     meta: {
-      icon: 'guanli',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_SMS',
@@ -701,10 +735,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getRuleListPage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getRuleListPage&amp;viewId=AdminView',
     name: 'RuleList',
     x: 5,
     y: 2,
+    icon: 'icon-zhaiyao',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -715,10 +750,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getManageCategoryPage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getManageCategoryPage&amp;viewId=AdminView',
     name: 'smsCategory',
     x: 5,
     y: 2,
+    icon: 'icon-msnui-module',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -729,10 +765,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getLogPage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getLogPage&amp;viewId=AdminView',
     name: 'LogList',
     x: 5,
     y: 3,
+    icon: 'icon-server_05',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -743,10 +780,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getPermManagePage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getPermManagePage&amp;viewId=AdminView',
     name: 'smsPermissionManagement',
     x: 5,
     y: 4,
+    icon: 'icon-zhaopin',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -757,10 +795,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getRolePage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getRolePage&amp;viewId=AdminView',
     name: 'smsRoleManager',
     x: 5,
     y: 5,
+    icon: 'icon-iconfont-jiaoshi',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -771,10 +810,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getUserManagementPage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getUserManagementPage&amp;viewId=AdminView',
     name: 'smsUserRoleManager',
     x: 5,
     y: 6,
+    icon: 'icon-yonghu',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -785,10 +825,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getCounsellorSettingPage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getCounsellorSettingPage&amp;viewId=AdminView',
     name: 'CounselorSetup',
     x: 5,
     y: 7,
+    icon: 'icon-iconfont-jiaoshi',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -800,10 +841,11 @@ const smsRouterMap = [
   },
 
   {
-    path: smsUrl + '/admin?methodToCall=getTimeSetPage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getTimeSetPage&amp;viewId=AdminView',
     name: 'smsTimeSet',
     x: 5,
     y: 8,
+    icon: 'icon-zhaiyao',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -814,10 +856,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getFunctionControlPage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getFunctionControlPage&amp;viewId=AdminView',
     name: 'ControlSwitch',
     x: 5,
     y: 9,
+    icon: 'icon-jindu12',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -828,10 +871,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getWorkFlowManagePage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getWorkFlowManagePage&amp;viewId=AdminView',
     name: 'smsWorkFlowManage',
     x: 5,
     y: 10,
+    icon: 'icon-zhaiyao',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -842,10 +886,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/home?methodToCall=getAnnouncementEditListPage&amp;viewId=PortalView',
+    path: subUrl + '/home?methodToCall=getAnnouncementEditListPage&amp;viewId=PortalView',
     name: 'EditBulletinBoard',
     x: 5,
     y: 11,
+    icon: 'icon-xiugai4',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -856,10 +901,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=getTemplateManagementPage&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=getTemplateManagementPage&amp;viewId=AdminView',
     name: 'UploadTemplate',
     x: 5,
     y: 12,
+    icon: 'icon-tijiao',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -870,10 +916,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/adminClass?methodToCall=getAdminClassInfoList&amp;viewId=AdminView',
+    path: subUrl + '/adminClass?methodToCall=getAdminClassInfoList&amp;viewId=AdminView',
     name: 'AdministrativeClassManagement',
     x: 5,
     y: 13,
+    icon: 'icon-xuejiguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -884,10 +931,11 @@ const smsRouterMap = [
     }
   },
   {
-    path: smsUrl + '/admin?methodToCall=queryMajorByCondition&amp;viewId=AdminView',
+    path: subUrl + '/admin?methodToCall=queryMajorByCondition&amp;viewId=AdminView',
     name: 'ProfessionalManagement',
     x: 5,
     y: 14,
+    icon: 'icon-xiangmuguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -903,8 +951,6 @@ export default {
   name: '学籍管理',
   code: 'sms',
   namespace: 'KR_SMS',
-  icon: 'gerenxinxi7',
-  baseUrl: '/sms',
-  isOld: true,
-  originRouters: smsRouterMap
+  icon: 'icon-gerenxinxi7',
+  originRouters: routerMap
 }

@@ -1,11 +1,10 @@
 const qs = require('querystring')
 
-import interceptor from './interceptor'
 import { removeUselessParams } from '../utils/utils'
 
-export default function (options) {
+export default function (options, interceptor) {
 
-  const axios = interceptor(options)
+  const axios = interceptor
 
   const base = options.baseApi
 

@@ -1,16 +1,17 @@
+import { httpConfig } from '@/config'
 /**
  * 课程
  */
-const cmUrl = '/portal'
+const cmUrl = httpConfig.appRoot
 const cmRouterMap = [
   {
     path: cmUrl + '/home?methodToCall=getHomePage&amp;viewId=PortalView',
     name: 'cmHome',
     x: 1,
     y: 1,
+    icon: 'icon-zhuye',
     menuLevel: 1,
     meta: {
-      icon: 'home',
       target: '_blank',
       title: '主页'
     }
@@ -20,9 +21,9 @@ const cmRouterMap = [
     name: 'CourseConsole',
     x: 1,
     y: 2,
+    icon: 'icon-xiangmuguanli',
     menuLevel: 1,
     meta: {
-      icon: 'kechengguanli',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_CM',
@@ -110,9 +111,9 @@ const cmRouterMap = [
     name: 'ProgramConsole',
     x: 2,
     y: 1,
+    icon: 'icon-xiangmuguanli',
     menuLevel: 1,
     meta: {
-      icon: 'tubiao_fanganguanli',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_CM',
@@ -167,7 +168,7 @@ const cmRouterMap = [
   },
   {
     path: cmUrl + '/trainProgram?methodToCall=getOpeningCourseInTrainProgramPage&amp;viewId=ProgramView',
-    name: 'getOpeningCourseInTrainProgramPage',
+    name: 'FindProposalProgram',
     x: 2,
     y: 5,
     icon: 'icon-ku1',
@@ -185,9 +186,9 @@ const cmRouterMap = [
     name: 'cmConsole',
     x: 3,
     y: 1,
+    icon: 'icon-xiangmuguanli',
     menuLevel: 1,
     meta: {
-      icon: 'guanli',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_CM',
@@ -200,6 +201,7 @@ const cmRouterMap = [
     name: 'cmCategory',
     x: 3,
     y: 2,
+    icon: 'icon-msnui-module',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -214,6 +216,7 @@ const cmRouterMap = [
     name: 'cmRuleConsole',
     x: 3,
     y: 3,
+    icon: 'icon-xitongguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -228,6 +231,7 @@ const cmRouterMap = [
     name: 'cmPermissionManagementPage',
     x: 3,
     y: 4,
+    icon: 'icon-zhaopin',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -242,6 +246,7 @@ const cmRouterMap = [
     name: 'cmRoleManager',
     x: 3,
     y: 5,
+    icon: 'icon-iconfont-jiaoshi',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -256,6 +261,7 @@ const cmRouterMap = [
     name: 'cmUserRoleManager',
     x: 3,
     y: 6,
+    icon: 'icon-yonghu6',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -270,6 +276,7 @@ const cmRouterMap = [
     name: 'cmTimeSet',
     x: 3,
     y: 7,
+    icon: 'icon-rizhi1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -285,6 +292,7 @@ const cmRouterMap = [
     name: 'cmWorkFlowManage',
     x: 3,
     y: 8,
+    icon: 'icon-baogaoyishenhe',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -299,6 +307,7 @@ const cmRouterMap = [
     name: 'GraduationCredit',
     x: 3,
     y: 9,
+    icon: 'icon-caozuorizhi',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -313,6 +322,7 @@ const cmRouterMap = [
     name: 'CourseManager',
     x: 3,
     y: 10,
+    icon: 'icon-zhiwumingcheng',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -328,8 +338,6 @@ export default {
   name: '课程/培养方案管理',
   code: 'cm',
   namespace: 'KR_CM',
-  icon: 'kecheng9',
-  baseUrl: '/cm',
-  isOld: true,
+  icon: 'icon-kecheng9',
   originRouters: cmRouterMap
 }

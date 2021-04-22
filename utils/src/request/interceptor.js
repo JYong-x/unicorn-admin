@@ -1,18 +1,16 @@
-import axios from 'axios'
-import auth from '../login/auth'
 /**
  * axios封装
  * 请求拦截、响应拦截、错误统一处理
  */
 export default function (options) {
-  const {messageFunction, router} = options
-  const {getLocalToken, removeAuth} = auth(options)
+  const {axios, message, router, authUtil} = options
+  const {getLocalToken, removeAuth} = authUtil
 
   /**
    * 提示函数
    */
   const tip = (msg) => {
-    messageFunction.error(msg)
+    message.error(msg)
   }
 
   /**

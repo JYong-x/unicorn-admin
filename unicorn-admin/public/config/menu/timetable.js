@@ -1,16 +1,18 @@
+import { httpConfig } from '@/config'
 /**
  * 排课权限路由
  * @type { *[] }
  */
+const timeUrl = httpConfig.appRoot + `/${process.env === 'production' ? 'tt' : 'timetable'}`
 const timeTableRouterMap = [
   {
-    path: '/Home',
+    path: timeUrl + '/Home',
     name: 'Home',
     x: 1,
     y: 1,
+    icon: 'fa fa-home',
     menuLevel: 1,
     meta: {
-      icon: 'home',
       target: '_blank',
       requireAuth: true,
       permission: ['ViewHomePage'],
@@ -18,14 +20,29 @@ const timeTableRouterMap = [
       title: '主页',
       matched: [{ path: '', name: '' }]
     }
-  },  {
-    path: '/CourseClassSettingInfo',
+  }, {
+    path: '/WorkSpaceHome',
+    name: 'WorkSpaceHome',
+    x: 1,
+    y: 1,
+    icon: 'fa fa-home',
+    menuLevel: 1,
+    meta: {
+      target: '_blank',
+      requireAuth: true,
+      permission: ['ViewWorkSpaceHomePage'],
+      namespace: 'KR_TT',
+      title: '公共主页',
+      matched: [{ path: '', name: '' }]
+    }
+  }, {
+    path: timeUrl + '/CourseClassSettingInfo',
     name: 'CourseClassSettingInfo',
     x: 1,
     y: 2,
+    icon: 'icon-xiangmuguanli',
     menuLevel: 1,
     meta: {
-      icon: 'canshuguanli',
       target: '_blank',
       requireAuth: true,
       permission: ['ViewCourseClassSettingInfoPage'],
@@ -35,10 +52,11 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '参数设置' }]
     }
   }, {
-    path: '/CourseSessionInfo',
+    path: timeUrl + '/CourseSessionInfo',
     name: 'CourseSessionInfo',
     x: 1,
     y: 3,
+    icon: 'icon-xiangqingchakan',
     menuLevel: 2,
     meta: {
       'requireAuth': true,
@@ -48,10 +66,11 @@ const timeTableRouterMap = [
       parentName: '学期信息',
       matched: [{path: '', name: '学期信息'}]}
   }, {
-    path: '/CourseTimePattern',
+    path: timeUrl + '/CourseTimePattern',
     name: 'CourseTimePattern',
     x: 1,
     y: 3,
+    icon: 'icon-jindu11',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -63,10 +82,11 @@ const timeTableRouterMap = [
       matched: [{ path: '/CourseClassSettingInfo', name: '排课设置' }, { path: '', name: '上课节次及时间' }]
     }
   }, {
-    path: '/CourseExperimentAndProject',
+    path: timeUrl + '/CourseExperimentAndProject',
     name: 'CourseExperimentAndProject',
     x: 1,
     y: 4,
+    icon: 'icon-kecheng3',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -78,10 +98,11 @@ const timeTableRouterMap = [
       matched: [{ path: '/CourseClassSettingInfo', name: '排课设置' }, { path: '', name: '实验课程及项目' }]
     }
   }, {
-    path: '/CourseBlockedTimePeriodStu',
+    path: timeUrl + '/CourseBlockedTimePeriodStu',
     name: 'CourseBlockedTimePeriodStu',
     x: 1,
     y: 5,
+    icon: 'icon-weishenqing',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -94,10 +115,11 @@ const timeTableRouterMap = [
     }
   },
   {
-    path: '/FullTimeTeacher',
+    path: timeUrl + '/FullTimeTeacher',
     name: 'FullTimeTeacher',
     x: 1,
     y: 6,
+    icon: 'icon-jiaoshixinxi',
     menuLevel: 2,
     meta: {
       'requireAuth': true,
@@ -107,10 +129,11 @@ const timeTableRouterMap = [
       parentName: '专任教师',
       matched: [{path: '', name: '专任教师列表'}]}
   }, {
-    path: '/CourseInstructionalResource',
+    path: timeUrl + '/CourseInstructionalResource',
     name: 'CourseInstructionalResource',
     x: 1,
     y: 6,
+    icon: 'icon-jiaoxuebanguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -121,10 +144,11 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '教学资源' }]
     }
   }, {
-    path: '/SetClassParameters',
+    path: timeUrl + '/SetClassParameters',
     name: 'SetClassParameters',
     x: 1,
     y: 7,
+    icon: 'icon-xiugai4',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -136,13 +160,13 @@ const timeTableRouterMap = [
       matched: [{ path: '/CourseClassSettingInfo', name: '排课设置' }, { path: '', name: '排课控制' }]
     }
   }, {
-    path: '/CourseArrangementTitle',
+    path: timeUrl + '/CourseArrangementTitle',
     name: 'CourseArrangementTitle',
     x: 1,
     y: 10,
+    icon: 'icon-jiaoxueziyuan',
     menuLevel: 1,
     meta: {
-      icon: 'lyq-zixun',
       target: '_blank',
       requireAuth: true,
       permission: ['ViewCourseArrangementTitlePage'],
@@ -151,10 +175,11 @@ const timeTableRouterMap = [
     }
   },
   {
-    path: '/CourseDistributableExperiment',
+    path: timeUrl + '/CourseDistributableExperiment',
     name: 'CourseDistributableExperiment',
     x: 1,
     y: 11,
+    icon: 'icon-yaopinjiance',
     menuLevel: 2,
     meta: {
       'requireAuth': true,
@@ -164,10 +189,11 @@ const timeTableRouterMap = [
       parentName: '主页',
       matched: [{path: '', name: '分配实验任务'}]}
   }, {
-    path: '/TeachingTaskRequirements',
+    path: timeUrl + '/TeachingTaskRequirements',
     name: 'TeachingTaskRequirements',
     x: 1,
     y: 11,
+    icon: 'icon-yaopinjiance',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -179,10 +205,11 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '教学任务需求' }]
     }
   }, {
-    path: '/ComprehensiveArrangeCourse',
+    path: timeUrl + '/ComprehensiveArrangeCourse',
     name: 'ComprehensiveArrangeCourse',
     x: 1,
     y: 12,
+    icon: 'icon-xiangqingchakan',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -194,10 +221,11 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '综合排课' }]
     }
   }, {
-    path: '/CourseAssistArrangementClass',
+    path: timeUrl + '/CourseAssistArrangementClass',
     name: 'CourseAssistArrangementClass',
     x: 1,
     y: 13,
+    icon: 'icon-xuankejieguo',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -209,10 +237,11 @@ const timeTableRouterMap = [
       matched: [{ path: '/CourseStudySchedule', name: '教学安排' }, { path: '', name: '辅助排课' }]
     }
   }, {
-    path: '/Schedule',
+    path: timeUrl + '/Schedule',
     name: 'Schedule',
     x: 1,
     y: 13,
+    icon: 'icon-xiangqingchakan',
     menuLevel: 2,
     meta: {'requireAuth': true,
       permission: ['ViewSchedulePage'],
@@ -221,10 +250,11 @@ const timeTableRouterMap = [
       parentName: '排课进度',
       matched: [{path: '', name: '排课进度'}]}
   }, {
-    path: '/TeachingClassManagement',
+    path: timeUrl + '/TeachingClassManagement',
     name: 'TeachingClassManagement',
     x: 1,
     y: 14,
+    icon: 'icon-msnui-copy-file',
     menuLevel: 2,
     meta: {'requireAuth': true,
       permission: ['ViewTeachingClassManagementPage'],
@@ -233,10 +263,11 @@ const timeTableRouterMap = [
       matched: [{path: '', name: '教学班管理'}]
     }
   }, {
-    path: '/EditClassRoom',
+    path: timeUrl + '/EditClassRoom',
     name: 'EditClassRoom',
     x: 1,
     y: 14,
+    icon: 'icon-jieguo',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -248,23 +279,24 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '编排教室' }]
     }
   }, {
-    path: '/RescheduleAndSuspendClasses',
-    name: 'RescheduleAndSuspendClasses',
+    path: timeUrl + '/RescheduleAndSuspendClasses',
+    name: '',
     x: 2,
     y: 5,
+    icon: 'icon-kechengdingzhi',
     menuLevel: 1,
     meta: {
-      icon: 'shenqing5',
       target: '_blank',
       requireAuth: true,
-      title: '调课'
+      title: '调停课'
     }
   },
   {
-    path: '/RescheduleAndSuspendClassesApply',
+    path: timeUrl + '/RescheduleAndSuspendClassesApply',
     name: 'RescheduleAndSuspendClassesApply',
     x: 2,
     y: 6,
+    icon: 'icon-tubiaolunkuo_huaban',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -277,10 +309,11 @@ const timeTableRouterMap = [
     }
   },
   {
-    path: '/RescheduleAndSuspendClassesApplyManagement',
+    path: timeUrl + '/RescheduleAndSuspendClassesApplyManagement',
     name: 'RescheduleAndSuspendClassesApplyManagement',
     x: 2,
     y: 7,
+    icon: 'icon-caidantubiao-05',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -293,10 +326,11 @@ const timeTableRouterMap = [
     }
   },
   {
-    path: '/RescheduleAndSuspendClassesCountSet',
+    path: timeUrl + '/RescheduleAndSuspendClassesCountSet',
     name: 'RescheduleAndSuspendClassesCountSet',
     x: 2,
     y: 8,
+    icon: 'icon-punishment',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -309,10 +343,11 @@ const timeTableRouterMap = [
     }
   },
   {
-    path: '/RescheduleAndSuspendClassesStatistics',
+    path: timeUrl + '/RescheduleAndSuspendClassesStatistics',
     name: 'RescheduleAndSuspendClassesStatistics',
     x: 2,
     y: 9,
+    icon: 'icon-tongji1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -324,10 +359,11 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '调停课' }, { path: '', name: '调停课统计' }]
     }
   }, {
-    path: '/TimeTabChangeLog',
+    path: timeUrl + '/TimeTabChangeLog',
     name: 'TimeTabChangeLog',
     x: 2,
     y: 10,
+    icon: 'icon-rizhi',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -341,12 +377,12 @@ const timeTableRouterMap = [
   },
   {
     path: '',
-    name: 'ApplicationTemporaryActivities',
+    name: '',
     x: 2,
     y: 11,
+    icon: 'icon-xiaoyuanhuodong',
     menuLevel: 1,
     meta: {
-      icon: 'linshihuodongguanli',
       target: '_blank',
       requireAuth: true,
       title: '临时活动',
@@ -356,10 +392,11 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '临时活动' }]
     }
   }, {
-    path: '/ApplicationTemporaryActivities',
+    path: timeUrl + '/ApplicationTemporaryActivities',
     name: 'ApplicationTemporaryActivities',
     x: 2,
     y: 12,
+    icon: 'icon-shenqing5',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -372,10 +409,11 @@ const timeTableRouterMap = [
     }
   },
   {
-    path: '/TemporaryActivitiesApplyManage',
+    path: timeUrl + '/TemporaryActivitiesApplyManage',
     name: 'TemporaryActivitiesApplyManage',
     x: 2,
     y: 13,
+    icon: 'icon-kechengguanli5',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -387,13 +425,13 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '临时活动' }, { path: '', name: '临时活动申请管理' }]
     }
   }, {
-    path: '/StartPlanTitle',
+    path: timeUrl + '/StartPlanTitle',
     name: 'StartPlanTitle',
     x: 3,
     y: 1,
+    icon: 'icon-jindu14',
     menuLevel: 1,
     meta: {
-      icon: 'tongji',
       target: '_blank',
       requireAuth: true,
       permission: ['ViewStartPlanTitlePage'],
@@ -401,10 +439,11 @@ const timeTableRouterMap = [
       title: '查询统计'
     }
   }, {
-    path: '/AllCourseSchedule',
+    path: timeUrl + '/AllCourseSchedule',
     name: 'AllCourseSchedule',
     x: 3,
     y: 3,
+    icon: 'icon-xuanke1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -416,10 +455,11 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '课表查询' }, { path: '', name: '快速查询' }]
     }
   }, {
-    path: '/FreeTimeSchedule',
+    path: timeUrl + '/FreeTimeSchedule',
     name: 'FreeTimeSchedule',
     x: 3,
     y: 3,
+    icon: 'icon-xuanke1',
     menuLevel: 2,
     meta: {
       'requireAuth': true,
@@ -430,10 +470,11 @@ const timeTableRouterMap = [
       matched: [{path: '', name: '空闲时间查询'}]}
   },
   {
-    path: '/CourseInspection',
+    path: timeUrl + '/CourseInspection',
     name: 'CourseInspection',
     x: 3,
     y: 4,
+    icon: 'icon-jiance1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -444,10 +485,11 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '排课检测' }]
     }
   }, {
-    path: '/ClassHourBalance',
+    path: timeUrl + '/ClassHourBalance',
     name: 'ClassHourBalance',
     x: 3,
     y: 5,
+    icon: 'icon-kecheng1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -459,10 +501,11 @@ const timeTableRouterMap = [
     }
   },
   {
-    path: '/GeneralCourseStatus',
+    path: timeUrl + '/GeneralCourseStatus',
     name: 'GeneralCourseStatus',
     x: 3,
     y: 6,
+    icon: 'icon-moban',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -472,65 +515,14 @@ const timeTableRouterMap = [
       title: '通识课程修读情况',
       matched: [{ path: '', name: '通识课程修读情况' }]
     }
-  },
-  {
-    path: '',
-    name: 'TeachMaterialManagement',
+  }, {
+    path: timeUrl + '/DataImport',
+    name: 'StartPlanTitle',
     x: 3,
     y: 7,
-    menuLevel: 1,
-    meta: { icon: 'kechengguanli', 'requireAuth': true, permission: ['ViewTeachMaterialManagementPage'], namespace: 'KR_TT', title: '教材管理' }
-  },
-  {
-    path: '/TextbookLibrary',
-    name: 'TextbookLibrary',
-    x: 3,
-    y: 8,
-    menuLevel: 2,
-    meta: {
-      target: '_blank',
-      requireAuth: true,
-      permission: ['ViewTextbookLibraryPage'],
-      namespace: 'KR_TT',
-      title: '教材库',
-      matched: [{path: '', name: '教材管理'}, {path: '', name: '教材库'}]
-    }
-  }, {
-    path: '/PublishingLibrary',
-    name: 'PublishingLibrary',
-    x: 3,
-    y: 9,
-    menuLevel: 2,
-    meta: {
-      target: '_blank',
-      requireAuth: true,
-      permission: ['ViewPublishingLibraryTaskPage'],
-      namespace: 'KR_TT',
-      title: '出版社库',
-      matched: [{path: '', name: '教材管理'}, {path: '', name: '出版社库'}]
-    }
-  }, {
-    path: '/CurriculumTextbook',
-    name: 'CurriculumTextbook',
-    x: 3,
-    y: 10,
-    menuLevel: 2,
-    meta: {
-      target: '_blank',
-      requireAuth: true,
-      permission: ['ViewCurriculumTextbookTaskPage'],
-      namespace: 'KR_TT',
-      title: '课程对教材',
-      matched: [{path: '', name: '教材管理'}, {path: '', name: '课程对教材'}]
-    }
-  }, {
-    path: '/DataImport',
-    name: 'DataImport',
-    x: 3,
-    y: 11,
+    icon: 'icon-jindu14',
     menuLevel: 1,
     meta: {
-      icon: 'paikejieguodaoru',
       target: '_blank',
       requireAuth: true,
       permission: ['ViewStartPlanTitlePage'],
@@ -538,10 +530,11 @@ const timeTableRouterMap = [
       title: '数据导入'
     }
   }, {
-    path: '/ImportTeachingTask',
+    path: timeUrl + '/ImportTeachingTask',
     name: 'ImportTeachingTask',
     x: 3,
-    y: 12,
+    y: 8,
+    icon: 'icon-ku1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -554,13 +547,13 @@ const timeTableRouterMap = [
     }
   },
   {
-    path: '/timeTableManageConsolo',
+    path: timeUrl + '/timeTableManageConsolo',
     name: 'timeTableManageConsolo',
     x: 4,
     y: 1,
+    icon: 'icon-yonghu4',
     menuLevel: 1,
     meta: {
-      icon: 'guanli',
       target: '_blank',
       requireAuth: true,
       permission: ['ViewManageConsoloTimeTablePage'],
@@ -570,10 +563,11 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '管理台' }]
     }
   }, {
-    path: '/AdminPermission',
+    path: timeUrl + '/AdminPermission',
     name: 'AdminPermission',
     x: 4,
     y: 3,
+    icon: 'fa fa-user-secret',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -583,10 +577,11 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '权限' }]
     }
   }, {
-    path: '/AdminRole',
+    path: timeUrl + '/AdminRole',
     name: 'AdminRole',
     x: 4,
     y: 4,
+    icon: 'fa fa-male',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -596,10 +591,11 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '角色' }]
     }
   }, {
-    path: '/AdminUser',
+    path: timeUrl + '/AdminUser',
     name: 'AdminUser',
     x: 4,
     y: 5,
+    icon: 'fa fa-user',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -610,7 +606,7 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '用户' }]
     }
   }, {
-    path: '/timeTableAdminUpdateUser',
+    path: timeUrl + '/timeTableAdminUpdateUser',
     name: 'timeTableAdminUpdateUser',
     x: 0,
     y: 0,
@@ -626,10 +622,11 @@ const timeTableRouterMap = [
     }
   },
   {
-    path: '/AdminTimeManagement',
+    path: timeUrl + '/AdminTimeManagement',
     name: 'AdminTimeManagement',
     x: 4,
     y: 7,
+    icon: 'icon-shijian1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -641,10 +638,11 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '时间' }]
     }
   }, {
-    path: '/AdminCategory',
+    path: timeUrl + '/AdminCategory',
     name: 'AdminCategory',
     x: 4,
     y: 2,
+    icon: 'fa fa-asterisk',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -656,10 +654,11 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '类别' }]
     }
   }, {
-    path: '/AdminWorkManage',
+    path: timeUrl + '/AdminWorkManage',
     name: 'AdminWorkManage',
     x: 4,
     y: 6,
+    icon: 'fa fa-random',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -671,10 +670,11 @@ const timeTableRouterMap = [
       matched: [{ path: '', name: '工作流' }]
     }
   }, {
-    path: '/AdminEditBulletinBoard',
+    path: timeUrl + '/AdminEditBulletinBoard',
     name: 'AdminEditBulletinBoard',
     x: 4,
     y: 7,
+    icon: 'fa fa-random',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -687,7 +687,7 @@ const timeTableRouterMap = [
     }
   },
   {
-    path: '*',
+    path: timeUrl + '*',
     redirect: '/page404'
   }
 ]
@@ -696,8 +696,6 @@ export default {
   name: '排课管理',
   code: 'timetable',
   namespace: 'KR_TT',
-  icon: 'server_05',
-  baseUrl: `/tt`,
-  isOld: true,
+  icon: 'icon-server_05',
   originRouters: timeTableRouterMap
 }

@@ -1,16 +1,17 @@
+import { httpConfig } from '@/config'
 /**
  * 教师教学档案
  */
-const tpmsUrl = '/portal'
+const tpmsUrl = httpConfig.appRoot + '/tpms/portal'
 const tpmsRouterMap = [
   {
     path: tpmsUrl + '/home?methodToCall=getTPMSHomePage&viewId=PortalView',
     name: 'tpmsHome',
     x: 1,
     y: 1,
+    icon: 'icon-xuejiguanli1',
     menuLevel: 1,
     meta: {
-      icon: 'home',
       target: '_blank',
       title: '主页'
     }
@@ -20,9 +21,9 @@ const tpmsRouterMap = [
     name: 'PersonalCourse',
     x: 1,
     y: 2,
+    icon: 'icon-xuejiguanli1',
     menuLevel: 1,
     meta: {
-      icon: 'xuejiguanli1',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_TPMS',
@@ -35,9 +36,9 @@ const tpmsRouterMap = [
     name: 'AdministratorsPerformanceEvaluation',
     x: 1,
     y: 3,
+    icon: 'icon-shenhe2',
     menuLevel: 1,
     meta: {
-      icon: 'chakan7',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_TPMS',
@@ -50,9 +51,9 @@ const tpmsRouterMap = [
     name: 'CourseConfirmConsole',
     x: 1,
     y: 4,
+    icon: 'icon-xuqiupingshen',
     menuLevel: 1,
     meta: {
-      icon: 'xuqiupingshen',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_TPMS',
@@ -65,9 +66,9 @@ const tpmsRouterMap = [
     name: 'ReviewConsole',
     x: 2,
     y: 1,
+    icon: 'icon-xuqiupingshen',
     menuLevel: 1,
     meta: {
-      icon: 'shenhe1',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_TPMS',
@@ -77,9 +78,10 @@ const tpmsRouterMap = [
   },
   {
     path: tpmsUrl + '/achievement?methodToCall=getEduTeachingAchvPage&amp;viewId=ReviewView',
-    name: 'getEduTeachingAchvPage',
+    name: 'AchievementReviewBlock',
     x: 2,
     y: 2,
+    icon: 'icon-xuqiupingshen',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -91,12 +93,12 @@ const tpmsRouterMap = [
   },
   {
     path: '',
-    name: 'OnlineTeachingPage',
+    name: 'AchievementReviewBlock',
     x: 2,
     y: 3,
+    icon: 'icon-zhidaobiaozhun',
     menuLevel: 1,
     meta: {
-      icon: 'zhidaobiaozhun',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_TPMS',
@@ -106,9 +108,10 @@ const tpmsRouterMap = [
   },
   {
     path: tpmsUrl + '/class?methodToCall=getManageClassAttendancePage&amp;viewId=PortfolioView',
-    name: 'getManageClassAttendancePage',
+    name: 'AchievementReviewBlock',
     x: 2,
     y: 4,
+    icon: 'icon-tongji1',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -120,9 +123,10 @@ const tpmsRouterMap = [
   },
   {
     path: tpmsUrl + '/class?methodToCall=getInstructorClassAttendancePage&amp;viewId=PortfolioView',
-    name: 'getInstructorClassAttendancePage',
+    name: 'AchievementReviewBlock',
     x: 2,
     y: 5,
+    icon: 'icon-zhidaobiaozhun',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -137,9 +141,9 @@ const tpmsRouterMap = [
     name: 'BPackageMoney',
     x: 3,
     y: 1,
+    icon: 'icon-mingxi',
     menuLevel: 1,
     meta: {
-      icon: 'mingxi',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_TPMS',
@@ -152,6 +156,7 @@ const tpmsRouterMap = [
     name: 'PostAllowanceCalculation',
     x: 3,
     y: 2,
+    icon: 'icon-xuqiupingshen',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -166,6 +171,7 @@ const tpmsRouterMap = [
     name: 'AllowanceDetailsConsole',
     x: 3,
     y: 3,
+    icon: 'icon-xuqiupingshen',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -180,6 +186,7 @@ const tpmsRouterMap = [
     name: 'DataImport',
     x: 3,
     y: 3,
+    icon: 'icon-xuqiupingshen',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -194,9 +201,9 @@ const tpmsRouterMap = [
     name: 'ManageConcole',
     x: 4,
     y: 1,
+    icon: 'icon-xuqiupingshen',
     menuLevel: 1,
     meta: {
-      icon: 'guanli',
       target: '_blank',
       requireAuth: true,
       namespace: 'KR_TPMS',
@@ -209,6 +216,7 @@ const tpmsRouterMap = [
     name: 'CourseLabelManage',
     x: 4,
     y: 2,
+    icon: 'icon-xuqiupingshen',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -223,6 +231,7 @@ const tpmsRouterMap = [
     name: 'ViewConsolePage',
     x: 4,
     y: 3,
+    icon: 'icon-msnui-module',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -237,6 +246,7 @@ const tpmsRouterMap = [
     name: 'tpmsRuleConsole',
     x: 4,
     y: 4,
+    icon: 'icon-xuqiupingshen',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -251,6 +261,7 @@ const tpmsRouterMap = [
     name: 'tpmsRoleManager',
     x: 4,
     y: 5,
+    icon: 'icon-iconfont-jiaoshi',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -265,6 +276,7 @@ const tpmsRouterMap = [
     name: 'tpmsUserRoleManager',
     x: 4,
     y: 6,
+    icon: 'icon-yonghu6',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -279,6 +291,7 @@ const tpmsRouterMap = [
     name: 'tpmsPermissionManagement',
     x: 4,
     y: 7,
+    icon: 'icon-zhaopin',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -293,6 +306,7 @@ const tpmsRouterMap = [
     name: 'tpmsTimeSet',
     x: 4,
     y: 8,
+    icon: 'icon-xuqiupingshen',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -307,6 +321,7 @@ const tpmsRouterMap = [
     name: 'tpmsWorkFlowManagePage',
     x: 4,
     y: 9,
+    icon: 'icon-xueshengguanli',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -321,6 +336,7 @@ const tpmsRouterMap = [
     name: 'JournalLibrary',
     x: 4,
     y: 10,
+    icon: 'icon-xuqiupingshen',
     menuLevel: 2,
     meta: {
       target: '_blank',
@@ -336,8 +352,6 @@ export default {
   name: '教师教学档案',
   code: 'tpms',
   namespace: 'KR_TPMS',
-  icon: 'pici',
-  baseUrl: '/tpms',
-  isOld: true,
+  icon: 'icon-pici',
   originRouters: tpmsRouterMap
 }

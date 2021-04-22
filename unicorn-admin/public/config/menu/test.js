@@ -1,4 +1,6 @@
-const testUrl = '/portal'
+import { httpConfig } from '@/config'
+
+const testUrl = httpConfig.appRoot + '/test/portal'
 const testRouterMap = [
   {
     path: testUrl,
@@ -294,8 +296,6 @@ export default {
   code: 'tams',
   namespace: 'KR_TEST',
   icon: 'icon-jiaoshixinxi',
-  baseUrl: '/test',
-  isOld: true,
   originRouters: testRouterMap
 }
 
