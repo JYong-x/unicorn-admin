@@ -1,13 +1,9 @@
-import axios from 'axios'
+let refreshing = false
 
-axios.defaults.withCredentials = true
-
-export default function (options, authUtils) {
-  const { storage, getLocalToken, getLocalRefreshToken, removeAuth, getAuth, setUserInfo, setAuth } = authUtils
+export default function (options, authUtils, interceptor) {
+  const { getLocalToken, getLocalRefreshToken, removeAuth, getAuth, setUserInfo, setAuth } = authUtils
 
   return {
-    options,
-    login,
     getToken,
     getUserInfo,
     logout,
@@ -17,47 +13,9 @@ export default function (options, authUtils) {
     listenExpires
   }
 
-  function login (code, config = options) {
-    return new Promise(resolve => {
-      const auth = getAuth()
-      if (auth.accessToken) {
-        return {
-          auth
-        }
-        // getUserInfo().then(userInfo => {
-        //   setUserInfo(userInfo)
-        //   resolve({
-        //     auth,
-        //     userInfo
-        //   })
-        // })
-      } else {
-        if (!code) {
-          throw new Error('code is must')
-          resolve()
-          return
-        }
-        getToken(code, config).then(auth => {
-          setAuth(auth)
-          listenExpires()
-          resolve({
-            auth
-          })
-          // getUserInfo().then(userInfo => {
-          //   setUserInfo(userInfo)
-          //   resolve({
-          //     auth,
-          //     userInfo
-          //   })
-          // })
-        })
-      }
-    })
-  }
-
   function getToken(code, config = options) {
     return new Promise(resolve => {
-      axios({
+      interceptor({
         url: config.accessTokenUri,
         method: 'POST',
         auth: {
@@ -83,7 +41,8 @@ export default function (options, authUtils) {
             return ret
           }
         ],
-      }).then(res => {
+      })
+        .then(res => {
         resolve(res.data)
       })
     })
@@ -91,7 +50,7 @@ export default function (options, authUtils) {
   function getUserInfo(config= options) {
     return new Promise(resolve => {
       const token = getAuth().accessToken
-      axios({
+      interceptor({
         url: config.userInfoUri,
         method: 'GET',
         headers: {
@@ -99,6 +58,7 @@ export default function (options, authUtils) {
           Authorization: `Bearer ${token}`
         },
       }).then(res => {
+        listenExpires()
         resolve(res.data)
       })
     })
@@ -107,7 +67,11 @@ export default function (options, authUtils) {
     return new Promise(resolve => {
       const token = getLocalToken()
       removeAuth()
-      axios({
+      if (!token) {
+        config.useCas ? casLoginRedirect() : logoutRedirect(options, token)
+        return
+      }
+      interceptor({
         url: `${config.logoutUri}`,
         method: 'GET',
         headers: {
@@ -115,7 +79,7 @@ export default function (options, authUtils) {
         },
       }).then(res => {
         if (res && res.status === 200) {
-          axios({
+          interceptor({
             url: `${config.removeTokenUri}?access_token=${token}`,
             method: 'GET',
             params: {
@@ -132,9 +96,6 @@ export default function (options, authUtils) {
       })
     })
   }
-  // function refreshToken(config = options) {
-  //   return _refreshToken(config)
-  // }
 
   // 登出后返回地址
   function logoutRedirect(config = options, token) {
@@ -144,6 +105,9 @@ export default function (options, authUtils) {
 
 // 跳转统一登录地址
   function loginRedirect(config = options) {
+    options.useCas ? casLoginRedirect(config) : authorizationRedirect(config)
+  }
+  function authorizationRedirect (config = options) {
     const authorUrl = `${config.userAuthorizationUri}?client_id=${config.clientId}&response_type=${config.response_type}&scope=${config.scope}&state=${config.state}&redirect_uri=${config.redirect_uri}`
     window.location.href = authorUrl
   }
@@ -155,7 +119,8 @@ export default function (options, authUtils) {
   }
 
   function listenExpires (config = options) {
-    if (!getAuth().accessToken) {
+    document.removeEventListener('mousemove', refreshToken)
+    if (!getAuth().currentToken) {
       return
     }
     setInterval(() => {
@@ -164,11 +129,13 @@ export default function (options, authUtils) {
         const now = new Date().getTime()
         // 当前时间与token过期时间间隔少于10分钟时刷新token
         if (tokenExpire - now < 10 * 60 * 1000) {
-          document.addEventListener('mousemove', refreshToken(config, storage, getLocalRefreshToken()))
+          document.addEventListener('mousemove', refreshToken)
         }
-      } else if (getLocalRefreshToken()) {
-        refreshToken(config, authUtils.storage)
-      } else if (config.router) {
+      }
+      // else if (curRefreshToken) {
+      //   refreshToken()
+      // }
+      else if (config.router) {
         setTimeout(() => {
           config.router.replace('/login')
         }, 3000)
@@ -177,28 +144,41 @@ export default function (options, authUtils) {
       }
     }, 60 * 1000)
   }
+
+  function refreshToken () {
+    _refreshToken(options, storage, getLocalRefreshToken(), interceptor).then(() => {
+      console.log('refreshToken success')
+    })
+      .catch(() => {
+        logout()
+      })
+    document.removeEventListener('mousemove', refreshToken)
+  }
 }
 
-function refreshToken(config, storage, refreshToken) {
-  const { router } = config
-  refreshTokenRequest(config, refreshToken).then(data => {
-    _setAuth(data, storage)
-  }).catch(() => {
-    if (router) {
-      setTimeout(() => {
-        router.replace('/login')
-      }, 3000)
-    } else {
-      throw new Error('refreshToken error')
-    }
+function _refreshToken(config, storage, refreshToken, interceptor) {
+  return new Promise((resolve, reject) => {
+    if (refreshing) return
+    refreshing = true
+    refreshTokenRequest(config, refreshToken, interceptor).then(data => {
+      _setAuth(data, storage)
+      resolve()
+    })
+      .catch(() => {
+        reject()
+    })
+      .finally(() => {
+        refreshing = false
+      })
   })
 }
 
-function refreshTokenRequest(config, refreshToken) {
+function refreshTokenRequest(config, refreshToken, interceptor) {
   return new Promise((resolve, reject) => {
-    axios({
+    return new Promise(resolve => {
+      interceptor({
+        method: 'post',
         url: config.refreshTokenUri,
-        method: 'POST',
         auth: {
           username: config.clientId,
           password: config.client_secret
@@ -209,20 +189,25 @@ function refreshTokenRequest(config, refreshToken) {
           grant_type: 'refresh_token',
           refresh_token: refreshToken
         },
-        transformRequest: [function (data) {
-          let ret = ''
-          for (const it in data) {
-            if (data[it] === null) {
-              continue
+        transformRequest: [
+          function (data) {
+            let ret = ''
+            for (const it in data) {
+              if (data[it] === null) {
+                continue
+              }
+              ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
             }
-            ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+            return ret
           }
-          return ret
-        }]
-      }).then(res => {
-      resolve(res.data)
-    }).catch(() => {
-      reject()
+        ],
+      })
+        .then(res => {
+          resolve(res.data)
+        })
+        .catch(() => {
+          reject()
+        })
     })
   })
 }

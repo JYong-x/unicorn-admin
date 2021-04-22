@@ -3,7 +3,7 @@
  * @type { *[] }
  */
 const subUrl = `/enroll`
-export const routerMap = [
+const routerMap = [
   {
     path: '/',
     name: 'index',

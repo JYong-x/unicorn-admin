@@ -2,66 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd0d321d-1675-41be-8103-4d4c03fd9bc4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/unicorn-admin/public/config/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unicorn-admin/public/config/menu/enroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unicorn-admin/public/config/menu/sam.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unicorn-admin/public/config/menu/tams.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unicorn-admin/public/config/menu/timetable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unicorn-admin/public/config/menu/trpms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unicorn-admin/public/config/subsystem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unicorn-admin/public/config/system.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/config/authUri.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/config/menu/cet.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/config/menu/cm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/config/menu/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/config/menu/sam.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/config/menu/sms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/config/menu/srtp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/config/menu/teach.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/config/menu/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/config/menu/tpms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/config/menu/trpms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/config/subsystem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/config/system.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/src/config/menu/exam.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/utils/src/navigation/guard.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/utils/src/navigation/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/src/storeModules/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/src/storeModules/permission.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/utils/src/utils/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/src/utils/permission.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout-pro/examples/unicorn-admin/src/api/finder.js" beforeDir="false" afterPath="$PROJECT_DIR$/layout-pro/examples/unicorn-admin/src/api/finder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unicorn-admin/src/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/unicorn-admin/src/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unicorn-admin/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/unicorn-admin/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unicorn-admin/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/unicorn-admin/vue.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/utils/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/config/dev.env.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/config/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/config/typeKeys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/config/prod.env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/config/menu/enroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/config/menu/enroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/config/menu/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/config/menu/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/login/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/login/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/src/login/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/login/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/request/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/request/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/request/interceptor.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/request/interceptor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/request/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/request/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/modules/cet.js" beforeDir="false" afterPath="$PROJECT_DIR$/unicorn-admin/public/config/menu/cet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/modules/cm.js" beforeDir="false" afterPath="$PROJECT_DIR$/unicorn-admin/public/config/menu/cm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/modules/enroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/config/menu/enroll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/modules/exam.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/modules/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/unicorn-admin/public/config/menu/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/modules/sam.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/modules/sms.js" beforeDir="false" afterPath="$PROJECT_DIR$/unicorn-admin/public/config/menu/sms.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/modules/srtp.js" beforeDir="false" afterPath="$PROJECT_DIR$/unicorn-admin/public/config/menu/srtp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/modules/tams.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/config/menu/tams.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/modules/teach.js" beforeDir="false" afterPath="$PROJECT_DIR$/unicorn-admin/public/config/menu/teach.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/modules/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/unicorn-admin/public/config/menu/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/modules/timetable.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/config/menu/timetable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/modules/tpms.js" beforeDir="false" afterPath="$PROJECT_DIR$/unicorn-admin/public/config/menu/tpms.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/modules/trpms.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/router/permission.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/src/utils/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/utils/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/utils/storage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/utils/storage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/utils/permission.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/src/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/utils/utils.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
